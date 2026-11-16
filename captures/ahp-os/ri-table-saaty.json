@@ -1,0 +1,62 @@
+{
+  "tool": {
+    "name": "AHP-OS (AHP Online System) - AHP Priority Calculator",
+    "version": "ahp-calc.php Rev 172, last update 2022-02-26 (from the page footer)",
+    "platform": "web (hosted at bpmsg.com)"
+  },
+  "captured": {
+    "date": "2026-11-16",
+    "by": "Philip Healy",
+    "method": "hosted-session",
+    "notes": "One calculator session covers both fixtures of the RI pair, since they share the same matrix and the tool has a single CR convention. Judgments were entered by browser automation in the operator's browser, read back from the form before calculation, and the outputs transcribed verbatim (see the transcript artifact). The operator manually checked the session before commit. The calculator is publicly accessible; no login was used."
+  },
+  "outputs": {
+    "matrices": {
+      "matrix": {
+        "priorities": [
+          0.573,
+          0.259,
+          0.116,
+          0.052
+        ],
+        "lambda_max": 4.093,
+        "ci": null,
+        "cr": 0.034,
+        "notes": "Displayed as 57.3%, 25.9%, 11.6%, 5.2%; CR displayed as '3.4%'; CI not displayed; 'Principal eigen value = 4.093'."
+      }
+    }
+  },
+  "ri_table": {
+    "name": "other",
+    "values": {
+      "4": 0.909433
+    },
+    "source": "Confirmed from the published source code (github.com/bpmsg/ahp-os, classes/AhpCalc.php): setAlonsoCr() computes CR = (lambda_max - n) / ((2.7699*n - 4.3513) - n), citing Alonso & Lamata (2006), and the priority calculator page (ahp-calc.php) displays exactly this value. At n = 4 the formula's effective RI is 0.909433, where Alonso & Lamata's Table 1 gives 0.8815 and the Saaty (1980) table 0.90. The documented formula is also stated in K. D. Goepel's AHP-OS implementation paper (IJAHP 10(3), 2018, working-paper eq. 2.5)."
+  },
+  "prioritization_method": "principal-eigenvector (stated on the results page)",
+  "fixture_id": "ri-table-saaty",
+  "matches_expected": {
+    "matrices.matrix.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived expected priorities at the tool's display precision."
+    },
+    "matrices.matrix.lambda_max": {
+      "matches": true,
+      "tolerance": 0.001,
+      "note": "Displayed 4.093 vs expected 4.0933; within the three-decimal display precision."
+    },
+    "matrices.matrix.cr": {
+      "matches": false,
+      "tolerance": 0.0005,
+      "note": "Displayed '3.4%' (the tool's value is 0.0342) vs the fixture's expected 0.034555 under the Saaty (1980) table - just outside the transcription tolerance. See the capture-level explanation."
+    }
+  },
+  "explanation": "The displayed CR (3.4%, i.e. 0.0342 by the tool's documented formula) differs slightly from this fixture's expected 0.034555 because the tool computes CR with the Alonso-Lamata linear fit (effective RI(4) = 0.9094) rather than the Saaty (1980) table this fixture declares (RI(4) = 0.90). Priorities and lambda_max match; the difference is entirely in the random-index convention.",
+  "reverify": {
+    "instructions": "Open https://bpmsg.com/ahp/ahp-calc.php (no account needed). Enter 4 criteria named P, Q, R, S; judgments: P 3 over Q, P 5 over R, P 8 over S, Q 3 over R, Q 5 over S, R 3 over S. Calculate and read the priorities, 'Consistency Ratio CR' and 'Principal eigen value'.",
+    "artifacts": [
+      "artifacts/ri-table-pair-transcript.txt"
+    ]
+  }
+}

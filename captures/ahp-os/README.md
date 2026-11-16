@@ -11,3 +11,4 @@ commit (the automation is noted in each capture's `captured.notes`).
 | --- | --- | --- |
 | [drinks-saaty-2008](drinks-saaty-2008.json) | 2026-11-16 | priorities, lambda_max and CR all match the expected values at the tool's display precision |
 | [college-selection-rwsaaty-1987](college-selection-rwsaaty-1987.json) | 2026-11-16 | all outputs match at display precision; the n=4 display pinned the tool's CR basis to the Alonso–Lamata linear fit, confirmed in the published source code (github.com/bpmsg/ahp-os) |
+| [ri-table-saaty](ri-table-saaty.json) / [ri-table-alonso-lamata](ri-table-alonso-lamata.json) | 2026-11-16 | one session covering the pair: priorities and lambda_max match both fixtures; the displayed CR (3.4%) diverges from both expected CRs and is explained — the tool implements Alonso & Lamata's linear fit (effective RI(4) = 0.9094), which differs from the 1980 table and from A&L's own Table 1 values |

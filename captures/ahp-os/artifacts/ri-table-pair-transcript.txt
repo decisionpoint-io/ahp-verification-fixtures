@@ -1,0 +1,51 @@
+AHP-OS capture session transcript — fixtures ri-table-saaty and
+ri-table-alonso-lamata (one session; the fixtures share the same matrix)
+=========================================================================
+
+Date: 2026-11-16
+Tool: AHP-OS "AHP Priority Calculator", https://bpmsg.com/ahp/ahp-calc.php
+Page footer: "AHP-OS author: Klaus D. Goepel, BPMSG. Last update: Feb 26, 2022 Rev: 172"
+Access: public page, no login used.
+Method: judgment entry automated in the operator's browser; judgments read
+back from the form before calculation; outputs transcribed verbatim.
+
+Setup
+-----
+Number of criteria: 4
+Names: P, Q, R, S
+
+Judgments as read back from the form before calculation
+--------------------------------------------------------
+ 1  P vs Q: P x3
+ 2  P vs R: P x5
+ 3  P vs S: P x8
+ 4  Q vs R: Q x3
+ 5  Q vs S: Q x5
+ 6  R vs S: R x3
+
+Results page text (verbatim)
+----------------------------
+Cat  Priority  Rank  (+)    (-)
+1  P  57.3%  1  14.3%  14.3%
+2  Q  25.9%  2   6.2%   6.2%
+3  R  11.6%  3   2.9%   2.9%
+4  S   5.2%  4   1.3%   1.3%
+Decision Matrix:
+    1     2     3     4
+1   1     3.00  5.00  8.00
+2   0.33  1     3.00  5.00
+3   0.20  0.33  1     3.00
+4   0.12  0.20  0.33  1
+Number of comparisons = 6
+Consistency Ratio CR = 3.4%
+Principal eigen value = 4.093
+Eigenvector solution: 4 iterations, delta = 3.1E-8
+
+Notes
+-----
+- The displayed CR (3.4%; 0.0342 by the tool's documented linear-fit
+  formula) sits between the two fixtures' expected values: 0.034555 under
+  the Saaty (1980) table and 0.035281 under the Alonso-Lamata Table 1
+  values. The tool implements Alonso & Lamata's linear fit (effective
+  RI(4) = 0.9094), so a single source paper yields two CR conventions —
+  the pair of captures documents the divergence from each fixture.
