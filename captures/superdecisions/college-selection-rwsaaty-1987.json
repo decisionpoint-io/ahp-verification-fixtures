@@ -43,12 +43,13 @@
   "ri_table": {
     "name": "other",
     "values": {
+      "3": 0.52,
       "4": 0.89,
       "5": 1.12,
       "6": 1.25,
       "7": 1.35
     },
-    "source": "Determined numerically across the three SuperDecisions web captures in this repository (drinks n=7; college criteria n=4 and location n=5; the eleven car matrices spanning n=2..6): the displayed inconsistencies imply effective RI(4) = 0.89, RI(5) = 1.12, RI(6) = 1.25 and RI(7) = 1.35 at the displayed four-decimal precision (CI values recomputed from the fixtures' matrices). 0.89, 1.25 and 1.35 coincide with the random-index estimates printed in T. L. Saaty, Theory and Applications of the Analytic Network Process, 2005, p. 31, while 1.12 coincides with the Saaty (1980) table; no single published table matches all observations. Vendor documentation or source stating the table was not located."
+    "source": "Determined numerically across the four SuperDecisions web captures in this repository (matrices spanning n = 2..7): the displayed inconsistencies imply effective RI(3) = 0.52, RI(4) = 0.89, RI(5) = 1.12, RI(6) = 1.25 and RI(7) = 1.35 at the displayed four-decimal precision (CI values recomputed from the fixtures' matrices). All but RI(5) coincide with the random-index estimates printed in T. L. Saaty, Theory and Applications of the Analytic Network Process, 2005, p. 31 (0.52, 0.89, 1.11, 1.25, 1.35); RI(5) = 1.12 coincides with the Saaty (1980) table instead. No single published table matches all observations, and vendor documentation or source stating the table was not located."
   },
   "prioritization_method": "principal-eigenvector (inferred: all displayed priorities equal the fixture's principal-eigenvector expected values at display precision, including entries where the column-normalization alternates differ)",
   "matches_expected": {

@@ -1,0 +1,64 @@
+SuperDecisions (web) capture session transcript — fixture school-selection-saaty-1977
+======================================================================================
+
+Date: 2026-11-16
+Tool: SuperDecisions V4 Platform (web application at superdecisions.com);
+      login page displays "SuperDecisions (v0.5.14)"
+Account: operator's account (Google sign-in performed by the operator)
+Method: model building and judgment entry automated in the operator's
+browser; each completed matrix read from screen and checked against the
+fixture before transcription; outputs transcribed verbatim. Four matrices
+initially received no values because the judgment grid's position varies
+with the header text; they were verified empty and re-entered, and every
+matrix was screenshot-verified before transcription.
+
+Model
+-----
+File: ahp-fixture-school-saaty-1977.sdm4 (saved to the operator's connected
+Google Drive; "Saving model in Google Drive" confirmed)
+Structure: Main Network with clusters Goal ("Satisfaction with school"),
+Criteria (Learning, Friends, School Life, Vocational Training, College
+Preparation, Music Classes) and Schools (School A, School B, School C).
+Connections: goal node -> Criteria cluster (6); all six criteria ->
+Schools cluster (6 x 3 = 18).
+
+Matrices as displayed after entry (all equal the fixture's matrices
+entry-for-entry; reciprocals filled automatically)
+--------------------------------------------------------------------
+Criteria (L, F, SL, VT, CP, MC):
+  L   1    4    3    1    3    4
+  F   1/4  1    7    3    1/5  1
+  SL  1/3  1/7  1    1/5  1/5  1/6
+  VT  1    1/3  5    1    1    1/3
+  CP  1/3  5    5    1    1    3
+  MC  1/4  1    6    3    1/3  1
+Learning:    A: 1, 1/3, 1/2 | B: 3, 1, 3 | C: 2, 1/3, 1
+Friends:     all 1
+School Life: A: 1, 5, 1 | B: 1/5, 1, 1/5 | C: 1, 5, 1
+Vocational:  A: 1, 9, 7 | B: 1/9, 1, 1/5 | C: 1/7, 5, 1
+College:     A: 1, 1/2, 1 | B: 2, 1, 2 | C: 1, 1/2, 1
+Music:       A: 1, 6, 4 | B: 1/6, 1, 1/3 | C: 1/4, 3, 1
+
+Outputs (Priorities panel 'Normal' column and 'Inconsistency', verbatim)
+------------------------------------------------------------------------
+criteria:    0.321, 0.140, 0.035, 0.128, 0.237, 0.139   Inconsistency 0.2272
+learning:    0.157, 0.594, 0.249                        Inconsistency 0.0516
+friends:     0.333, 0.333, 0.333                        Inconsistency 0
+school life: 0.455, 0.091, 0.455                        Inconsistency 0
+vocational:  0.772, 0.055, 0.173                        Inconsistency 0.2004
+college:     0.250, 0.500, 0.250                        Inconsistency 0
+music:       0.691, 0.091, 0.218                        Inconsistency 0.0516
+
+Final synthesis (Results > Local Results > Schools, Normal column):
+  School B 0.378, School A 0.367, School C 0.254
+
+Notes
+-----
+- lambda_max and CI are not displayed.
+- The tool accepted the famously inconsistent criteria matrix (displayed
+  inconsistency 0.2272) without blocking entry or synthesis.
+- School B ranks first, matching the fixture's principal-eigenvector
+  synthesis; the fixture's description notes that the column-normalization
+  approximation reverses the A/B pair on this example.
+- The displayed inconsistencies imply effective RI(3) = 0.52 and
+  RI(6) = 1.25; see the capture's ri_table block and explanation.

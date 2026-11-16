@@ -1,0 +1,201 @@
+{
+  "fixture_id": "school-selection-saaty-1977",
+  "tool": {
+    "name": "SuperDecisions (web, V4 Platform)",
+    "version": "v0.5.14 (as displayed on the application's login page)",
+    "platform": "web (hosted at superdecisions.com)"
+  },
+  "captured": {
+    "date": "2026-11-16",
+    "by": "Philip Healy",
+    "method": "manual-gui-entry",
+    "notes": "Model building and judgment entry (7 matrices, 33 comparisons) were automated in the operator's browser (operator signed in and supervised); each completed matrix was read from screen and checked against the fixture before transcription (see the transcript artifact). During entry, four matrices initially received no values because the judgment grid's position varies with the header text; the affected matrices were verified empty and re-entered at the correct cells, and every matrix was screenshot-verified before transcription. The operator manually checked the session and outputs before this capture was committed."
+  },
+  "outputs": {
+    "matrices": {
+      "criteria": {
+        "priorities": [
+          0.321,
+          0.14,
+          0.035,
+          0.128,
+          0.237,
+          0.139
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.2272
+      },
+      "learning": {
+        "priorities": [
+          0.157,
+          0.594,
+          0.249
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0516
+      },
+      "friends": {
+        "priorities": [
+          0.333,
+          0.333,
+          0.333
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0
+      },
+      "school_life": {
+        "priorities": [
+          0.455,
+          0.091,
+          0.455
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0
+      },
+      "vocational_training": {
+        "priorities": [
+          0.772,
+          0.055,
+          0.173
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.2004
+      },
+      "college_preparation": {
+        "priorities": [
+          0.25,
+          0.5,
+          0.25
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0
+      },
+      "music_classes": {
+        "priorities": [
+          0.691,
+          0.091,
+          0.218
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0516
+      }
+    },
+    "synthesis": {
+      "labels": [
+        "School A",
+        "School B",
+        "School C"
+      ],
+      "values": [
+        0.367,
+        0.378,
+        0.254
+      ],
+      "notes": "Results > Local Results > Schools (Normal column): School B 0.378, School A 0.367, School C 0.254. Computed by the tool's supermatrix; on this pure hierarchy it reproduces the standard AHP synthesis."
+    }
+  },
+  "ri_table": {
+    "name": "other",
+    "values": {
+      "3": 0.52,
+      "4": 0.89,
+      "5": 1.12,
+      "6": 1.25,
+      "7": 1.35
+    },
+    "source": "Determined numerically across the four SuperDecisions web captures in this repository (matrices spanning n = 2..7): the displayed inconsistencies imply effective RI(3) = 0.52, RI(4) = 0.89, RI(5) = 1.12, RI(6) = 1.25 and RI(7) = 1.35 at the displayed four-decimal precision (CI values recomputed from the fixtures' matrices). All but RI(5) coincide with the random-index estimates printed in T. L. Saaty, Theory and Applications of the Analytic Network Process, 2005, p. 31 (0.52, 0.89, 1.11, 1.25, 1.35); RI(5) = 1.12 coincides with the Saaty (1980) table instead. No single published table matches all observations, and vendor documentation or source stating the table was not located."
+  },
+  "prioritization_method": "principal-eigenvector (inferred: all displayed priorities equal the fixture's principal-eigenvector expected values at display precision, and the School A/B ranking follows the eigenvector rather than the column-normalization ordering)",
+  "matches_expected": {
+    "matrices.criteria.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the tool's display precision (three decimals)."
+    },
+    "matrices.criteria.cr": {
+      "matches": false,
+      "tolerance": 0.0005,
+      "note": "Displayed 0.2272 vs expected 0.229011 (Saaty 1980 RI): a random-index difference - see the capture-level explanation. The underlying CI agrees."
+    },
+    "matrices.learning.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the tool's display precision (three decimals)."
+    },
+    "matrices.learning.cr": {
+      "matches": false,
+      "tolerance": 0.0005,
+      "note": "Displayed 0.0516 vs expected 0.046225 (Saaty 1980 RI): a random-index difference - see the capture-level explanation. The underlying CI agrees."
+    },
+    "matrices.friends.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the tool's display precision (three decimals)."
+    },
+    "matrices.friends.cr": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Within the fixture's tolerance."
+    },
+    "matrices.school_life.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the tool's display precision (three decimals)."
+    },
+    "matrices.school_life.cr": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Within the fixture's tolerance."
+    },
+    "matrices.vocational_training.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the tool's display precision (three decimals)."
+    },
+    "matrices.vocational_training.cr": {
+      "matches": false,
+      "tolerance": 0.0005,
+      "note": "Displayed 0.2004 vs expected 0.179714 (Saaty 1980 RI): a random-index difference - see the capture-level explanation. The underlying CI agrees."
+    },
+    "matrices.college_preparation.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the tool's display precision (three decimals)."
+    },
+    "matrices.college_preparation.cr": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Within the fixture's tolerance."
+    },
+    "matrices.music_classes.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the tool's display precision (three decimals)."
+    },
+    "matrices.music_classes.cr": {
+      "matches": false,
+      "tolerance": 0.0005,
+      "note": "Displayed 0.0516 vs expected 0.046225 (Saaty 1980 RI): a random-index difference - see the capture-level explanation. The underlying CI agrees."
+    },
+    "synthesis": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector synthesis at display precision, with School B first - confirming the fixture's note that eigenvector implementations rank B ahead of A on this example (the column-normalization approximation reverses the pair)."
+    }
+  },
+  "explanation": "Four of the seven displayed inconsistencies differ from the fixture's expected consistency ratios by more than the fixture's tolerance: the criteria matrix (0.2272 vs 0.229011), Learning (0.0516 vs 0.046225), Vocational Training (0.2004 vs 0.179714) and Music Classes (0.0516 vs 0.046225). All are random-index differences, not disagreements about the judgments or the eigenvector: the tool's effective RI values (0.52 at n = 3 and 1.25 at n = 6, consistent with the estimates in Saaty's 2005 ANP book) differ from the Saaty (1980) table the fixture declares (0.58 and 1.24). The n = 3 differences are the most visible (about 12 percent relative), because the two published RI(3) values differ by roughly ten percent. The underlying consistency indices agree, every priority vector and the final synthesis match at display precision, and the perfectly consistent matrices (Friends, School Life, College Preparation) display inconsistency 0 under any table.",
+  "notes": "The model file ahp-fixture-school-saaty-1977.sdm4 is saved in the operator's connected Google Drive and can be exported on request. The tool accepted and displayed the criteria matrix's strong inconsistency (displayed 0.2272) without blocking entry or synthesis.",
+  "reverify": {
+    "instructions": "Sign in at superdecisions.com. Create a model with clusters Goal (node: Satisfaction with school), Criteria (Learning, Friends, School Life, Vocational Training, College Preparation, Music Classes) and Schools (School A, School B, School C). Connect the goal node to the Criteria cluster and each criterion to the Schools cluster. In Assess/Compare > Matrix view enter the fixture's seven matrices (a value in cell (row, column) means the row element is that many times more preferred; enter each judgment as a value >= 1 in the dominant element's row). Read each reference node's Priorities panel and Inconsistency figure, and the synthesis under Results > Local Results > Schools.",
+    "artifacts": [
+      "artifacts/school-selection-saaty-1977-transcript.txt"
+    ]
+  }
+}
