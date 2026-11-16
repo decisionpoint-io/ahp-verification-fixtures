@@ -1,15 +1,15 @@
 {
   "fixture_id": "school-selection-saaty-1977",
   "tool": {
-    "name": "AHP-OS (AHP Online System) - AHP Priority Calculator",
-    "version": "ahp-calc.php Rev 172, last update 2022-02-26 (from the page footer)",
+    "name": "AHP-OS (AHP Online System) - hierarchy and alternative evaluation",
+    "version": "page footers: ahp-hierarchy.php Rev 181 (2022-03-19), ahp-hiercalc/ahp-altcalc Rev 172 (2022-02-26), ahp-group.php Rev 192 (2022-04-03); AHP-OS does not display a global version number",
     "platform": "web (hosted at bpmsg.com)"
   },
   "captured": {
     "date": "2026-11-16",
     "by": "Philip Healy",
     "method": "hosted-session",
-    "notes": "Partial capture: three of the fixture's seven matrices (the criteria matrix and the Learning and Vocational Training school matrices), chosen to cover the fixture's famously inconsistent criteria matrix and the matrix sizes where the tool's CR convention differs most visibly from the fixture's declared table. The calculator evaluates one matrix per session; it does not compose hierarchies without a login, so no synthesis is captured. Judgments entered by browser automation with per-judgment read-back; outputs transcribed verbatim; manually checked by the operator before commit. No login was used."
+    "notes": "Full capture of the fixture via AHP-OS's project workflow, using the operator's account: a priority-evaluation hierarchy project (session Ny8yXu) for the criteria matrix, and an alternative-evaluation project (session EtarEh) seeded with the evaluated criteria weights for the six school matrices and the synthesis. The standard AHP linear judgment scale (scale 0) was used; AHP-OS also offers nine alternative judgment scales, which were not exercised. Judgments entered by browser automation with per-judgment read-back; outputs transcribed verbatim from the group-results page; manually checked by the operator before commit. Single-matrix sessions on the tool's public priority calculator (criteria, Learning, Vocational Training) produced identical priorities and CRs, corroborating the project workflow. The hierarchy editor also displays the evaluated criteria weights at eight decimals (0.32077473, 0.13949933, 0.03477002, 0.12849246, 0.23738353, 0.13907993), which agree with the fixture's derived values to about 5e-6 (the tool's power method iterates to a delta of 1e-7)."
   },
   "outputs": {
     "matrices": {
@@ -24,8 +24,7 @@
         ],
         "lambda_max": 7.42,
         "ci": null,
-        "cr": 0.227,
-        "notes": "Displayed 32.1%, 13.9%, 3.5%, 12.8%, 23.7%, 13.9%; CR '22.7%'; 'Principal eigen value = 7.420'. The tool accepted and evaluated the strongly inconsistent matrix without blocking."
+        "cr": 0.227
       },
       "learning": {
         "priorities": [
@@ -35,8 +34,27 @@
         ],
         "lambda_max": 3.054,
         "ci": null,
-        "cr": 0.056,
-        "notes": "Displayed 15.7%, 59.4%, 24.9%; CR '5.6%'."
+        "cr": 0.056
+      },
+      "friends": {
+        "priorities": [
+          0.333,
+          0.333,
+          0.333
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0
+      },
+      "school_life": {
+        "priorities": [
+          0.455,
+          0.091,
+          0.455
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0
       },
       "vocational_training": {
         "priorities": [
@@ -46,9 +64,41 @@
         ],
         "lambda_max": 3.208,
         "ci": null,
-        "cr": 0.218,
-        "notes": "Displayed 77.2%, 5.5%, 17.3%; CR '21.8%'."
+        "cr": 0.218
+      },
+      "college_preparation": {
+        "priorities": [
+          0.25,
+          0.5,
+          0.25
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0
+      },
+      "music_classes": {
+        "priorities": [
+          0.691,
+          0.091,
+          0.218
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.056
       }
+    },
+    "synthesis": {
+      "labels": [
+        "School A",
+        "School B",
+        "School C"
+      ],
+      "values": [
+        0.367,
+        0.378,
+        0.254
+      ],
+      "notes": "Group-results page, 'Consolidated Weights of Alternatives': School A 36.7%, School B 37.8%, School C 25.4% (CRmax 21.8%). The same values appear as the totals row of the hierarchy-with-alternatives table."
     }
   },
   "ri_table": {
@@ -57,59 +107,90 @@
       "3": 0.4793,
       "6": 1.25362
     },
-    "source": "Confirmed from the published source code (github.com/bpmsg/ahp-os, classes/AhpCalc.php, setAlonsoCr(), displayed by ahp-calc.php): CR = (lambda_max - n) / ((2.7699*n - 4.3513) - n), the linear fit proposed by Alonso & Lamata (2006). The values given here are the effective RI(n) = (1.7699*n - 4.3513)/(n - 1) implied by the formula at the sizes captured: 0.4793 at n = 3 (published tables: Saaty 1980 0.58, Alonso-Lamata Table 1 0.5245) and 1.2536 at n = 6 (published tables: 1.24 and 1.2479). The displayed CRs reproduce the formula directly: 22.7% (criteria), 5.6% (Learning), 21.8% (Vocational Training)."
+    "source": "Confirmed from the published source code (github.com/bpmsg/ahp-os, classes/AhpCalc.php, setAlonsoCr(), displayed by the calculator and project pages): CR = (lambda_max - n) / ((2.7699*n - 4.3513) - n), the linear fit proposed by Alonso & Lamata (2006). The values given here are the effective RI(n) implied by the formula at the sizes captured: 0.4793 at n = 3 (published tables: Saaty 1980 0.58, Alonso-Lamata Table 1 0.5245) and 1.2536 at n = 6 (published tables: 1.24 and 1.2479). All displayed CRs reproduce the formula directly."
   },
-  "prioritization_method": "principal-eigenvector (stated on the results page)",
+  "prioritization_method": "principal-eigenvector (stated by the tool; power method, documented iteration delta 1e-7; the eight-decimal weights in the hierarchy editor agree with the fixture's eigenvector values to ~5e-6)",
   "matches_expected": {
     "matrices.criteria.priorities": {
       "matches": true,
       "tolerance": 0.001,
-      "note": "Matches the fixture's derived expected values at the tool's display precision (percentages to one decimal). Tolerance 0.001 because a value at a rounding boundary (13.95%) displays as 13.9."
-    },
-    "matrices.criteria.lambda_max": {
-      "matches": true,
-      "tolerance": 0.001,
-      "note": "Within the three-decimal display precision."
+      "note": "Matches the fixture's derived expected values at the tool's display precision. Tolerance 0.001: a value at a rounding boundary (13.95%) displays as 13.9."
     },
     "matrices.criteria.cr": {
       "matches": false,
       "tolerance": 0.0005,
-      "note": "Displayed 0.227 vs expected 0.229011 (Saaty 1980 RI): a random-index difference - see the capture-level explanation."
+      "note": "Displayed 0.227 vs expected 0.229011 (Saaty 1980 RI): the tool's Alonso-Lamata linear-fit convention - see the capture-level explanation."
     },
     "matrices.learning.priorities": {
       "matches": true,
       "tolerance": 0.0005,
-      "note": "Matches the fixture's derived expected values at the tool's display precision (percentages to one decimal)."
-    },
-    "matrices.learning.lambda_max": {
-      "matches": true,
-      "tolerance": 0.001,
-      "note": "Within the three-decimal display precision."
+      "note": "Matches the fixture's derived expected values at the tool's display precision."
     },
     "matrices.learning.cr": {
       "matches": false,
       "tolerance": 0.0005,
-      "note": "Displayed 0.056 vs expected 0.046225 (Saaty 1980 RI): a random-index difference - see the capture-level explanation."
+      "note": "Displayed 0.056 vs expected 0.046225 (Saaty 1980 RI): the tool's Alonso-Lamata linear-fit convention - see the capture-level explanation."
+    },
+    "matrices.friends.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived expected values at the tool's display precision."
+    },
+    "matrices.friends.cr": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Within the fixture's tolerance (perfectly consistent matrix displays 0 under any random-index convention)."
+    },
+    "matrices.school_life.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived expected values at the tool's display precision."
+    },
+    "matrices.school_life.cr": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Within the fixture's tolerance (perfectly consistent matrix displays 0 under any random-index convention)."
     },
     "matrices.vocational_training.priorities": {
       "matches": true,
       "tolerance": 0.0005,
-      "note": "Matches the fixture's derived expected values at the tool's display precision (percentages to one decimal)."
-    },
-    "matrices.vocational_training.lambda_max": {
-      "matches": true,
-      "tolerance": 0.001,
-      "note": "Within the three-decimal display precision."
+      "note": "Matches the fixture's derived expected values at the tool's display precision."
     },
     "matrices.vocational_training.cr": {
       "matches": false,
       "tolerance": 0.0005,
-      "note": "Displayed 0.218 vs expected 0.179714 (Saaty 1980 RI): a random-index difference - see the capture-level explanation."
+      "note": "Displayed 0.218 vs expected 0.179714 (Saaty 1980 RI): the tool's Alonso-Lamata linear-fit convention - see the capture-level explanation."
+    },
+    "matrices.college_preparation.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived expected values at the tool's display precision."
+    },
+    "matrices.college_preparation.cr": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Within the fixture's tolerance (perfectly consistent matrix displays 0 under any random-index convention)."
+    },
+    "matrices.music_classes.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived expected values at the tool's display precision."
+    },
+    "matrices.music_classes.cr": {
+      "matches": false,
+      "tolerance": 0.0005,
+      "note": "Displayed 0.056 vs expected 0.046225 (Saaty 1980 RI): the tool's Alonso-Lamata linear-fit convention - see the capture-level explanation."
+    },
+    "synthesis": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector synthesis at display precision, with School B first - confirming the fixture's note that eigenvector implementations rank B ahead of A on this example."
     }
   },
-  "explanation": "All three displayed consistency ratios differ from the fixture's expected values (criteria 0.227 vs 0.229011; Learning 0.056 vs 0.046225; Vocational Training 0.218 vs 0.179714). All are random-index differences, not disagreements about the judgments or the eigenvector: the tool computes CR with the Alonso-Lamata linear fit, whose effective RI at n = 3 (0.4793) is about 17 percent below the Saaty (1980) value (0.58) the fixture declares - which is why the n = 3 divergences are large in relative terms (21 percent both) while the n = 6 divergence is under one percent. All priorities and principal eigenvalues match at display precision.",
+  "explanation": "Four of the seven displayed consistency ratios differ from the fixture's expected values (criteria 0.227 vs 0.229011; Learning 0.056 vs 0.046225; Vocational Training 0.218 vs 0.179714; Music Classes 0.056 vs 0.046225). All are random-index differences, not disagreements about the judgments or the eigenvector: the tool computes CR with the Alonso-Lamata linear fit, whose effective RI at n = 3 (0.4793) is about 17 percent below the Saaty (1980) value (0.58) the fixture declares, which is why the n = 3 divergences are large in relative terms. The perfectly consistent matrices display 0 under any convention, and every priority vector and the final synthesis match the fixture's principal-eigenvector values at display precision.",
+  "notes": "The two AHP-OS projects (sessions Ny8yXu and EtarEh) remain in the operator's account and can be exported via the application's Export Project function on request.",
   "reverify": {
-    "instructions": "Open https://bpmsg.com/ahp/ahp-calc.php (no account needed) and run three sessions. (1) 6 criteria named as in the fixture; judgments from the fixture's criteria matrix (Learning 4 over Friends, 3 over School Life, equal to Vocational Training, 3 over College Preparation, 4 over Music Classes; Friends 7 over School Life, 3 over Vocational Training, College Preparation 5 over Friends, Friends equal to Music Classes; Vocational Training 5 over School Life, College Preparation 5 over School Life, Music Classes 6 over School Life; Vocational Training equal to College Preparation, Music Classes 3 over Vocational Training; College Preparation 3 over Music Classes). (2) 3 criteria School A/B/C with the Learning matrix (B 3 over A, C 2 over A, B 3 over C). (3) The same names with the Vocational Training matrix (A 9 over B, A 7 over C, C 5 over B). Read the priorities, CR and principal eigen value from each results page.",
+    "instructions": "Register or sign in at bpmsg.com/ahp (free). Create a hierarchy 'School Selection: Learning, Friends, School Life, Vocational Training, College Preparation, Music Classes;', save it as a project, open it and complete the 15 criteria comparisons from the fixture's criteria matrix; the evaluated weights appear in the hierarchy editor. Then use the Alternatives menu on the weighted hierarchy to define School A/B/C, save as an alternative-evaluation project, and complete the six 3-judgment comparisons from the fixture's school matrices. The group-results page shows the consolidated table transcribed here (local priorities, per-criterion CRs, and the final weights of the alternatives). Alternatively, each matrix can be reproduced without an account in the public priority calculator (bpmsg.com/ahp/ahp-calc.php).",
     "artifacts": [
       "artifacts/school-selection-saaty-1977-transcript.txt"
     ]
