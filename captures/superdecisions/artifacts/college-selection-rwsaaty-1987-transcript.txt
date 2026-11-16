@@ -1,0 +1,76 @@
+SuperDecisions (web) capture session transcript — fixture college-selection-rwsaaty-1987
+=========================================================================================
+
+Date: 2026-11-16
+Tool: SuperDecisions V4 Platform (web application at superdecisions.com);
+      login page displays "SuperDecisions (v0.5.14)"
+Account: operator's account (Google sign-in performed by the operator)
+Method: model building and judgment entry automated in the operator's
+browser; both completed judgment matrices read from screen and checked
+against the fixture before transcription; outputs transcribed verbatim.
+
+Model
+-----
+File: ahp-fixture-college-rwsaaty-1987.sdm4 (saved to the operator's
+connected Google Drive; "Model saved successfully" confirmed)
+Structure: Main Network with clusters "Goal" (node "Choose best college"),
+"Criteria" (Location, Ambience, Reputation, Academics) and "Colleges"
+(Swarthmore, Northwestern, U. Michigan, Vanderbilt, CMU). Goal node
+connected to the Criteria cluster ("Choose best college: 4 connections");
+Location node connected to the Colleges cluster ("Location: 5 connections").
+
+Judgment entry (Assess/Compare > Matrix view)
+---------------------------------------------
+A value in cell (row, column) means "row is N times more preferred than
+column"; reciprocals fill automatically.
+
+Criteria matrix wrt "Choose best college", as displayed after entry
+(rows/columns: Location, Ambience, Reputation, Academics):
+
+  Location    1    1/7  1/5  1/5
+  Ambience    7    1    2    3
+  Reputation  5    1/2  1    1
+  Academics   5    1/3  1    1
+
+Colleges matrix wrt "Location", as displayed after entry (rows/columns:
+Swarthmore, Northwestern, U. Michigan, Vanderbilt, CMU):
+
+  Swarthmore    1    1/4  1/3  1/3  7
+  Northwestern  4    1    2    3    7
+  U. Michigan   3    1/2  1    3    6
+  Vanderbilt    3    1/3  1/3  1    4
+  CMU           1/7  1/7  1/6  1/4  1
+
+Both equal the fixture's matrices entry-for-entry.
+
+Outputs (Priorities panel, verbatim)
+------------------------------------
+Criteria (wrt Choose best college):
+Nodes       Normal  Ideal
+Location    0.053   0.108
+Ambience    0.491   1
+Reputation  0.238   0.485
+Academics   0.218   0.444
+Inconsistency: 0.0206
+
+Colleges (wrt Location):
+Nodes         Normal  Ideal
+Swarthmore    0.115   0.286
+Northwestern  0.402   1
+U. Michigan   0.284   0.707
+Vanderbilt    0.163   0.406
+CMU           0.037   0.091
+Inconsistency: 0.0923
+
+Notes
+-----
+- lambda_max and CI are not displayed.
+- The displayed inconsistencies imply effective random-index values
+  RI(4) = 0.89 and RI(5) = 1.12 (CI from the fixture's matrices: 0.0183 and
+  0.1034). Together with the drinks capture (RI(7) = 1.35), the tool's
+  observed RI values match the Saaty 2005 ANP-book estimates at n = 4 and 7
+  but the Saaty 1980 table at n = 5; no single published table matches all
+  three observations. See the capture's ri_table block.
+- Academics 0.218 and U. Michigan 0.284 independently corroborate the
+  fixture's source_reported analysis of the 1987 paper's printed 0.213
+  (last-digit slip for 0.218) and 0.283 (sum-to-1.000 rounding of 0.2841).

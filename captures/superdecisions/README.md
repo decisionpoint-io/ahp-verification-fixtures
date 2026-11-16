@@ -12,3 +12,4 @@ Drive and can be exported on request.
 | Fixture | Date | Result |
 | --- | --- | --- |
 | [drinks-saaty-2008](drinks-saaty-2008.json) | 2026-11-16 | priorities match the expected values at display precision; the displayed inconsistency (0.0218) uses a different random-index table than the fixture declares (RI(7) = 1.35, consistent with the estimates in Saaty's 2005 ANP book) and is within the published CR's tolerance here — see the capture's `ri_table` |
+| [college-selection-rwsaaty-1987](college-selection-rwsaaty-1987.json) | 2026-11-16 | priorities match at display precision; the criteria matrix's inconsistency (0.0206 vs published CR 0.02) is the first capture divergence on record, explained as a random-index difference (effective RI(4) = 0.89 vs the fixture's 0.90, same CI) |

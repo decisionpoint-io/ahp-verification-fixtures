@@ -14,7 +14,15 @@
   "outputs": {
     "matrices": {
       "drinks": {
-        "priorities": [0.177, 0.019, 0.042, 0.116, 0.190, 0.129, 0.327],
+        "priorities": [
+          0.177,
+          0.019,
+          0.042,
+          0.116,
+          0.19,
+          0.129,
+          0.327
+        ],
         "lambda_max": 7.177,
         "ci": null,
         "cr": 0.022,
@@ -23,8 +31,13 @@
     }
   },
   "ri_table": {
-    "name": "alonso-lamata",
-    "source": "The calculator's documentation page (bpmsg.com/ahp-online-calculator) footnotes the consistency ratio directly to Alonso & Lamata (2006); Goepel's implementation paper (K. D. Goepel, 'Implementing the analytic hierarchy process as a standard method for multi-criteria decision making in corporate enterprises', IJAHP 10(3), 2018) states AHP-OS uses Saaty's CR or the Alonso-Lamata modification for the eigenvector method. At the tool's display precision the distinction is not visible for this matrix: CI/RI gives 0.0223 under the Saaty (1980) table and 0.0219 under Alonso-Lamata, both of which display as 2.2%."
+    "name": "other",
+    "values": {
+      "4": 0.909433,
+      "5": 1.12455,
+      "7": 1.339667
+    },
+    "source": "Confirmed from the published source code (github.com/bpmsg/ahp-os, classes/AhpCalc.php): the function setAlonsoCr() computes CR = (lambda_max - n) / ((2.7699*n - 4.3513) - n), citing Alonso & Lamata (2006), and the priority calculator page (ahp-calc.php) displays exactly this value (cr_alo). The same class also contains setSaatyCr() with a classic-style RI table (0.57, 0.9, 1.12, 1.24, 1.32, ...), but that value is not the one the calculator displays. The documented formula is also stated in K. D. Goepel, 'Implementation of an online software tool for the analytic hierarchy process (AHP-OS)', IJAHP 10(3), 2018 (working-paper eq. 2.5). The values given here are the effective RI(n) = (1.7699*n - 4.3513)/(n - 1) implied by the formula; the displayed CRs of all captured matrices reproduce under it (n=7: 0.0220 -> '2.2%'; n=4: 0.0201 -> '2.0%'; n=5: 0.0919 -> '9.2%'). Note this linear-fit variant differs slightly from the Alonso-Lamata Table 1 values used by the fixture ri-table-alonso-lamata (e.g. 0.9094 vs 0.8815 at n=4)."
   },
   "prioritization_method": "principal-eigenvector",
   "matches_expected": {
@@ -41,11 +54,13 @@
     "matrices.drinks.cr": {
       "matches": true,
       "tolerance": 0.0005,
-      "note": "Displayed '2.2%' equals the fixture's published CR 0.022. See ri_table: at this display precision the value is the same under either RI basis."
+      "note": "Displayed '2.2%' equals the fixture's published CR 0.022. The tool computes CR with the Alonso-Lamata linear fit (see ri_table), which gives 0.0220 here; the fixture's Saaty (1980) table gives 0.0223. Both display as 2.2% and both are within the fixture's tolerance of the published value."
     }
   },
   "reverify": {
     "instructions": "Open https://bpmsg.com/ahp/ahp-calc.php (no account needed). Enter 7 as the number of criteria and click Go; name them Coffee, Wine, Tea, Beer, Sodas, Milk, Water and click OK. Enter the 21 pairwise judgments from the fixture's matrix (upper triangle, row by row; for entries below 1, select the second element and the reciprocal intensity - e.g. Coffee vs Water 1/2 means selecting Water with intensity 2; the full list is in the transcript artifact). Click 'Check Consistency' / 'Calculate'. The results section shows the priorities, 'Consistency Ratio CR' and 'Principal eigen value' transcribed here. The result can also be exported with the 'Download_(.csv)' button.",
-    "artifacts": ["artifacts/drinks-saaty-2008-transcript.txt"]
+    "artifacts": [
+      "artifacts/drinks-saaty-2008-transcript.txt"
+    ]
   }
 }

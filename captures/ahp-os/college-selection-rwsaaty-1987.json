@@ -1,0 +1,91 @@
+{
+  "fixture_id": "college-selection-rwsaaty-1987",
+  "tool": {
+    "name": "AHP-OS (AHP Online System) - AHP Priority Calculator",
+    "version": "ahp-calc.php Rev 172, last update 2022-02-26 (from the page footer; AHP-OS does not display a global version number)",
+    "platform": "web (hosted at bpmsg.com)"
+  },
+  "captured": {
+    "date": "2026-11-16",
+    "by": "Philip Healy",
+    "method": "hosted-session",
+    "notes": "Model building and judgment entry were automated in the operator's browser; every entered judgment was read back from the form and checked against the fixture before calculation, and the outputs were transcribed verbatim from the results page (see the transcript artifact). The operator manually checked the session and outputs before this capture was committed. The calculator is publicly accessible; no login was used."
+  },
+  "outputs": {
+    "matrices": {
+      "criteria": {
+        "priorities": [
+          0.053,
+          0.491,
+          0.238,
+          0.218
+        ],
+        "lambda_max": 4.055,
+        "ci": null,
+        "cr": 0.02,
+        "notes": "Displayed as 5.3%, 49.1%, 23.8%, 21.8%; CR displayed as '2.0%'; CI not displayed. The tool's 21.8% for Academics independently corroborates the fixture's reading that the source paper's printed 0.213 is a last-digit slip for 0.218 (see the fixture's source_reported)."
+      },
+      "location": {
+        "priorities": [
+          0.115,
+          0.402,
+          0.284,
+          0.163,
+          0.037
+        ],
+        "lambda_max": 5.413,
+        "ci": null,
+        "cr": 0.092,
+        "notes": "Displayed as 11.5%, 40.2%, 28.4%, 16.3%, 3.7%; CR displayed as '9.2%'; CI not displayed. The tool's 28.4% for U. Michigan matches the exact eigenvector value 0.2841 where the source paper prints 0.283 (sum-to-1.000 rounding; see the fixture's source_reported)."
+      }
+    }
+  },
+  "ri_table": {
+    "name": "other",
+    "values": {
+      "4": 0.909433,
+      "5": 1.12455,
+      "7": 1.339667
+    },
+    "source": "Confirmed from the published source code (github.com/bpmsg/ahp-os, classes/AhpCalc.php): the function setAlonsoCr() computes CR = (lambda_max - n) / ((2.7699*n - 4.3513) - n), citing Alonso & Lamata (2006), and the priority calculator page (ahp-calc.php) displays exactly this value (cr_alo). The same class also contains setSaatyCr() with a classic-style RI table (0.57, 0.9, 1.12, 1.24, 1.32, ...), but that value is not the one the calculator displays. The documented formula is also stated in K. D. Goepel, 'Implementation of an online software tool for the analytic hierarchy process (AHP-OS)', IJAHP 10(3), 2018 (working-paper eq. 2.5). The values given here are the effective RI(n) = (1.7699*n - 4.3513)/(n - 1) implied by the formula; the displayed CRs of all captured matrices reproduce under it (n=7: 0.0220 -> '2.2%'; n=4: 0.0201 -> '2.0%'; n=5: 0.0919 -> '9.2%'). Note this linear-fit variant differs slightly from the Alonso-Lamata Table 1 values used by the fixture ri-table-alonso-lamata (e.g. 0.9094 vs 0.8815 at n=4)."
+  },
+  "prioritization_method": "principal-eigenvector (stated on the results page: 'based on the principal eigenvector'; 'Eigenvector solution' iteration count and delta displayed)",
+  "matches_expected": {
+    "matrices.criteria.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the derived expected values at the tool's display precision (percentages to one decimal)."
+    },
+    "matrices.criteria.lambda_max": {
+      "matches": true,
+      "tolerance": 0.001,
+      "note": "Tool displays three decimals and iterates to a delta of about 1e-8; tolerance reflects that the displayed value may be rounded or truncated."
+    },
+    "matrices.criteria.cr": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Displayed '2.0%' equals the fixture's published CR 0.02. The tool's linear-fit basis gives 0.0201 and the fixture's Saaty (1980) table gives 0.0204; both display as 2.0%. The Alonso-Lamata Table 1 values would give 0.0208 ('2.1%'), which is how this capture pinned down the tool's CR basis - see ri_table."
+    },
+    "matrices.location.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the derived expected values at the tool's display precision."
+    },
+    "matrices.location.lambda_max": {
+      "matches": true,
+      "tolerance": 0.001,
+      "note": "Displayed 5.413 vs expected 5.413541; within the display/convergence precision (see criteria.lambda_max note)."
+    },
+    "matrices.location.cr": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Displayed '9.2%' equals the fixture's published CR 0.092. The tool's linear-fit basis gives 0.0919 and the fixture's table gives 0.0923, both displaying as 9.2%; the Alonso-Lamata Table 1 values would give 0.0933 ('9.3%')."
+    }
+  },
+  "reverify": {
+    "instructions": "Open https://bpmsg.com/ahp/ahp-calc.php (no account needed). For the criteria matrix: 4 criteria named Location, Ambience, Reputation, Academics; judgments: Ambience 7 over Location, Reputation 5 over Location, Academics 5 over Location, Ambience 2 over Reputation, Ambience 3 over Academics, Reputation = Academics (1). For the location matrix: 5 criteria named Swarthmore, Northwestern, U. Michigan, Vanderbilt, CMU; judgments: Northwestern 4 over Swarthmore, U. Michigan 3 over Swarthmore, Vanderbilt 3 over Swarthmore, Swarthmore 7 over CMU, Northwestern 2 over U. Michigan, Northwestern 3 over Vanderbilt, Northwestern 7 over CMU, U. Michigan 3 over Vanderbilt, U. Michigan 6 over CMU, Vanderbilt 4 over CMU. Click Calculate and read the priorities, 'Consistency Ratio CR' and 'Principal eigen value'.",
+    "artifacts": [
+      "artifacts/college-selection-rwsaaty-1987-transcript.txt"
+    ]
+  }
+}

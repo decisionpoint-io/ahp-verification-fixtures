@@ -1,0 +1,82 @@
+{
+  "fixture_id": "college-selection-rwsaaty-1987",
+  "tool": {
+    "name": "SuperDecisions (web, V4 Platform)",
+    "version": "v0.5.14 (as displayed on the application's login page)",
+    "platform": "web (hosted at superdecisions.com)"
+  },
+  "captured": {
+    "date": "2026-11-16",
+    "by": "Philip Healy",
+    "method": "manual-gui-entry",
+    "notes": "Model building and judgment entry were automated in the operator's browser (operator signed in and supervised); both completed judgment matrices were read from screen and checked against the fixture entry-by-entry before the results were transcribed verbatim (see the transcript artifact). The operator manually checked the session and outputs before this capture was committed."
+  },
+  "outputs": {
+    "matrices": {
+      "criteria": {
+        "priorities": [
+          0.053,
+          0.491,
+          0.238,
+          0.218
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0206,
+        "notes": "'Normal' column of the Priorities panel; the 'Inconsistency' figure 0.0206 is transcribed as cr; lambda_max and CI are not displayed. The tool's 0.218 for Academics independently corroborates the fixture's reading that the source paper's printed 0.213 is a last-digit slip for 0.218."
+      },
+      "location": {
+        "priorities": [
+          0.115,
+          0.402,
+          0.284,
+          0.163,
+          0.037
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0923,
+        "notes": "'Normal' column of the Priorities panel; the 'Inconsistency' figure 0.0923 is transcribed as cr. The tool's 0.284 for U. Michigan matches the exact eigenvector value 0.2841 where the source paper prints 0.283 (sum-to-1.000 rounding)."
+      }
+    }
+  },
+  "ri_table": {
+    "name": "other",
+    "values": {
+      "4": 0.89,
+      "5": 1.12,
+      "7": 1.35
+    },
+    "source": "Determined numerically from the three matrices captured so far (drinks n=7, college criteria n=4, college location n=5), using CI values recomputed from the fixtures' matrices: displayed inconsistencies 0.0218 (n=7), 0.0206 (n=4) and 0.0923 (n=5) imply effective RI values of 1.35, 0.89 and 1.12 respectively to the displayed precision. 0.89 and 1.35 coincide with the random-index estimates printed in T. L. Saaty, Theory and Applications of the Analytic Network Process, 2005, p. 31, while 1.12 coincides with the Saaty (1980) table; no single published table matches all three. Vendor documentation stating the table was not located."
+  },
+  "prioritization_method": "principal-eigenvector (inferred: all displayed priorities equal the fixture's principal-eigenvector expected values at display precision, including entries where the column-normalization alternates differ)",
+  "matches_expected": {
+    "matrices.criteria.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "All four displayed priorities equal the fixture's derived expected values at the tool's display precision."
+    },
+    "matrices.criteria.cr": {
+      "matches": false,
+      "tolerance": 0.0005,
+      "note": "Displayed 0.0206 vs the fixture's published CR 0.02 (difference 0.0006, outside the fixture's tolerance). See the capture-level explanation: this is a random-index difference, not a priorities or CI difference."
+    },
+    "matrices.location.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "All five displayed priorities equal the fixture's derived expected values at the tool's display precision."
+    },
+    "matrices.location.cr": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Displayed 0.0923 vs the fixture's published CR 0.092 (difference 0.0003, within tolerance). The tool's observed effective RI(5) = 1.12 coincides with the fixture's declared table at this matrix size, so no divergence arises here, unlike at n=4."
+    }
+  },
+  "explanation": "The criteria matrix's displayed inconsistency (0.0206) differs from the fixture's published CR (0.02) because the tool computes its inconsistency with a different random-index value at n=4 (effective RI 0.89, consistent with the estimates in Saaty's 2005 ANP book) than the Saaty (1980) table the fixture declares (RI 0.90). The consistency index itself agrees: CI = 0.0183 from the fixture's matrix, which gives 0.0204 under the fixture's table - the published value 0.02 within its tolerance - and 0.0206 under the tool's. All priorities match the expected values at the tool's display precision. This is a documented random-index difference, not a disagreement about the judgments or the eigenvector.",
+  "reverify": {
+    "instructions": "Sign in at superdecisions.com. Create a model with clusters 'Goal' (node: Choose best college), 'Criteria' (nodes: Location, Ambience, Reputation, Academics) and 'Colleges' (nodes: Swarthmore, Northwestern, U. Michigan, Vanderbilt, CMU). Connect the goal node to the Criteria cluster and the Location node to the Colleges cluster. In Assess/Compare > Matrix view enter the fixture's two matrices (a value in cell (row, column) means the row element is that many times more preferred; enter each judgment as a value >= 1 in the dominant element's row and reciprocals fill automatically); the full matrices as entered are in the transcript artifact. Read the Priorities panel and 'Inconsistency' figure for each reference node (Choose best college, then Location). The model file ahp-fixture-college-rwsaaty-1987.sdm4 is saved in the operator's Google Drive and can be exported on request.",
+    "artifacts": [
+      "artifacts/college-selection-rwsaaty-1987-transcript.txt"
+    ]
+  }
+}
