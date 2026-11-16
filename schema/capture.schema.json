@@ -1,0 +1,128 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/decisionpoint-io/ahp-verification-fixtures/schema/capture.schema.json",
+  "title": "AHP tool capture",
+  "description": "A manually curated snapshot of the outputs a tool produced for one fixture, with provenance and a re-verification path. Captures record tools that cannot run in CI (closed-source, GUI-only, or hosted); every tool is recorded the same way.",
+  "type": "object",
+  "required": ["fixture_id", "tool", "captured", "outputs", "matches_expected", "reverify"],
+  "additionalProperties": false,
+  "properties": {
+    "fixture_id": {
+      "type": "string",
+      "description": "The id of the fixture the tool was given."
+    },
+    "tool": {
+      "type": "object",
+      "required": ["name", "version", "platform"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string", "description": "Exact version as reported by the tool; 'undetermined' if the tool does not report one." },
+        "platform": { "type": "string", "description": "e.g. 'Windows 11 desktop', 'web (hosted)', 'macOS 15'." }
+      }
+    },
+    "captured": {
+      "type": "object",
+      "required": ["date", "by", "method"],
+      "additionalProperties": false,
+      "properties": {
+        "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+        "by": { "type": "string", "description": "Who operated the tool (name or handle)." },
+        "method": { "type": "string", "enum": ["manual-gui-entry", "export-file", "hosted-session"] },
+        "notes": { "type": "string" }
+      }
+    },
+    "outputs": {
+      "type": "object",
+      "description": "The tool's outputs, transcribed exactly as displayed or exported, in the same shape as the fixture's expected block.",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "matrices": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "priorities": { "type": "array", "items": { "type": "number" } },
+              "lambda_max": { "type": ["number", "null"] },
+              "ci": { "type": ["number", "null"] },
+              "cr": { "type": ["number", "null"] },
+              "notes": { "type": "string", "description": "e.g. which outputs the tool does not display." }
+            }
+          }
+        },
+        "global_priorities": { "$ref": "#/definitions/labelledOutput" },
+        "synthesis": { "$ref": "#/definitions/labelledOutput" },
+        "stability": { "type": "object" }
+      }
+    },
+    "ri_table": {
+      "type": "object",
+      "description": "The random-index table the tool uses, if determinable from its documentation, source, or output.",
+      "required": ["name"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string", "enum": ["saaty", "alonso-lamata", "donegan-dodd", "other", "undetermined"] },
+        "values": {
+          "type": "object",
+          "patternProperties": { "^[0-9]+$": { "type": "number" } },
+          "additionalProperties": false
+        },
+        "source": { "type": "string", "description": "How the table was determined (documentation page, source file, support answer)." }
+      }
+    },
+    "prioritization_method": {
+      "type": "string",
+      "description": "The tool's prioritization method, if determinable (e.g. 'principal-eigenvector', 'column-normalization-mean', 'geometric-mean', 'undetermined')."
+    },
+    "matches_expected": {
+      "type": "object",
+      "description": "Per-output comparison against the fixture's expected values. Keys are output paths (e.g. 'matrices.drinks.priorities'); each entry records whether the output is within the stated tolerance of the expected value.",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["matches", "tolerance"],
+        "additionalProperties": false,
+        "properties": {
+          "matches": { "type": "boolean" },
+          "tolerance": { "type": "number", "exclusiveMinimum": 0 },
+          "compared_to": { "type": "string", "description": "Which expected block was compared: 'expected' or an alternate method name." },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "explanation": {
+      "type": "string",
+      "description": "REQUIRED whenever any matches_expected entry is false: the cause of the divergence, stated factually (e.g. 'uses the Alonso-Lamata RI estimates; CI and priorities match'). CI enforces this."
+    },
+    "reverify": {
+      "type": "object",
+      "description": "How anyone can reproduce this capture. At least one of instructions, artifacts, or url.",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "instructions": { "type": "string" },
+        "artifacts": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Paths (relative to the capture file) of exported model files or screenshots in this repository."
+        },
+        "url": { "type": "string", "description": "A URL anyone can open without an account that reproduces the fixture in the tool." }
+      }
+    },
+    "notes": { "type": "string" }
+  },
+  "definitions": {
+    "labelledOutput": {
+      "type": "object",
+      "required": ["labels", "values"],
+      "additionalProperties": false,
+      "properties": {
+        "labels": { "type": "array", "items": { "type": "string" } },
+        "values": { "type": "array", "items": { "type": "number" } },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}
