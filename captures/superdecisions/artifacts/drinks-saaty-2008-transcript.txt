@@ -1,0 +1,68 @@
+SuperDecisions (web) capture session transcript — fixture drinks-saaty-2008
+===========================================================================
+
+Date: 2026-11-16
+Tool: SuperDecisions V4 Platform (web application at superdecisions.com);
+      login page displays "SuperDecisions (v0.5.14)"
+Account: operator's account (Google sign-in performed by the operator)
+Method: model building and judgment entry automated in the operator's
+browser; the completed judgment matrix was read from screen and checked
+against the fixture before transcription; outputs transcribed verbatim.
+
+Model
+-----
+File: ahp-fixture-drinks-saaty-2008.sdm4 (saved to the operator's connected
+Google Drive; "Model saved successfully" confirmed)
+Structure: Main Network with cluster "Goal" (node "Relative drink
+consumption") and cluster "Drinks" (nodes Coffee, Wine, Tea, Beer, Sodas,
+Milk, Water); the goal node connected to all seven drink nodes
+("Relative drink consumption: 7 connections").
+
+Judgment entry
+--------------
+Assess/Compare > Matrix view, with respect to "Relative drink consumption",
+cluster "Drinks". Entering a value in cell (row, column) means "row is N
+times more preferred than column" (status bar wording); reciprocals are
+filled automatically. All 21 judgments were entered as values >= 1 in the
+cell whose row is the dominant element.
+
+Matrix as displayed after entry (rows/columns: Coffee, Wine, Tea, Beer,
+Sodas, Milk, Water):
+
+  Coffee  1    9    5    2    1    1    1/2
+  Wine    1/9  1    1/3  1/9  1/9  1/9  1/9
+  Tea     1/5  3    1    1/3  1/4  1/3  1/9
+  Beer    1/2  9    3    1    1/2  1    1/3
+  Sodas   1    9    4    2    1    2    1/2
+  Milk    1    9    3    1    1/2  1    1/3
+  Water   2    9    9    3    2    3    1
+
+This equals the fixture's matrix entry-for-entry.
+
+Outputs (Assess/Compare Priorities panel, verbatim)
+---------------------------------------------------
+Nodes   Normal  Ideal
+Coffee  0.177   0.543
+Wine    0.019   0.059
+Tea     0.042   0.128
+Beer    0.116   0.356
+Sodas   0.19    0.58
+Milk    0.129   0.394
+Water   0.327   1
+
+Inconsistency: 0.0218
+
+Results > Local Results > Global Priorities (sorted): Water 0.327,
+Sodas 0.190, Coffee 0.177, Milk 0.129, Beer 0.116, Tea 0.042, Wine 0.019.
+
+Notes
+-----
+- lambda_max and CI are not displayed.
+- The tool also displays an Inconsistency Report (suggested judgment
+  revisions with projected inconsistency improvements) and per-node
+  sensitivity analysis; these have no counterpart in the fixture.
+- On the displayed inconsistency 0.0218, see the capture's ri_table block:
+  the value equals CI/RI with RI(7) = 1.35 (the random-index estimates
+  printed in Saaty's Theory and Applications of the Analytic Network
+  Process, 2005, p. 31), where the fixture's declared Saaty (1980) table
+  (RI(7) = 1.32) gives 0.0223 and Alonso-Lamata gives 0.0219.

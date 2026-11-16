@@ -1,0 +1,47 @@
+{
+  "fixture_id": "drinks-saaty-2008",
+  "tool": {
+    "name": "SuperDecisions (web, V4 Platform)",
+    "version": "v0.5.14 (as displayed on the application's login page)",
+    "platform": "web (hosted at superdecisions.com)"
+  },
+  "captured": {
+    "date": "2026-11-16",
+    "by": "Philip Healy",
+    "method": "manual-gui-entry",
+    "notes": "Model building and judgment entry were automated in the operator's browser (operator signed in and supervised); the completed judgment matrix was read from screen and checked against the fixture entry-by-entry before the result was transcribed verbatim (see the transcript artifact). The operator manually checked the session and outputs before this capture was committed."
+  },
+  "outputs": {
+    "matrices": {
+      "drinks": {
+        "priorities": [0.177, 0.019, 0.042, 0.116, 0.190, 0.129, 0.327],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0218,
+        "notes": "Priorities are the 'Normal' column, displayed to three decimals (Sodas displays as '0.19'). lambda_max and CI are not displayed. The value transcribed as cr is the tool's 'Inconsistency' figure, displayed as 0.0218. The tool also displays 'Ideal' priorities (each priority divided by the largest: 0.543, 0.059, 0.128, 0.356, 0.580, 0.394, 1), an inconsistency-improvement report, and sensitivity analysis, which have no counterpart in the fixture."
+      }
+    }
+  },
+  "ri_table": {
+    "name": "other",
+    "values": { "7": 1.35 },
+    "source": "Determined numerically from this capture: the displayed inconsistency 0.0218 equals CI/RI(7) with RI(7) = 1.35 to the displayed precision (CI = 0.029438 from the fixture's derived values; 0.029438/1.35 = 0.0218). RI(7) = 1.35 appears in the random-index estimates printed in T. L. Saaty, Theory and Applications of the Analytic Network Process, RWS Publications, 2005, p. 31 (0.52, 0.89, 1.11, 1.25, 1.35, ...), the same table AHPy's 'saaty' option uses. The fixture's declared Saaty (1980) table (RI(7) = 1.32) would give 0.0223, and Alonso-Lamata (2006) would give 0.0219, neither of which matches the displayed value. Vendor documentation stating the table was not located; this determination rests on the single matrix captured here."
+  },
+  "prioritization_method": "principal-eigenvector (inferred: the displayed priorities equal the fixture's principal-eigenvector expected values at all seven entries to three decimals; the column-normalization alternates differ from them at that precision for Wine, Sodas and Water)",
+  "matches_expected": {
+    "matrices.drinks.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "All seven displayed priorities equal the fixture's published expected priorities exactly at the tool's display precision."
+    },
+    "matrices.drinks.cr": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "The displayed inconsistency 0.0218 is within the fixture's tolerance of the published CR 0.022 (|0.0218 - 0.022| = 0.0002). Note that the tool computes its inconsistency with a different random-index table than the fixture declares (see ri_table): under the fixture's Saaty (1980) table the same CI gives 0.0223. At this matrix's consistency level all three published RI tables land within the fixture's tolerance of the published value, so the RI-table difference is documented here rather than surfacing as a divergence."
+    }
+  },
+  "reverify": {
+    "instructions": "Sign in at superdecisions.com (Google or Microsoft account). Create a new model; add a cluster 'Goal' with one node and a cluster 'Drinks' with nodes Coffee, Wine, Tea, Beer, Sodas, Milk, Water; use Design > Make Node connections to connect the goal node to the Drinks cluster (7 connections). In Assess/Compare > Matrix view, enter the fixture's matrix: a value in cell (row, column) means the row element is that many times more preferred, so enter each judgment as a value >= 1 in the dominant element's row (the full cell list is in the transcript artifact); reciprocals fill automatically. Read the Priorities panel ('Normal' column) and the 'Inconsistency' figure. The model file ahp-fixture-drinks-saaty-2008.sdm4 is saved in the operator's Google Drive and can be shared or exported via the application's 'Export sdmod' / 'Download' functions on request.",
+    "artifacts": ["artifacts/drinks-saaty-2008-transcript.txt"]
+  }
+}
