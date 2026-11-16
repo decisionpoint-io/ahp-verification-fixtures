@@ -24,7 +24,7 @@
       "9": 1.45,
       "10": 1.49
     },
-    "source": "T. L. Saaty, The Analytic Hierarchy Process, McGraw-Hill, 1980. Values as tabulated in J. A. Alonso and M. T. Lamata, 'Consistency in the analytic hierarchy process: a new approach', International Journal of Uncertainty, Fuzziness and Knowledge-Based Systems 14(4), 2006, Table 1 (Wharton column)."
+    "source": "T. L. Saaty, The Analytic Hierarchy Process, McGraw-Hill, 1980; as printed in R. W. Saaty, 'The analytic hierarchy process - what it is and how it is used', Mathematical Modelling 9(3-5), 1987, p. 172 (average random consistency index, sample size 500), and as tabulated in J. A. Alonso and M. T. Lamata, 'Consistency in the analytic hierarchy process: a new approach', IJUFKS 14(4), 2006, Table 1 (Wharton column)."
   },
   "matrices": [
     {

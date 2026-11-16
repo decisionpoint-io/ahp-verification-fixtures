@@ -45,6 +45,7 @@ reading (a non-reciprocal printed entry, a probable typesetting slip).
 | [`car-hierarchy-wikipedia`](fixtures/car-hierarchy-wikipedia.json) | hierarchy | derived — the complete three-level hierarchy (11 matrices, 133 comparisons, alternatives included), judgments verified against the article's published judgment-table images; Wikipedia's displayed values preserved and explained in `source_reported` |
 | [`school-selection-saaty-1977`](fixtures/school-selection-saaty-1977.json) | hierarchy | derived from the published matrices, verified entry-by-entry against Saaty (1977) with the paper's published results cross-checked and preserved in `source_reported`; includes a famously inconsistent criteria matrix (CR ≈ 0.23) |
 | [`job-selection-saaty-2008`](fixtures/job-selection-saaty-2008.json) | matrix | published (Saaty 2008, Tables 3–5 priorities) |
+| [`college-selection-rwsaaty-1987`](fixtures/college-selection-rwsaaty-1987.json) | matrix | published (R. W. Saaty 1987) — two matrices printed with priorities **and** CRs (0.02 and 0.092), the literature known-CR cases of record |
 | [`consistent-n3/n4/n5`](fixtures/consistent-n3.json) | matrix | derived (constructed; CR exactly 0) |
 | [`fractional-entries`](fixtures/fractional-entries.json) | matrix | derived (entries like 1/3 and 2.5; reciprocal handling) |
 | [`ri-table-saaty`](fixtures/ri-table-saaty.json) / [`ri-table-alonso-lamata`](fixtures/ri-table-alonso-lamata.json) | matrix | derived — the SAME matrix under two RI tables, showing a CR difference that is purely an RI-table difference |

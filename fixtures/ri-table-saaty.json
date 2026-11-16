@@ -4,7 +4,7 @@
   "description": "This fixture and its companion (ri-table-alonso-lamata) contain the SAME 4x4 judgment matrix; they differ only in the declared random-index table. Under Saaty's RI the expected CR is 0.034555; under Alonso and Lamata's RI it is 0.035281. Priorities, lambda_max and CI are identical in both. The pair demonstrates that when two tools report different CRs for the same judgments, the cause can be the RI table rather than the prioritization mathematics; comparing CI values removes the RI table from the comparison. The RI discussion on decisionpoint.io/mathematics covers the same point.",
   "category": "matrix",
   "source": {
-    "citation": "Constructed for this fixture set; see provenance fields. RI tables: T. L. Saaty, The Analytic Hierarchy Process, McGraw-Hill, 1980. Values as tabulated in J. A. Alonso and M. T. Lamata, 'Consistency in the analytic hierarchy process: a new approach', International Journal of Uncertainty, Fuzziness and Knowledge-Based Systems 14(4), 2006, Table 1 (Wharton column)."
+    "citation": "Constructed for this fixture set; see provenance fields. RI tables: T. L. Saaty, The Analytic Hierarchy Process, McGraw-Hill, 1980; as printed in R. W. Saaty, 'The analytic hierarchy process - what it is and how it is used', Mathematical Modelling 9(3-5), 1987, p. 172 (average random consistency index, sample size 500), and as tabulated in J. A. Alonso and M. T. Lamata, 'Consistency in the analytic hierarchy process: a new approach', IJUFKS 14(4), 2006, Table 1 (Wharton column)."
   },
   "scale": {
     "name": "saaty-1-9",
@@ -23,7 +23,7 @@
       "9": 1.45,
       "10": 1.49
     },
-    "source": "T. L. Saaty, The Analytic Hierarchy Process, McGraw-Hill, 1980. Values as tabulated in J. A. Alonso and M. T. Lamata, 'Consistency in the analytic hierarchy process: a new approach', International Journal of Uncertainty, Fuzziness and Knowledge-Based Systems 14(4), 2006, Table 1 (Wharton column)."
+    "source": "T. L. Saaty, The Analytic Hierarchy Process, McGraw-Hill, 1980; as printed in R. W. Saaty, 'The analytic hierarchy process - what it is and how it is used', Mathematical Modelling 9(3-5), 1987, p. 172 (average random consistency index, sample size 500), and as tabulated in J. A. Alonso and M. T. Lamata, 'Consistency in the analytic hierarchy process: a new approach', IJUFKS 14(4), 2006, Table 1 (Wharton column)."
   },
   "related_fixtures": [
     "ri-table-alonso-lamata"

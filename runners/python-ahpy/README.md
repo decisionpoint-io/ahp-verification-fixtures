@@ -20,7 +20,9 @@ python3 runner.py ../../fixtures/drinks-saaty-2008.json
 
 AHPy's `saaty` RI values (0.52, 0.89, 1.11, 1.25, 1.35, ... from the 2005 ANP
 book) differ from the Saaty (1980) table the fixtures declare (0.58, 0.90,
-1.12, 1.24, 1.32, ...). Both are published random-index tables; a CR computed
+1.12, 1.24, 1.32, ...). AHPy's default `dd` table was checked against
+Donegan & Dodd (1991) directly — it matches their "Actual RI" column
+(0.4914, 0.8286, 1.0591, ...) exactly. Both are published random-index tables; a CR computed
 under one is not comparable with a CR computed under the other. The runner
 therefore reconstructs, using only AHPy's documented RI values and the
 definitions of CI and CR:

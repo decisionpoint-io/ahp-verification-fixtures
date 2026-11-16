@@ -47,13 +47,19 @@ inlines the values. Two tables appear:
 | 9 | 1.45 | 1.4499 |
 | 10 | 1.49 | 1.4854 |
 
-Sources: Saaty (1980), *The Analytic Hierarchy Process*, McGraw-Hill; the
-values are also tabulated (Wharton column) in Alonso & Lamata (2006),
-"Consistency in the analytic hierarchy process: a new approach", *IJUFKS*
-14(4), Table 1, which is the source of the second column. Other published
-tables exist (Donegan & Dodd 1991; the estimates in Saaty's 2005 ANP book:
-0.52, 0.89, 1.11, 1.25, 1.35, ...); the runner READMEs document which table
-each verified implementation uses. **Two tools reporting different CRs for
+Sources: Saaty (1980), *The Analytic Hierarchy Process*, McGraw-Hill. The
+first column is printed in R. W. Saaty (1987), "The analytic hierarchy
+process — what it is and how it is used", *Mathematical Modelling* 9(3–5),
+p. 172, described there as average random consistency indices from a sample
+of size 500 (the values in these fixtures were checked against that printed
+table directly), and is also tabulated (Wharton column) in Alonso & Lamata
+(2006), "Consistency in the analytic hierarchy process: a new approach",
+*IJUFKS* 14(4), Table 1, which is the source of the second column. Other
+published tables exist (Donegan & Dodd 1991, whose "Actual RI" column —
+0.4914, 0.8286, 1.0591, ... — was checked against their paper directly and
+matches the table AHPy uses as its default; and the estimates in Saaty's
+2005 ANP book: 0.52, 0.89, 1.11, 1.25, 1.35, ...); the runner READMEs
+document which table each verified implementation uses. **Two tools reporting different CRs for
 the same matrix may simply be using different RI tables** — the
 `ri-table-saaty` / `ri-table-alonso-lamata` fixture pair exists to make that
 concrete, and comparing CI (which is RI-independent) removes the table from
@@ -170,6 +176,30 @@ subcriteria: 0.091, 0.218, 0.691; salary alternatives: 0.555, 0.258, 0.124,
 precision. The source does not publish consistency figures for these
 matrices, so lambda_max, CI and CR are derived. The example's remaining
 matrices are not published in the paper and are not included.
+
+### college-selection-rwsaaty-1987
+
+The college-selection walkthrough in R. W. Saaty (1987), pp. 163–166, prints
+two matrices in full, each with its priority vector *and* its consistency
+ratio — which makes this the fixture of record for a known-CR inconsistent
+matrix from the literature (alongside the drinks fixture's published CR
+0.022). Both published CRs recompute from the printed matrices at the
+published precision: the criteria matrix's "inconsistency ratio of 0.02"
+(recomputed 0.0204) and the LOCATION matrix's "C.R. = 0.092" (recomputed
+0.0923). The published CRs are the normative expected CR values.
+
+Two printed priority figures carry documented rounding quirks. The criteria
+weights print as (0.053, 0.491, 0.238, 0.213), but ACADEMICS recomputes as
+0.218: the printed vector sums to 0.995 where the recomputed one sums to
+1.000, and re-synthesizing with 0.218 and the paper's published local
+vectors reproduces its published final priorities (0.270, 0.387, 0.201,
+0.086, 0.055) within 0.001 of every value — consistent with a last-digit
+typographical slip. The LOCATION weight for U. Michigan prints as 0.283
+where the exact value is 0.2841, consistent with rounding the vector to sum
+to 1.000. The paper's three unprinted college matrices (Ambience,
+Reputation, Academics) are represented only by their published priority
+vectors, preserved in `source_reported`; they are not expected values
+because their matrices are not published.
 
 ### consistent-n3 / n4 / n5
 
