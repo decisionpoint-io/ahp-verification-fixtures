@@ -1,11 +1,11 @@
 {
   "id": "school-selection-saaty-1977",
   "title": "Saaty school selection example (three high schools, six criteria)",
-  "description": "One of the earliest published AHP applications: Saaty and his son ranked three high schools against six criteria. The criteria matrix is a well-known example of a strongly inconsistent judgment matrix (lambda_max about 7.42 for n = 6; CR about 0.23 under Saaty's RI). Expected values are derived with the principal-eigenvector method from the published matrices. Note that on this example the final ranking of schools A and B differs between the principal-eigenvector synthesis (B slightly ahead of A) and the column-normalization approximation (A slightly ahead of B) - see the synthesis alternate; the margin is about 0.01 either way, so implementations using different documented prioritization methods can legitimately report different top choices on this fixture.",
+  "description": "One of the earliest published AHP applications: Saaty's family ranked three high schools against six characteristics (Saaty 1977, pp. 265-266). The matrices in this fixture were verified entry-by-entry against the original paper (Table 10 and the six school comparison matrices), and the paper's published results - the criteria eigenvector (0.32, 0.14, 0.03, 0.13, 0.24, 0.14), the Table 11 school eigenvectors and eigenvalues, and the final priorities A = 0.37, B = 0.38, C = 0.25 - are recorded in source_reported, where their agreement with the derived values is stated. Expected values are derived at six decimals because the paper publishes at two. The criteria matrix is a well-known example of a strongly inconsistent judgment matrix (lambda_max 7.42 for n = 6; CR about 0.23 under Saaty's RI; the paper notes the inconsistency and that no revision was made). Note also that on this example the final ranking of schools A and B differs between the principal-eigenvector synthesis (B slightly ahead of A) and the column-normalization approximation (A slightly ahead of B) - see the synthesis alternate; the margin is about 0.01 either way, so implementations using different documented prioritization methods can legitimately report different top choices on this fixture.",
   "category": "hierarchy",
   "source": {
-    "citation": "T. L. Saaty, 'A scaling method for priorities in hierarchical structures', Journal of Mathematical Psychology 15(3), 1977, pp. 234-281 (the school selection example); matrices as reproduced in N. Krivulin, 'Tropical implementation of the analytical hierarchy process decision method', arXiv:1802.01989, Section 5.2.",
-    "url": "https://arxiv.org/abs/1802.01989"
+    "citation": "T. L. Saaty, 'A scaling method for priorities in hierarchical structures', Journal of Mathematical Psychology 15(3), 1977, pp. 234-281; the school selection example, Table 10 and the school comparison matrices, pp. 265-266.",
+    "notes": "Matrices verified against the original paper. They are also reproduced in N. Krivulin, 'Tropical implementation of the analytical hierarchy process decision method', arXiv:1802.01989, Section 5.2, which is a convenient open-access copy."
   },
   "scale": {
     "name": "saaty-1-9",
@@ -695,5 +695,65 @@
         }
       ]
     }
+  },
+  "source_reported": {
+    "explanation": "The paper publishes its results at two decimals; the derived values in this fixture agree with every published figure at that rounding, with two typographical exceptions. First, the paper prints the criteria matrix's principal eigenvalue as lambda_max = 7.49, while recomputation from its own Table 10 gives 7.4199 (7.42 at two decimals); the paper's accompanying eigenvector recomputes exactly, so the printed eigenvalue appears to be a typographical slip. Second, Table 11 prints School life's priority for school C as 0.46 where the exact value is 0.4545 (0.45 at plain rounding), consistent with rounding the column to sum to 1.00.",
+    "values": {
+      "criteria_priorities": [
+        0.32,
+        0.14,
+        0.03,
+        0.13,
+        0.24,
+        0.14
+      ],
+      "criteria_lambda_max": 7.49,
+      "local_priorities": {
+        "learning": [
+          0.16,
+          0.59,
+          0.25
+        ],
+        "friends": [
+          0.33,
+          0.33,
+          0.33
+        ],
+        "school_life": [
+          0.45,
+          0.09,
+          0.46
+        ],
+        "vocational_training": [
+          0.77,
+          0.05,
+          0.17
+        ],
+        "college_preparation": [
+          0.25,
+          0.5,
+          0.25
+        ],
+        "music_classes": [
+          0.69,
+          0.09,
+          0.22
+        ]
+      },
+      "local_lambda_max": {
+        "learning": 3.05,
+        "friends": 3,
+        "school_life": 3,
+        "vocational_training": 3.21,
+        "college_preparation": 3,
+        "music_classes": 3.05
+      },
+      "final_priorities": {
+        "School A": 0.37,
+        "School B": 0.38,
+        "School C": 0.25
+      }
+    },
+    "citation": "T. L. Saaty, 'A scaling method for priorities in hierarchical structures', Journal of Mathematical Psychology 15(3), 1977, pp. 234-281; the school selection example, Table 10 and the school comparison matrices, pp. 265-266. Eigenvector and lambda_max of Table 10 from p. 266; school eigenvectors and eigenvalues from Table 11; final priorities from p. 266."
   }
 }

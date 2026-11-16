@@ -131,12 +131,26 @@ tables.
 
 ### school-selection-saaty-1977
 
-Matrices from Saaty (1977) as reproduced in arXiv:1802.01989, Section 5.2.
-The original's priority values are behind a paywall, so all expected values
-here are derived; the derived criteria weights (0.3208, 0.1395, 0.0348,
-0.1285, 0.2374, 0.1391) and final priorities (A 0.3673, B 0.3785, C 0.2542)
-agree, at their rounding, with the values widely reproduced in the secondary
-literature. Two properties make this fixture useful:
+Matrices verified entry-by-entry against the original paper (Saaty 1977,
+Table 10 and the six school comparison matrices, pp. 265–266; they are also
+reproduced in arXiv:1802.01989, Section 5.2). The paper publishes its
+results at two decimals, and the derived values here agree with every
+published figure at that rounding: the criteria eigenvector (0.32, 0.14,
+0.03, 0.13, 0.24, 0.14 vs derived 0.3208, 0.1395, 0.0348, 0.1285, 0.2374,
+0.1391), the Table 11 school eigenvectors and eigenvalues, and the final
+priorities (A = 0.37, B = 0.38, C = 0.25 vs derived 0.3673, 0.3785,
+0.2542). Expected values remain the six-decimal derivation, with the full
+published record preserved in `source_reported`.
+
+Two printed figures do not recompute and are documented in the fixture:
+the paper prints the criteria matrix's eigenvalue as λmax = 7.49, while
+recomputation from its own Table 10 gives 7.4199 (7.42) — the accompanying
+eigenvector recomputes exactly, so this appears to be a typographical
+slip; and Table 11 prints School life's priority for school C as 0.46
+where the exact value is 0.4545, consistent with rounding the column to
+sum to 1.00.
+
+Two properties make this fixture useful:
 
 * the criteria matrix is a famously inconsistent published example
   (lambda_max ≈ 7.42 at n = 6; CR ≈ 0.229 under the Saaty RI table), so it
