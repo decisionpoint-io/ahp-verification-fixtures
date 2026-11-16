@@ -1,0 +1,308 @@
+{
+  "fixture_id": "car-hierarchy-wikipedia",
+  "tool": {
+    "name": "SuperDecisions (web, V4 Platform)",
+    "version": "v0.5.14 (as displayed on the application's login page)",
+    "platform": "web (hosted at superdecisions.com)"
+  },
+  "captured": {
+    "date": "2026-11-16",
+    "by": "Philip Healy",
+    "method": "manual-gui-entry",
+    "notes": "Model building and judgment entry (all 11 matrices, 133 comparisons, including the decimal Fuel Costs intensities such as 1.13 and the non-integer 1.5/1.2 Maintenance intensities, all accepted by the matrix editor) were automated in the operator's browser (operator signed in and supervised); each completed matrix was read from screen and checked against the fixture before transcription (see the transcript artifact). The operator manually checked the session and outputs before this capture was committed."
+  },
+  "outputs": {
+    "matrices": {
+      "criteria": {
+        "priorities": [
+          0.51,
+          0.234,
+          0.041,
+          0.215
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0746
+      },
+      "cost_subcriteria": {
+        "priorities": [
+          0.488,
+          0.252,
+          0.1,
+          0.161
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0152
+      },
+      "capacity_subcriteria": {
+        "priorities": [
+          0.167,
+          0.833
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0
+      },
+      "purchase_price": {
+        "priorities": [
+          0.246,
+          0.025,
+          0.025,
+          0.246,
+          0.366,
+          0.093
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0677
+      },
+      "fuel_costs": {
+        "priorities": [
+          0.187,
+          0.211,
+          0.132,
+          0.163,
+          0.151,
+          0.157
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0
+      },
+      "maintenance_costs": {
+        "priorities": [
+          0.358,
+          0.313,
+          0.084,
+          0.1,
+          0.088,
+          0.057
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0226
+      },
+      "resale_value": {
+        "priorities": [
+          0.225,
+          0.095,
+          0.055,
+          0.416,
+          0.105,
+          0.105
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0051
+      },
+      "safety": {
+        "priorities": [
+          0.216,
+          0.216,
+          0.075,
+          0.036,
+          0.022,
+          0.434
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0802
+      },
+      "style": {
+        "priorities": [
+          0.358,
+          0.358,
+          0.039,
+          0.155,
+          0.023,
+          0.068
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.1012
+      },
+      "cargo_capacity": {
+        "priorities": [
+          0.089,
+          0.089,
+          0.17,
+          0.17,
+          0.17,
+          0.311
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0022
+      },
+      "passenger_capacity": {
+        "priorities": [
+          0.136,
+          0.136,
+          0.273,
+          0.136,
+          0.045,
+          0.273
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0
+      }
+    },
+    "synthesis": {
+      "labels": [
+        "Accord Sedan",
+        "Accord Hybrid",
+        "Pilot SUV",
+        "CR-V SUV",
+        "Element SUV",
+        "Odyssey Minivan"
+      ],
+      "values": [
+        0.215,
+        0.15,
+        0.106,
+        0.167,
+        0.144,
+        0.219
+      ],
+      "notes": "Results > Local Results, Alternatives panel (normalized column): Odyssey 0.219, Accord Sedan 0.215, CR-V 0.167, Accord Hybrid 0.150, Element 0.144, Pilot 0.106. SuperDecisions computes this via its supermatrix; on this pure hierarchy it reproduces the standard AHP synthesis. The page's 'Global Priorities' panel uses a supermatrix normalization over all nodes (criteria and alternatives together) and has no direct counterpart in the fixture, so it is not transcribed as an output."
+    }
+  },
+  "ri_table": {
+    "name": "other",
+    "values": {
+      "4": 0.89,
+      "5": 1.12,
+      "6": 1.25,
+      "7": 1.35
+    },
+    "source": "Determined numerically across the three SuperDecisions web captures in this repository (drinks n=7; college criteria n=4 and location n=5; the eleven car matrices spanning n=2..6): the displayed inconsistencies imply effective RI(4) = 0.89, RI(5) = 1.12, RI(6) = 1.25 and RI(7) = 1.35 at the displayed four-decimal precision (CI values recomputed from the fixtures' matrices). 0.89, 1.25 and 1.35 coincide with the random-index estimates printed in T. L. Saaty, Theory and Applications of the Analytic Network Process, 2005, p. 31, while 1.12 coincides with the Saaty (1980) table; no single published table matches all observations. Vendor documentation or source stating the table was not located."
+  },
+  "prioritization_method": "principal-eigenvector (inferred: all 11 local priority vectors equal the fixture's principal-eigenvector expected values at display precision, including matrices where the column-normalization alternates differ)",
+  "matches_expected": {
+    "matrices.criteria.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the tool's display precision (three decimals)."
+    },
+    "matrices.criteria.cr": {
+      "matches": false,
+      "tolerance": 0.0005,
+      "note": "Displayed 0.0746 vs expected 0.073791 (Saaty 1980 RI): a random-index difference - see the capture-level explanation. The underlying CI agrees."
+    },
+    "matrices.cost_subcriteria.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the tool's display precision (three decimals)."
+    },
+    "matrices.cost_subcriteria.cr": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Within the fixture's tolerance."
+    },
+    "matrices.capacity_subcriteria.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the tool's display precision (three decimals)."
+    },
+    "matrices.capacity_subcriteria.cr": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Within the fixture's tolerance."
+    },
+    "matrices.purchase_price.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the tool's display precision (three decimals)."
+    },
+    "matrices.purchase_price.cr": {
+      "matches": false,
+      "tolerance": 0.0005,
+      "note": "Displayed 0.0677 vs expected 0.068205 (Saaty 1980 RI): a random-index difference - see the capture-level explanation. The underlying CI agrees."
+    },
+    "matrices.fuel_costs.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the tool's display precision (three decimals)."
+    },
+    "matrices.fuel_costs.cr": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Within the fixture's tolerance."
+    },
+    "matrices.maintenance_costs.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the tool's display precision (three decimals)."
+    },
+    "matrices.maintenance_costs.cr": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Within the fixture's tolerance."
+    },
+    "matrices.resale_value.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the tool's display precision (three decimals)."
+    },
+    "matrices.resale_value.cr": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Within the fixture's tolerance."
+    },
+    "matrices.safety.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the tool's display precision (three decimals)."
+    },
+    "matrices.safety.cr": {
+      "matches": false,
+      "tolerance": 0.0005,
+      "note": "Displayed 0.0802 vs expected 0.080826 (Saaty 1980 RI): a random-index difference - see the capture-level explanation. The underlying CI agrees."
+    },
+    "matrices.style.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the tool's display precision (three decimals)."
+    },
+    "matrices.style.cr": {
+      "matches": false,
+      "tolerance": 0.0005,
+      "note": "Displayed 0.1012 vs expected 0.101989 (Saaty 1980 RI): a random-index difference - see the capture-level explanation. The underlying CI agrees."
+    },
+    "matrices.cargo_capacity.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the tool's display precision (three decimals)."
+    },
+    "matrices.cargo_capacity.cr": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Within the fixture's tolerance."
+    },
+    "matrices.passenger_capacity.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the tool's display precision (three decimals)."
+    },
+    "matrices.passenger_capacity.cr": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Within the fixture's tolerance."
+    },
+    "synthesis": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "The Results page's Alternatives panel matches the fixture's derived synthesis at display precision; rank order identical (Odyssey first, Accord Sedan second)."
+    }
+  },
+  "explanation": "Four of the eleven displayed inconsistencies differ from the fixture's expected consistency ratios by slightly more than the fixture's tolerance: the criteria matrix (0.0746 vs 0.073791), Purchase Price (0.0677 vs 0.068205), Safety (0.0802 vs 0.080826) and Style (0.1012 vs 0.101989). All four are random-index differences, not disagreements about the judgments or the eigenvector: the tool's effective RI values (0.89 at n = 4 and 1.25 at n = 6, consistent with the estimates in Saaty's 2005 ANP book) differ from the Saaty (1980) table the fixture declares (0.90 and 1.24). The underlying consistency indices agree, every local priority vector and the final synthesis match at display precision, and the remaining seven inconsistencies are within tolerance (at n = 5 the tool's effective RI coincides with the fixture's table, and the near-consistent matrices are unaffected at display precision).",
+  "notes": "The model file ahp-fixture-car-wikipedia.sdm4 is saved in the operator's connected Google Drive and can be exported via the application's 'Export sdmod' / 'Download' functions on request.",
+  "reverify": {
+    "instructions": "Sign in at superdecisions.com. Create a model with clusters Goal (node: Choose best car), Criteria (Cost, Safety, Style, Capacity), Cost Subcriteria (Purchase Price, Fuel Costs, Maintenance Costs, Resale Value), Capacity Subcriteria (Cargo Capacity, Passenger Capacity) and Alternatives (the six Honda models). Connect the goal node to the Criteria cluster, Cost to Cost Subcriteria, Capacity to Capacity Subcriteria, and each of the eight covering criteria (Safety, Style and the six subcriteria) to the Alternatives cluster. In Assess/Compare > Matrix view enter the fixture's eleven matrices (a value in cell (row, column) means the row element is that many times more preferred; enter each judgment as a value >= 1 in the dominant element's row; decimals such as 1.13 are accepted; the full matrices as entered are in the transcript artifact). Read each reference node's Priorities panel and Inconsistency figure, and the final synthesis under Results > Local Results > Alternatives.",
+    "artifacts": [
+      "artifacts/car-hierarchy-wikipedia-transcript.txt"
+    ]
+  }
+}

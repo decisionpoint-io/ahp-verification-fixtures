@@ -1,0 +1,68 @@
+SuperDecisions (web) capture session transcript — fixture car-hierarchy-wikipedia
+==================================================================================
+
+Date: 2026-11-16
+Tool: SuperDecisions V4 Platform (web application at superdecisions.com);
+      login page displays "SuperDecisions (v0.5.14)"
+Account: operator's account (Google sign-in performed by the operator)
+Method: model building and judgment entry automated in the operator's
+browser; each completed matrix read from screen and checked against the
+fixture before transcription; outputs transcribed verbatim.
+
+Model
+-----
+File: ahp-fixture-car-wikipedia.sdm4 (saved to the operator's connected
+Google Drive; "Saving model in Google Drive" confirmed)
+Structure: Main Network with clusters Goal ("Choose best car"), Criteria
+(Cost, Safety, Style, Capacity), Cost Subcriteria (Purchase Price, Fuel
+Costs, Maintenance Costs, Resale Value), Capacity Subcriteria (Cargo
+Capacity, Passenger Capacity) and Alternatives (Accord Sedan, Accord
+Hybrid, Pilot SUV, CR-V SUV, Element SUV, Odyssey Minivan).
+Connections: goal node -> Criteria cluster (4); Cost -> Cost Subcriteria
+(4); Capacity -> Capacity Subcriteria (2); Safety, Style, Purchase Price,
+Fuel Costs, Maintenance Costs, Resale Value, Cargo Capacity and Passenger
+Capacity -> Alternatives cluster (8 x 6 = 48).
+
+Judgment entry (Assess/Compare > Matrix view)
+---------------------------------------------
+A value in cell (row, column) means "row is N times more preferred than
+column"; reciprocals fill automatically. All 133 comparisons entered as the
+fixture's matrices (fixtures/car-hierarchy-wikipedia.json), with each
+judgment entered as a value >= 1 in the dominant element's row. The
+decimal Fuel Costs intensities (1.13, 1.41, 1.15, 1.24, 1.19, 1.59, 1.3,
+1.4, 1.35, 1.23, 1.14, 1.18, 1.08, 1.04, 1.04) and the non-integer
+Maintenance intensities (1.5, 1.2) were accepted by the matrix editor and
+displayed back exactly (reciprocals as e.g. "1/1.13"). Every matrix grid
+was read back from screen after entry and matched the fixture
+entry-for-entry.
+
+Outputs (per reference node: Priorities panel 'Normal' column and the
+'Inconsistency' figure, transcribed verbatim)
+-----------------------------------------------------------------------
+criteria (wrt Choose best car):      0.510, 0.234, 0.041, 0.215      Inconsistency 0.0746
+cost subcriteria (wrt Cost):         0.488, 0.252, 0.100, 0.161      Inconsistency 0.0152
+capacity subcriteria (wrt Capacity): 0.167, 0.833                    Inconsistency 0
+purchase price:   0.246, 0.025, 0.025, 0.246, 0.366, 0.093           Inconsistency 0.0677
+fuel costs:       0.187, 0.211, 0.132, 0.163, 0.151, 0.157           Inconsistency 0
+maintenance:      0.358, 0.313, 0.084, 0.100, 0.088, 0.057           Inconsistency 0.0226
+resale value:     0.225, 0.095, 0.055, 0.416, 0.105, 0.105           Inconsistency 0.0051
+safety:           0.216, 0.216, 0.075, 0.036, 0.022, 0.434           Inconsistency 0.0802
+style:            0.358, 0.358, 0.039, 0.155, 0.023, 0.068           Inconsistency 0.1012
+cargo capacity:   0.089, 0.089, 0.170, 0.170, 0.170, 0.311           Inconsistency 0.0022
+passenger cap.:   0.136, 0.136, 0.273, 0.136, 0.045, 0.273           Inconsistency 0
+(alternative vectors in fixture order: Accord Sedan, Accord Hybrid,
+Pilot SUV, CR-V SUV, Element SUV, Odyssey Minivan)
+
+Final synthesis (Results > Local Results > Alternatives, Normal column):
+  Odyssey Minivan 0.219, Accord Sedan 0.215, CR-V SUV 0.167,
+  Accord Hybrid 0.150, Element SUV 0.144, Pilot SUV 0.106
+
+Notes
+-----
+- lambda_max and CI are not displayed.
+- The Results page's "Global Priorities" panel uses a supermatrix
+  normalization over all nodes and has no direct counterpart in the
+  fixture; it was not transcribed as an output.
+- The displayed inconsistencies imply effective RI values 0.89 (n=4),
+  1.12 (n=5, from the college capture), 1.25 (n=6) and 1.35 (n=7, from the
+  drinks capture); see the capture's ri_table block and explanation.
