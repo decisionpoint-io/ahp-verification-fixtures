@@ -1,0 +1,337 @@
+{
+  "fixture_id": "car-hierarchy-wikipedia",
+  "tool": {
+    "name": "decisionpoint.io (hosted application)",
+    "version": "undetermined (hosted, continuously deployed); captured from the public observer view on 2026-11-16",
+    "platform": "web (hosted at app.decisionpoint.io)"
+  },
+  "captured": {
+    "date": "2026-11-16",
+    "by": "Philip Healy",
+    "method": "hosted-session",
+    "notes": "The judgments were entered into this public decision by the operator when the application's interactive case study was created (February 2026); the decision is linked from the Wikipedia article's External links section. This capture transcribes the outputs the application displays to an anonymous observer of the public decision. The decision's judgment set was cross-checked against the fixture's matrices via the public API (identical, all 133 comparisons) during the fixture's own verification. The operator manually checked the transcription before commit. Note on neutrality: decisionpoint.io is maintained by the same organization that maintains this repository; the capture follows the same schema and rules as every other tool captured here."
+  },
+  "outputs": {
+    "matrices": {
+      "criteria": {
+        "priorities": [
+          0.51,
+          0.234,
+          0.041,
+          0.215
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.07,
+        "notes": "Local priorities from the results page's Priority Breakdowns (three decimals); per-matrix 'Consistency' figures from the comparisons page's scorecards (two decimals). lambda_max and CI are not displayed."
+      },
+      "cost_subcriteria": {
+        "priorities": [
+          0.488,
+          0.252,
+          0.1,
+          0.161
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.02
+      },
+      "capacity_subcriteria": {
+        "priorities": [
+          0.167,
+          0.833
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0
+      },
+      "purchase_price": {
+        "priorities": [
+          0.246,
+          0.025,
+          0.025,
+          0.246,
+          0.366,
+          0.093
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.07
+      },
+      "fuel_costs": {
+        "priorities": [
+          0.187,
+          0.211,
+          0.132,
+          0.163,
+          0.151,
+          0.157
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0
+      },
+      "maintenance_costs": {
+        "priorities": [
+          0.358,
+          0.313,
+          0.084,
+          0.1,
+          0.088,
+          0.057
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.02
+      },
+      "resale_value": {
+        "priorities": [
+          0.225,
+          0.095,
+          0.055,
+          0.416,
+          0.105,
+          0.105
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.01
+      },
+      "safety": {
+        "priorities": [
+          0.216,
+          0.216,
+          0.075,
+          0.036,
+          0.022,
+          0.434
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.08
+      },
+      "style": {
+        "priorities": [
+          0.358,
+          0.358,
+          0.039,
+          0.155,
+          0.023,
+          0.068
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.1
+      },
+      "cargo_capacity": {
+        "priorities": [
+          0.089,
+          0.089,
+          0.17,
+          0.17,
+          0.17,
+          0.311
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0
+      },
+      "passenger_capacity": {
+        "priorities": [
+          0.136,
+          0.136,
+          0.273,
+          0.136,
+          0.045,
+          0.273
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0
+      }
+    },
+    "global_priorities": {
+      "labels": [
+        "Purchase Price",
+        "Fuel Costs",
+        "Maintenance Costs",
+        "Resale Value",
+        "Safety",
+        "Style",
+        "Cargo Capacity",
+        "Passenger Capacity"
+      ],
+      "values": [
+        0.249,
+        0.128,
+        0.051,
+        0.082,
+        0.234,
+        0.041,
+        0.036,
+        0.179
+      ],
+      "notes": "Totals row of the results page's Results Table."
+    },
+    "synthesis": {
+      "labels": [
+        "Accord Sedan",
+        "Accord Hybrid",
+        "Pilot SUV",
+        "CR-V SUV",
+        "Element SUV",
+        "Odyssey Minivan"
+      ],
+      "values": [
+        0.215,
+        0.15,
+        0.106,
+        0.167,
+        0.144,
+        0.219
+      ],
+      "notes": "Overall Ranking on the results page (three decimals): Odyssey 1st, Accord Sedan 2nd, CR-V 3rd, Accord Hybrid 4th, Element 5th, Pilot 6th. The page also displays an overall CONSISTENCY figure of 0.03, which the engine computes as the unweighted mean of the per-matrix consistency ratios (the fixture's expected per-matrix CRs average 0.0336)."
+    }
+  },
+  "ri_table": {
+    "name": "saaty",
+    "values": {
+      "3": 0.58,
+      "4": 0.9,
+      "5": 1.12,
+      "6": 1.24,
+      "7": 1.32,
+      "8": 1.41,
+      "9": 1.45,
+      "10": 1.49
+    },
+    "source": "Engine source (the application's js-ahp evaluation module, saatyRandomIndexes): the classic Saaty (1980) table, matching the fixture's declared table for all sizes used here. Determined by direct source inspection - the engine is maintained by the same organization as this repository. The source cites Alonso & Lamata (2006) and Donegan & Dodd (1991) for the provenance of the estimates at larger n."
+  },
+  "prioritization_method": "principal-eigenvector (power method; determined by direct engine source inspection, and consistent with all displayed values matching the fixture's principal-eigenvector expected values at display precision)",
+  "matches_expected": {
+    "matrices.criteria.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the display precision (three decimals)."
+    },
+    "matrices.criteria.cr": {
+      "matches": true,
+      "tolerance": 0.005,
+      "note": "Matches the fixture's expected CR (Saaty 1980 RI table, same table as the engine) at the display precision (two decimals)."
+    },
+    "matrices.cost_subcriteria.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the display precision (three decimals)."
+    },
+    "matrices.cost_subcriteria.cr": {
+      "matches": true,
+      "tolerance": 0.005,
+      "note": "Matches the fixture's expected CR (Saaty 1980 RI table, same table as the engine) at the display precision (two decimals)."
+    },
+    "matrices.capacity_subcriteria.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the display precision (three decimals)."
+    },
+    "matrices.capacity_subcriteria.cr": {
+      "matches": true,
+      "tolerance": 0.005,
+      "note": "Matches the fixture's expected CR (Saaty 1980 RI table, same table as the engine) at the display precision (two decimals)."
+    },
+    "matrices.purchase_price.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the display precision (three decimals)."
+    },
+    "matrices.purchase_price.cr": {
+      "matches": true,
+      "tolerance": 0.005,
+      "note": "Matches the fixture's expected CR (Saaty 1980 RI table, same table as the engine) at the display precision (two decimals)."
+    },
+    "matrices.fuel_costs.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the display precision (three decimals)."
+    },
+    "matrices.fuel_costs.cr": {
+      "matches": true,
+      "tolerance": 0.005,
+      "note": "Matches the fixture's expected CR (Saaty 1980 RI table, same table as the engine) at the display precision (two decimals)."
+    },
+    "matrices.maintenance_costs.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the display precision (three decimals)."
+    },
+    "matrices.maintenance_costs.cr": {
+      "matches": true,
+      "tolerance": 0.005,
+      "note": "Matches the fixture's expected CR (Saaty 1980 RI table, same table as the engine) at the display precision (two decimals)."
+    },
+    "matrices.resale_value.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the display precision (three decimals)."
+    },
+    "matrices.resale_value.cr": {
+      "matches": true,
+      "tolerance": 0.005,
+      "note": "Matches the fixture's expected CR (Saaty 1980 RI table, same table as the engine) at the display precision (two decimals)."
+    },
+    "matrices.safety.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the display precision (three decimals)."
+    },
+    "matrices.safety.cr": {
+      "matches": true,
+      "tolerance": 0.005,
+      "note": "Matches the fixture's expected CR (Saaty 1980 RI table, same table as the engine) at the display precision (two decimals)."
+    },
+    "matrices.style.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the display precision (three decimals)."
+    },
+    "matrices.style.cr": {
+      "matches": true,
+      "tolerance": 0.005,
+      "note": "Matches the fixture's expected CR (Saaty 1980 RI table, same table as the engine) at the display precision (two decimals)."
+    },
+    "matrices.cargo_capacity.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the display precision (three decimals)."
+    },
+    "matrices.cargo_capacity.cr": {
+      "matches": true,
+      "tolerance": 0.005,
+      "note": "Matches the fixture's expected CR (Saaty 1980 RI table, same table as the engine) at the display precision (two decimals)."
+    },
+    "matrices.passenger_capacity.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the display precision (three decimals)."
+    },
+    "matrices.passenger_capacity.cr": {
+      "matches": true,
+      "tolerance": 0.005,
+      "note": "Matches the fixture's expected CR (Saaty 1980 RI table, same table as the engine) at the display precision (two decimals)."
+    },
+    "global_priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Results Table totals row matches the fixture's derived global priorities at display precision."
+    },
+    "synthesis": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Overall Ranking matches the fixture's derived synthesis at display precision; rank order identical."
+    }
+  },
+  "reverify": {
+    "url": "https://app.decisionpoint.io/ahp/processes/1u7fb2loziitknizzy7baon5t",
+    "instructions": "Open the URL (no account needed; the page states 'You are an observer and cannot make edits'). The overview and VIEW RESULTS pages show the Overall Ranking, Priority Breakdowns per matrix, and the Results Table whose totals row carries the global priorities; VIEW COMPARISONS shows each matrix's judgments and its Consistency figure. The same decision is linked from the Wikipedia article's External links section."
+  }
+}
