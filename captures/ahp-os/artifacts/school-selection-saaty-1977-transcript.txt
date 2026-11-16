@@ -1,0 +1,55 @@
+AHP-OS capture session transcript — fixture school-selection-saaty-1977
+(partial: criteria, Learning and Vocational Training matrices)
+=========================================================================
+
+Date: 2026-11-16
+Tool: AHP-OS "AHP Priority Calculator", https://bpmsg.com/ahp/ahp-calc.php
+Page footer: "AHP-OS author: Klaus D. Goepel, BPMSG. Last update: Feb 26, 2022 Rev: 172"
+Access: public page, no login used. The calculator evaluates one matrix per
+session; three sessions were run. Judgments entered by browser automation
+with per-judgment read-back; outputs transcribed verbatim.
+
+Session 1 — criteria matrix (n = 6)
+-----------------------------------
+Names: Learning, Friends, School Life, Vocational Training, College
+Preparation, Music Classes
+Judgments as read back: Learning x4 over Friends; Learning x3 over School
+Life; Learning = Vocational Training (1); Learning x3 over College
+Preparation; Learning x4 over Music Classes; Friends x7 over School Life;
+Friends x3 over Vocational Training; College Preparation x5 over Friends;
+Friends = Music Classes (1); Vocational Training x5 over School Life;
+College Preparation x5 over School Life; Music Classes x6 over School
+Life; Vocational Training = College Preparation (1); Music Classes x3 over
+Vocational Training; College Preparation x3 over Music Classes.
+
+Results (verbatim): Learning 32.1% (1), Friends 13.9% (3), School Life
+3.5% (6), Vocational Training 12.8% (5), College Preparation 23.7% (2),
+Music Classes 13.9% (4). Consistency Ratio CR = 22.7%. Principal eigen
+value = 7.420. Eigenvector solution: 10 iterations, delta = 1.5E-8.
+The decision-matrix echo equals the fixture's Table 10 matrix.
+
+Session 2 — Learning matrix (n = 3)
+-----------------------------------
+Names: School A, School B, School C
+Judgments as read back: School B x3 over School A; School C x2 over
+School A; School B x3 over School C.
+Results (verbatim): School A 15.7% (3), School B 59.4% (1), School C
+24.9% (2). CR = 5.6%. Principal eigen value = 3.054.
+
+Session 3 — Vocational Training matrix (n = 3)
+----------------------------------------------
+Names: School A, School B, School C
+Judgments as read back: School A x9 over School B; School A x7 over
+School C; School C x5 over School B.
+Results (verbatim): School A 77.2% (1), School B 5.5% (3), School C
+17.3% (2). CR = 21.8%. Principal eigen value = 3.208.
+
+Notes
+-----
+- The tool accepted and evaluated the strongly inconsistent criteria
+  matrix (CR displayed 22.7%) without blocking.
+- All three displayed CRs follow the tool's Alonso-Lamata linear-fit
+  formula (source-confirmed); the divergences from the fixture's
+  Saaty-(1980)-table CRs are largest in relative terms at n = 3, where
+  the fit's effective RI (0.4793) is about 17% below the table value
+  (0.58). See the capture's explanation.

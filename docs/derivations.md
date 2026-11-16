@@ -58,8 +58,13 @@ table directly), and is also tabulated (Wharton column) in Alonso & Lamata
 published tables exist (Donegan & Dodd 1991, whose "Actual RI" column —
 0.4914, 0.8286, 1.0591, ... — was checked against their paper directly and
 matches the table AHPy uses as its default; and the estimates in Saaty's
-2005 ANP book: 0.52, 0.89, 1.11, 1.25, 1.35, ...); the runner READMEs
-document which table each verified implementation uses. **Two tools reporting different CRs for
+2005 ANP book: 0.52, 0.89, 1.11, 1.25, 1.35, ...). Alonso & Lamata's paper
+additionally provides a LINEAR FIT, lambda_max(n) = 2.7699n − 4.3513, whose
+implied RI(n) = (1.7699n − 4.3513)/(n − 1) differs from their own Table 1
+(0.4793 vs 0.5245 at n = 3; 0.9094 vs 0.8815 at n = 4) — so even "uses
+Alonso–Lamata" names two distinct CR conventions; AHP-OS implements the
+fit (see the captures). The runner READMEs and each capture's ri_table
+document which convention each verified or captured implementation uses. **Two tools reporting different CRs for
 the same matrix may simply be using different RI tables** — the
 `ri-table-saaty` / `ri-table-alonso-lamata` fixture pair exists to make that
 concrete, and comparing CI (which is RI-independent) removes the table from
