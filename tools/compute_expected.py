@@ -36,7 +36,10 @@ failures = []
 
 
 def entry_value(x):
-    return float(Fraction(x)) if isinstance(x, str) else float(x)
+    if isinstance(x, str):
+        num, _, den = x.partition("/")
+        return float(Fraction(num) / Fraction(den)) if den else float(Fraction(num))
+    return float(x)
 
 
 def to_array(rows):
@@ -119,33 +122,49 @@ def run_fixture(path):
             if key not in weights[method]:
                 weights[method][key], _ = methods[method](A)
 
+    defs = {m["key"]: m for m in fx["matrices"]}
     for field in ("global_priorities", "synthesis"):
         block = fx["expected"].get(field)
         if not block:
             continue
-        parented = {m["key"]: m.get("parent") for m in fx["matrices"]}
-        root_key = next(k for k, p in parented.items() if p is None)
-        root_def = next(m for m in fx["matrices"] if m["key"] == root_key)
         blocks = [(block.get("method", "principal-eigenvector"), block)] + [
             (alt["method"], alt) for alt in block.get("alternates", [])]
         for method, b in blocks:
             wset = weights[method]
-            root_w = dict(zip(root_def["labels"], wset[root_key]))
+
+            # global scale factor of a matrix: 1 at the root, otherwise the
+            # parent matrix's factor times the parent element's local weight
+            factor = {}
+
+            def gfactor(key):
+                if key not in factor:
+                    mdef = defs[key]
+                    if not mdef.get("parent"):
+                        factor[key] = 1.0
+                    else:
+                        pkey = mdef["parent"]["matrix"]
+                        plocal = dict(zip(defs[pkey]["labels"], wset[pkey]))
+                        factor[key] = gfactor(pkey) * plocal[mdef["parent"]["element"]]
+                return factor[key]
+
             if field == "global_priorities":
-                # children replace their parent element; childless elements keep their weight
-                out = dict(root_w)
+                # an element's global priority is its matrix's factor times
+                # its local weight (covering labels are unique to one matrix)
+                G = {}
                 for m in fx["matrices"]:
-                    if m.get("parent"):
-                        pw = out.pop(m["parent"]["element"])
-                        for lbl, lw in zip(m["labels"], wset[m["key"]]):
-                            out[lbl] = pw * lw
-                got = [out[lbl] for lbl in block["labels"]]
+                    for lbl, lw in zip(m["labels"], wset[m["key"]]):
+                        if lbl in block["labels"]:
+                            G[lbl] = gfactor(m["key"]) * lw
+                got = [G[lbl] for lbl in block["labels"]]
             else:
-                # synthesis: criteria-weighted sum of per-criterion alternative priorities
+                # synthesis: sum the matrices that compare the alternatives,
+                # each scaled by its covering criterion's global priority
                 got = np.zeros(len(block["labels"]))
                 for m in fx["matrices"]:
-                    if m.get("parent"):
-                        got += root_w[m["parent"]["element"]] * wset[m["key"]]
+                    if m.get("parent") and set(m["labels"]) == set(block["labels"]):
+                        aligned = dict(zip(m["labels"], wset[m["key"]]))
+                        got += gfactor(m["key"]) * np.array(
+                            [aligned[lbl] for lbl in block["labels"]])
             check(f"{field}[{method}]", list(got), b)
 
 

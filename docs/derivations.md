@@ -86,19 +86,48 @@ output, and is recorded in the fixture's notes.
 
 ### car-hierarchy-wikipedia
 
-The Wikipedia article publishes, in text form, the criteria judgments, the
-Cost and Capacity subcriteria judgments, and the resulting global ("factor")
-priorities; the alternative-level judgments appear only in images and are not
-included. The displayed global priorities (0.246, 0.127, 0.050, 0.081, 0.237,
-0.042, 0.036, 0.181) differ from the exact principal-eigenvector synthesis
-(0.248944, 0.128302, 0.050937, 0.081891, 0.234352, 0.040519, 0.035842,
-0.179212) by up to about 0.003, and agree closely with the
-column-normalization approximation (0.245949, 0.126364, 0.050400, 0.080934,
-0.237327, 0.042533, 0.036082, 0.180411). The article does not state which
-method its software used. The fixture's normative expected values are the
-eigenvector derivation; the article's displayed values are preserved in
-`source_reported` with this explanation. Neither set is wrong; they are
-outputs of different documented prioritization methods.
+The complete three-level hierarchy: 11 judgment matrices, 133 pairwise
+comparisons. The criteria and subcriteria judgments are stated in the
+article's prose; the alternative-level judgments are published in the
+article's judgment-table images (AHPJonesPurchasePrice04REV01.png,
+AHPJonesSafety02.png, AHPJonesPassengerCapacity02.png,
+AHPJonesFuelCost02.png, AHPJonesResaleValue03.png,
+AHPJonesMaintenanceCosts02.png, AHPJonesStyle01.png,
+AHPJonesCargoCapacity02.png). The transcription in this fixture was verified
+three independent ways:
+
+1. **entry-by-entry against the images** — all 120 alternative-level
+   judgments, including the decimal Fuel Costs intensities (the article's
+   MPG ratios to two decimals, e.g. 1.13 = 35/31) and the non-integer
+   Maintenance intensities 1.5 and 1.2;
+2. **against the article's own displayed results** — under the
+   column-normalization approximation, the transcribed matrices reproduce
+   the article's per-criterion local priority tables at their printed three
+   decimals (Fuel Costs within 0.003), its global priorities within 0.002,
+   and the final priorities in its AHPJonesFinalPriorities.png synthesis
+   table (0.213, 0.150, 0.109, 0.165, 0.143, 0.220) within 0.002;
+3. **against the interactive decision linked from the article's External
+   links section** (app.decisionpoint.io/ahp/processes/1u7fb2loziitknizzy7baon5t),
+   which contains identical judgments.
+
+Every numeric result the article displays — criteria priorities 0.504 /
+0.237 / 0.042 / 0.217, the factor table, the local tables, and the final
+synthesis — is consistent with the column-normalization approximation. The
+exact principal-eigenvector results differ by up to about 0.003 without
+changing the ranking (Odyssey 0.2191, Accord Sedan 0.2147, CR-V 0.1665,
+Accord Hybrid 0.1497, Element 0.1438, Pilot 0.1061). The article does not
+state which prioritization method its software used. The fixture's normative
+expected values are the eigenvector derivation, with column-normalization
+alternates per matrix; all displayed article values are preserved in
+`source_reported`. Neither set is wrong; they are outputs of different
+documented prioritization methods applied to the same judgments.
+
+One caution for anyone cross-checking against summarized or scraped copies
+of the article: the final priorities appear only in the synthesis-table
+image, not in the article text (which names just the 0.220 / 0.213 top two
+and the ranking order). The values above were read from the image itself and
+confirmed by recomputation from the article's own local and global priority
+tables.
 
 ### school-selection-saaty-1977
 

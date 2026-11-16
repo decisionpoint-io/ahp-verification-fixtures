@@ -36,7 +36,10 @@ def ok(msg):
 
 
 def entry_value(x):
-    return float(Fraction(x)) if isinstance(x, str) else float(x)
+    if isinstance(x, str):
+        num, _, den = x.partition("/")
+        return float(Fraction(num) / Fraction(den)) if den else float(Fraction(num))
+    return float(x)
 
 
 def load(path):

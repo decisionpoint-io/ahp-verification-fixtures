@@ -42,7 +42,7 @@ reading (a non-reciprocal printed entry, a probable typesetting slip).
 | Fixture | Category | Expected values from |
 | --- | --- | --- |
 | [`drinks-saaty-2008`](fixtures/drinks-saaty-2008.json) | matrix | published (Saaty 2008, Table 2: priorities and CR 0.022) — also the literature known-CR case |
-| [`car-hierarchy-wikipedia`](fixtures/car-hierarchy-wikipedia.json) | hierarchy | derived; Wikipedia's displayed values preserved and explained in `source_reported` |
+| [`car-hierarchy-wikipedia`](fixtures/car-hierarchy-wikipedia.json) | hierarchy | derived — the complete three-level hierarchy (11 matrices, 133 comparisons, alternatives included), judgments verified against the article's published judgment-table images; Wikipedia's displayed values preserved and explained in `source_reported` |
 | [`school-selection-saaty-1977`](fixtures/school-selection-saaty-1977.json) | hierarchy | derived from the published matrices (Saaty 1977); includes a famously inconsistent criteria matrix (CR ≈ 0.23) |
 | [`job-selection-saaty-2008`](fixtures/job-selection-saaty-2008.json) | matrix | published (Saaty 2008, Tables 3–5 priorities) |
 | [`consistent-n3/n4/n5`](fixtures/consistent-n3.json) | matrix | derived (constructed; CR exactly 0) |

@@ -105,32 +105,48 @@ function runFixture(file) {
     record(fx.id, `${mdef.key}.cr`, crChecked, b.cr.value, b.cr.tolerance);
   }
 
-  const children = fx.matrices.filter((m) => m.parent);
-  if (children.length === 0) return;
-  const rootDef = fx.matrices.find((m) => !m.parent);
-  const rootW = {};
-  rootDef.labels.forEach((lbl, i) => (rootW[lbl] = weights[rootDef.key][i]));
+  if (!fx.matrices.some((m) => m.parent)) return;
+  const defs = Object.fromEntries(fx.matrices.map((m) => [m.key, m]));
+
+  // global scale factor of a matrix: 1 at the root, otherwise the parent
+  // matrix's factor times the parent element's local weight
+  const factor = {};
+  function gfactor(key) {
+    if (!(key in factor)) {
+      const m = defs[key];
+      if (!m.parent) {
+        factor[key] = 1.0;
+      } else {
+        const p = defs[m.parent.matrix];
+        const plocal = weights[p.key][p.labels.indexOf(m.parent.element)];
+        factor[key] = gfactor(p.key) * plocal;
+      }
+    }
+    return factor[key];
+  }
 
   const gp = fx.expected.global_priorities;
   if (gp) {
-    const out = { ...rootW };
-    for (const m of children) {
-      const pw = out[m.parent.element];
-      delete out[m.parent.element];
-      m.labels.forEach((lbl, i) => (out[lbl] = pw * weights[m.key][i]));
-    }
-    const got = gp.labels.map((lbl) => out[lbl]);
+    // a covering criterion's global priority is its matrix's factor times
+    // its local weight (covering labels are unique to one matrix)
+    const got = gp.labels.map((lbl) => {
+      const m = fx.matrices.find((mm) => mm.labels.includes(lbl));
+      return gfactor(m.key) * weights[m.key][m.labels.indexOf(lbl)];
+    });
     const b = blockFor(gp);
     record(fx.id, "global_priorities", got, b.values, b.tolerance);
   }
 
   const syn = fx.expected.synthesis;
   if (syn) {
+    // sum the matrices that compare the alternatives, each scaled by its
+    // covering criterion's global priority
     const got = syn.labels.map(() => 0);
-    for (const m of children) {
-      const pw = rootW[m.parent.element];
+    for (const m of fx.matrices) {
+      if (!m.parent) continue;
+      if ([...m.labels].sort().join("|") !== [...syn.labels].sort().join("|")) continue;
       m.labels.forEach((lbl, i) => {
-        got[syn.labels.indexOf(lbl)] += pw * weights[m.key][i];
+        got[syn.labels.indexOf(lbl)] += gfactor(m.key) * weights[m.key][i];
       });
     }
     const b = blockFor(syn);

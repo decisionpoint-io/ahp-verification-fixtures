@@ -48,7 +48,10 @@ results = []  # (fixture, check, status)
 
 
 def entry_value(x):
-    return float(Fraction(x)) if isinstance(x, str) else float(x)
+    if isinstance(x, str):
+        num, _, den = x.partition("/")
+        return float(Fraction(num) / Fraction(den)) if den else float(Fraction(num))
+    return float(x)
 
 
 def comparisons(mdef):
@@ -107,34 +110,42 @@ def run_fixture(path):
         exp["_labels"] = mdef["labels"]
         check_matrix(fx["id"], key, c, exp, len(mdef["labels"]), ri_fixture)
 
-    # hierarchy composition: attach child Compare objects (renamed to their
-    # parent element) to the root, then read AHPy's composed weights
-    children = [(key, mdef) for key, (c, mdef) in cmps.items() if mdef.get("parent")]
-    if children:
-        root_key = next(k for k, (c, m) in cmps.items() if not m.get("parent"))
-        root_def = cmps[root_key][1]
-        kid_objs = []
-        for key, mdef in children:
-            kid_objs.append(ahpy.Compare(mdef["parent"]["element"], comparisons(mdef),
-                                         precision=PRECISION, random_index="saaty"))
-        root = ahpy.Compare(root_key, comparisons(root_def),
-                            precision=PRECISION, random_index="saaty")
-        root.add_children(kid_objs)
+    # hierarchy composition: rebuild the tree with fresh Compare objects
+    # (each child named after its parent element), attached bottom-up, then
+    # read AHPy's composed weights
+    defs = {m["key"]: m for m in fx["matrices"]}
+    children_of = {}
+    for m in fx["matrices"]:
+        if m.get("parent"):
+            children_of.setdefault(m["parent"]["matrix"], []).append(m["key"])
+    if children_of:
+        objs = {}
+
+        def build(key):
+            mdef = defs[key]
+            name = mdef["parent"]["element"] if mdef.get("parent") else key
+            c = ahpy.Compare(name, comparisons(mdef),
+                             precision=PRECISION, random_index="saaty")
+            kids = [build(k) for k in children_of.get(key, [])]
+            if kids:
+                c.add_children(kids)
+            objs[key] = c
+            return c
+
+        root_key = next(m["key"] for m in fx["matrices"] if not m.get("parent"))
+        root = build(root_key)
 
         gp = fx["expected"].get("global_priorities")
         if gp:
-            # composed leaf weights; elements without children keep their own
-            # (root-level) weight as their global priority
-            child_elements = {m["parent"]["element"] for _, m in children}
+            # a covering criterion's global priority is its matrix's
+            # global_weights entry (local_weights at the root, whose global
+            # scale is 1)
             got = []
-            label_map = {}
-            for (key, mdef), kid in zip(children, kid_objs):
-                for lbl in mdef["labels"]:
-                    label_map[lbl] = float(kid.global_weights[lbl])
-            for lbl in root_def["labels"]:
-                if lbl not in child_elements:
-                    label_map[lbl] = float(root.local_weights[lbl])
-            got = [label_map[lbl] for lbl in gp["labels"]]
+            for lbl in gp["labels"]:
+                key = next(m["key"] for m in fx["matrices"] if lbl in m["labels"])
+                obj = objs[key]
+                source = obj.global_weights if key != root_key else obj.local_weights
+                got.append(float(source[lbl]))
             record(fx["id"], "global_priorities", got, gp["values"], gp["tolerance"])
 
         syn = fx["expected"].get("synthesis")

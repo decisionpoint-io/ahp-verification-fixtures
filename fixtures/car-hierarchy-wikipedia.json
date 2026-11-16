@@ -1,16 +1,16 @@
 {
   "id": "car-hierarchy-wikipedia",
-  "title": "Wikipedia car example - criteria and subcriteria hierarchy",
-  "description": "The Jones family car-buying example that serves as Wikipedia's standing worked illustration of AHP. This fixture covers the judgment matrices the article publishes in text form: the four criteria compared with respect to the goal, the four subcriteria of Cost, and the two subcriteria of Capacity. (The article's alternative-level judgments are published only as images and are not included.) Expected local and global priorities are derived with the principal-eigenvector method; the global priorities the article displays are recorded in source_reported, where they are compared with the derived values.",
+  "title": "Wikipedia car example - complete hierarchy with alternatives",
+  "description": "The Jones family car-buying example that serves as Wikipedia's standing worked illustration of AHP, as a complete three-level hierarchy: four criteria, six subcriteria under Cost and Capacity, and six Honda models compared under all eight covering criteria (11 judgment matrices, 133 pairwise comparisons). The criteria and subcriteria judgments are stated in the article's prose; the alternative-level judgments are published in the article's judgment-table images and were transcribed from them (each matrix cites its image). Transcription was verified three ways: entry-by-entry against the images; by reproducing the article's own displayed local priorities at their printed precision under the column-normalization approximation; and against the interactive decision linked from the article's External links section, which contains identical judgments. Expected values are derived with the principal-eigenvector method, with column-normalization alternates for every inconsistent matrix; all values the article itself displays are preserved in source_reported, where their relationship to both methods is explained.",
   "category": "hierarchy",
   "source": {
     "citation": "'Analytic hierarchy process - car example', Wikipedia, https://en.wikipedia.org/wiki/Analytic_hierarchy_process_%E2%80%93_car_example (accessed 2026-11-16).",
-    "notes": "Criteria judgments are stated in the article's prose; the Cost and Capacity subcriteria judgments are stated in a footnote ('Purchase Price 2 over Fuel Cost, 5 over Maintenance Cost, and 3 over Resale Value; Fuel Cost 2 over Maintenance Cost and 2 over Resale Value; Maintenance Cost -2 vs. Resale Value'; 'Cargo Capacity -5 vs. Passenger Capacity' - negative values meaning the left element is less important)."
+    "notes": "Criteria judgments are in the article's prose; Cost and Capacity subcriteria judgments are in a footnote ('Purchase Price 2 over Fuel Cost, 5 over Maintenance Cost, and 3 over Resale Value; Fuel Cost 2 over Maintenance Cost and 2 over Resale Value; Maintenance Cost -2 vs. Resale Value'; 'Cargo Capacity -5 vs. Passenger Capacity' - negative values meaning the left element is less important). Alternative judgments are in the article's judgment-table images (named per matrix). Fuel Costs judgments are the article's MPG ratios to two decimals (e.g. 1.13 = 35/31 MPG); Purchase Price, Maintenance and Resale judgments include the non-integer intensities 1.5 and 1.2 exactly as the images show. An interactive version containing these judgments is linked from the article's External links: https://app.decisionpoint.io/ahp/processes/1u7fb2loziitknizzy7baon5t"
   },
   "scale": {
     "name": "saaty-1-9",
     "fractional_values_allowed": true,
-    "notes": "Judgments on Saaty's fundamental 1-9 scale; reciprocals (e.g. 1/3) and intermediate or fractional values are valid entries. Matrix entries may be given as numbers or as fraction strings such as \"1/3\"."
+    "notes": "Judgments on Saaty's fundamental 1-9 scale; reciprocals and fractional/decimal values are valid entries (the article's Fuel Costs judgments are decimal MPG ratios). Matrix entries may be numbers or fraction strings such as \"1/3\" or \"1/1.13\"."
   },
   "ri_table": {
     "name": "saaty",
@@ -61,7 +61,7 @@
           1
         ]
       ],
-      "description": "Importance of the four criteria with respect to the goal."
+      "description": "Importance of the four criteria with respect to the goal (stated in the article's prose)."
     },
     {
       "key": "cost_subcriteria",
@@ -122,6 +122,534 @@
         "matrix": "criteria",
         "element": "Capacity"
       }
+    },
+    {
+      "key": "purchase_price",
+      "labels": [
+        "Accord Sedan",
+        "Accord Hybrid",
+        "Pilot SUV",
+        "CR-V SUV",
+        "Element SUV",
+        "Odyssey Minivan"
+      ],
+      "rows": [
+        [
+          1,
+          9,
+          9,
+          1,
+          "1/2",
+          5
+        ],
+        [
+          "1/9",
+          1,
+          1,
+          "1/9",
+          "1/9",
+          "1/7"
+        ],
+        [
+          "1/9",
+          1,
+          1,
+          "1/9",
+          "1/9",
+          "1/7"
+        ],
+        [
+          1,
+          9,
+          9,
+          1,
+          "1/2",
+          5
+        ],
+        [
+          2,
+          9,
+          9,
+          2,
+          1,
+          6
+        ],
+        [
+          "1/5",
+          7,
+          7,
+          "1/5",
+          "1/6",
+          1
+        ]
+      ],
+      "parent": {
+        "matrix": "cost_subcriteria",
+        "element": "Purchase Price"
+      },
+      "description": "Alternatives with respect to Purchase Price (judgment table published as AHPJonesPurchasePrice04REV01.png in the article)."
+    },
+    {
+      "key": "fuel_costs",
+      "labels": [
+        "Accord Sedan",
+        "Accord Hybrid",
+        "Pilot SUV",
+        "CR-V SUV",
+        "Element SUV",
+        "Odyssey Minivan"
+      ],
+      "rows": [
+        [
+          1,
+          "1/1.13",
+          1.41,
+          1.15,
+          1.24,
+          1.19
+        ],
+        [
+          1.13,
+          1,
+          1.59,
+          1.3,
+          1.4,
+          1.35
+        ],
+        [
+          "1/1.41",
+          "1/1.59",
+          1,
+          "1/1.23",
+          "1/1.14",
+          "1/1.18"
+        ],
+        [
+          "1/1.15",
+          "1/1.3",
+          1.23,
+          1,
+          1.08,
+          1.04
+        ],
+        [
+          "1/1.24",
+          "1/1.4",
+          1.14,
+          "1/1.08",
+          1,
+          "1/1.04"
+        ],
+        [
+          "1/1.19",
+          "1/1.35",
+          1.18,
+          "1/1.04",
+          1.04,
+          1
+        ]
+      ],
+      "parent": {
+        "matrix": "cost_subcriteria",
+        "element": "Fuel Costs"
+      },
+      "description": "Alternatives with respect to Fuel Costs (judgment table published as AHPJonesFuelCost02.png in the article)."
+    },
+    {
+      "key": "maintenance_costs",
+      "labels": [
+        "Accord Sedan",
+        "Accord Hybrid",
+        "Pilot SUV",
+        "CR-V SUV",
+        "Element SUV",
+        "Odyssey Minivan"
+      ],
+      "rows": [
+        [
+          1,
+          1.5,
+          4,
+          4,
+          4,
+          5
+        ],
+        [
+          "1/1.5",
+          1,
+          4,
+          4,
+          4,
+          5
+        ],
+        [
+          "1/4",
+          "1/4",
+          1,
+          1,
+          1.2,
+          1
+        ],
+        [
+          "1/4",
+          "1/4",
+          1,
+          1,
+          1,
+          3
+        ],
+        [
+          "1/4",
+          "1/4",
+          "1/1.2",
+          1,
+          1,
+          2
+        ],
+        [
+          "1/5",
+          "1/5",
+          1,
+          "1/3",
+          "1/2",
+          1
+        ]
+      ],
+      "parent": {
+        "matrix": "cost_subcriteria",
+        "element": "Maintenance Costs"
+      },
+      "description": "Alternatives with respect to Maintenance Costs (judgment table published as AHPJonesMaintenanceCosts02.png in the article)."
+    },
+    {
+      "key": "resale_value",
+      "labels": [
+        "Accord Sedan",
+        "Accord Hybrid",
+        "Pilot SUV",
+        "CR-V SUV",
+        "Element SUV",
+        "Odyssey Minivan"
+      ],
+      "rows": [
+        [
+          1,
+          3,
+          4,
+          "1/2",
+          2,
+          2
+        ],
+        [
+          "1/3",
+          1,
+          2,
+          "1/5",
+          1,
+          1
+        ],
+        [
+          "1/4",
+          "1/2",
+          1,
+          "1/6",
+          "1/2",
+          "1/2"
+        ],
+        [
+          2,
+          5,
+          6,
+          1,
+          4,
+          4
+        ],
+        [
+          "1/2",
+          1,
+          2,
+          "1/4",
+          1,
+          1
+        ],
+        [
+          "1/2",
+          1,
+          2,
+          "1/4",
+          1,
+          1
+        ]
+      ],
+      "parent": {
+        "matrix": "cost_subcriteria",
+        "element": "Resale Value"
+      },
+      "description": "Alternatives with respect to Resale Value (judgment table published as AHPJonesResaleValue03.png in the article)."
+    },
+    {
+      "key": "safety",
+      "labels": [
+        "Accord Sedan",
+        "Accord Hybrid",
+        "Pilot SUV",
+        "CR-V SUV",
+        "Element SUV",
+        "Odyssey Minivan"
+      ],
+      "rows": [
+        [
+          1,
+          1,
+          5,
+          7,
+          9,
+          "1/3"
+        ],
+        [
+          1,
+          1,
+          5,
+          7,
+          9,
+          "1/3"
+        ],
+        [
+          "1/5",
+          "1/5",
+          1,
+          2,
+          9,
+          "1/8"
+        ],
+        [
+          "1/7",
+          "1/7",
+          "1/2",
+          1,
+          2,
+          "1/8"
+        ],
+        [
+          "1/9",
+          "1/9",
+          "1/9",
+          "1/2",
+          1,
+          "1/9"
+        ],
+        [
+          3,
+          3,
+          8,
+          8,
+          9,
+          1
+        ]
+      ],
+      "parent": {
+        "matrix": "criteria",
+        "element": "Safety"
+      },
+      "description": "Alternatives with respect to Safety (judgment table published as AHPJonesSafety02.png in the article)."
+    },
+    {
+      "key": "style",
+      "labels": [
+        "Accord Sedan",
+        "Accord Hybrid",
+        "Pilot SUV",
+        "CR-V SUV",
+        "Element SUV",
+        "Odyssey Minivan"
+      ],
+      "rows": [
+        [
+          1,
+          1,
+          7,
+          5,
+          9,
+          6
+        ],
+        [
+          1,
+          1,
+          7,
+          5,
+          9,
+          6
+        ],
+        [
+          "1/7",
+          "1/7",
+          1,
+          "1/6",
+          3,
+          "1/3"
+        ],
+        [
+          "1/5",
+          "1/5",
+          6,
+          1,
+          7,
+          5
+        ],
+        [
+          "1/9",
+          "1/9",
+          "1/3",
+          "1/7",
+          1,
+          "1/5"
+        ],
+        [
+          "1/6",
+          "1/6",
+          3,
+          "1/5",
+          5,
+          1
+        ]
+      ],
+      "parent": {
+        "matrix": "criteria",
+        "element": "Style"
+      },
+      "description": "Alternatives with respect to Style (judgment table published as AHPJonesStyle01.png in the article)."
+    },
+    {
+      "key": "cargo_capacity",
+      "labels": [
+        "Accord Sedan",
+        "Accord Hybrid",
+        "Pilot SUV",
+        "CR-V SUV",
+        "Element SUV",
+        "Odyssey Minivan"
+      ],
+      "rows": [
+        [
+          1,
+          1,
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/3"
+        ],
+        [
+          1,
+          1,
+          "1/2",
+          "1/2",
+          "1/2",
+          "1/3"
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          1,
+          "1/2"
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          1,
+          "1/2"
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          1,
+          "1/2"
+        ],
+        [
+          3,
+          3,
+          2,
+          2,
+          2,
+          1
+        ]
+      ],
+      "parent": {
+        "matrix": "capacity_subcriteria",
+        "element": "Cargo Capacity"
+      },
+      "description": "Alternatives with respect to Cargo Capacity (judgment table published as AHPJonesCargoCapacity02.png in the article)."
+    },
+    {
+      "key": "passenger_capacity",
+      "labels": [
+        "Accord Sedan",
+        "Accord Hybrid",
+        "Pilot SUV",
+        "CR-V SUV",
+        "Element SUV",
+        "Odyssey Minivan"
+      ],
+      "rows": [
+        [
+          1,
+          1,
+          "1/2",
+          1,
+          3,
+          "1/2"
+        ],
+        [
+          1,
+          1,
+          "1/2",
+          1,
+          3,
+          "1/2"
+        ],
+        [
+          2,
+          2,
+          1,
+          2,
+          6,
+          1
+        ],
+        [
+          1,
+          1,
+          "1/2",
+          1,
+          3,
+          "1/2"
+        ],
+        [
+          "1/3",
+          "1/3",
+          "1/6",
+          "1/3",
+          1,
+          "1/6"
+        ],
+        [
+          2,
+          2,
+          1,
+          2,
+          6,
+          1
+        ]
+      ],
+      "parent": {
+        "matrix": "capacity_subcriteria",
+        "element": "Passenger Capacity"
+      },
+      "description": "Alternatives with respect to Passenger Capacity (judgment table published as AHPJonesPassengerCapacity02.png in the article)."
     }
   ],
   "expected": {
@@ -303,6 +831,566 @@
             "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
           }
         }
+      },
+      "purchase_price": {
+        "priorities": {
+          "method": "principal-eigenvector",
+          "values": [
+            0.246175,
+            0.024554,
+            0.024554,
+            0.246175,
+            0.365751,
+            0.09279
+          ],
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "lambda_max": {
+          "value": 6.422871,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "ci": {
+          "value": 0.084574,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "cr": {
+          "value": 0.068205,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "alternates": [
+          {
+            "method": "column-normalization-mean",
+            "priorities": {
+              "values": [
+                0.241803,
+                0.026764,
+                0.026764,
+                0.241803,
+                0.361706,
+                0.10116
+              ],
+              "tolerance": 1e-06
+            },
+            "lambda_max": {
+              "value": 6.450445,
+              "tolerance": 1e-06
+            },
+            "ci": {
+              "value": 0.090089,
+              "tolerance": 1e-06
+            },
+            "cr": {
+              "value": 0.072652,
+              "tolerance": 1e-06
+            },
+            "provenance": {
+              "type": "derived",
+              "method": "Column-normalization mean (Saaty's approximate method): normalize each column of the matrix to sum to 1, then average across columns; lambda_max is estimated as the mean of (A*w)_i / w_i. This is the prioritization method implemented by, among others, the npm 'ahp' package. Reproduce with tools/compute_expected.py."
+            }
+          }
+        ]
+      },
+      "fuel_costs": {
+        "priorities": {
+          "method": "principal-eigenvector",
+          "values": [
+            0.186718,
+            0.211041,
+            0.132435,
+            0.16262,
+            0.150673,
+            0.156514
+          ],
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "lambda_max": {
+          "value": 6.000005,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "ci": {
+          "value": 1e-06,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "cr": {
+          "value": 1e-06,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "alternates": [
+          {
+            "method": "column-normalization-mean",
+            "priorities": {
+              "values": [
+                0.186718,
+                0.211041,
+                0.132435,
+                0.16262,
+                0.150673,
+                0.156514
+              ],
+              "tolerance": 1e-06
+            },
+            "lambda_max": {
+              "value": 6.000005,
+              "tolerance": 1e-06
+            },
+            "ci": {
+              "value": 1e-06,
+              "tolerance": 1e-06
+            },
+            "cr": {
+              "value": 1e-06,
+              "tolerance": 1e-06
+            },
+            "provenance": {
+              "type": "derived",
+              "method": "Column-normalization mean (Saaty's approximate method): normalize each column of the matrix to sum to 1, then average across columns; lambda_max is estimated as the mean of (A*w)_i / w_i. This is the prioritization method implemented by, among others, the npm 'ahp' package. Reproduce with tools/compute_expected.py."
+            }
+          }
+        ]
+      },
+      "maintenance_costs": {
+        "priorities": {
+          "method": "principal-eigenvector",
+          "values": [
+            0.358199,
+            0.31325,
+            0.0837,
+            0.099533,
+            0.087913,
+            0.057406
+          ],
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "lambda_max": {
+          "value": 6.140965,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "ci": {
+          "value": 0.028193,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "cr": {
+          "value": 0.022736,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "alternates": [
+          {
+            "method": "column-normalization-mean",
+            "priorities": {
+              "values": [
+                0.357319,
+                0.311933,
+                0.083689,
+                0.100448,
+                0.088297,
+                0.058314
+              ],
+              "tolerance": 1e-06
+            },
+            "lambda_max": {
+              "value": 6.142312,
+              "tolerance": 1e-06
+            },
+            "ci": {
+              "value": 0.028462,
+              "tolerance": 1e-06
+            },
+            "cr": {
+              "value": 0.022954,
+              "tolerance": 1e-06
+            },
+            "provenance": {
+              "type": "derived",
+              "method": "Column-normalization mean (Saaty's approximate method): normalize each column of the matrix to sum to 1, then average across columns; lambda_max is estimated as the mean of (A*w)_i / w_i. This is the prioritization method implemented by, among others, the npm 'ahp' package. Reproduce with tools/compute_expected.py."
+            }
+          }
+        ]
+      },
+      "resale_value": {
+        "priorities": {
+          "method": "principal-eigenvector",
+          "values": [
+            0.224918,
+            0.094928,
+            0.055167,
+            0.415806,
+            0.10459,
+            0.10459
+          ],
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "lambda_max": {
+          "value": 6.031681,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "ci": {
+          "value": 0.006336,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "cr": {
+          "value": 0.00511,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "alternates": [
+          {
+            "method": "column-normalization-mean",
+            "priorities": {
+              "values": [
+                0.224444,
+                0.095394,
+                0.055422,
+                0.414788,
+                0.104976,
+                0.104976
+              ],
+              "tolerance": 1e-06
+            },
+            "lambda_max": {
+              "value": 6.03173,
+              "tolerance": 1e-06
+            },
+            "ci": {
+              "value": 0.006346,
+              "tolerance": 1e-06
+            },
+            "cr": {
+              "value": 0.005118,
+              "tolerance": 1e-06
+            },
+            "provenance": {
+              "type": "derived",
+              "method": "Column-normalization mean (Saaty's approximate method): normalize each column of the matrix to sum to 1, then average across columns; lambda_max is estimated as the mean of (A*w)_i / w_i. This is the prioritization method implemented by, among others, the npm 'ahp' package. Reproduce with tools/compute_expected.py."
+            }
+          }
+        ]
+      },
+      "safety": {
+        "priorities": {
+          "method": "principal-eigenvector",
+          "values": [
+            0.216244,
+            0.216244,
+            0.07516,
+            0.03603,
+            0.022295,
+            0.434027
+          ],
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "lambda_max": {
+          "value": 6.501119,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "ci": {
+          "value": 0.100224,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "cr": {
+          "value": 0.080826,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "alternates": [
+          {
+            "method": "column-normalization-mean",
+            "priorities": {
+              "values": [
+                0.215221,
+                0.215221,
+                0.08253,
+                0.038337,
+                0.024409,
+                0.424282
+              ],
+              "tolerance": 1e-06
+            },
+            "lambda_max": {
+              "value": 6.53166,
+              "tolerance": 1e-06
+            },
+            "ci": {
+              "value": 0.106332,
+              "tolerance": 1e-06
+            },
+            "cr": {
+              "value": 0.085752,
+              "tolerance": 1e-06
+            },
+            "provenance": {
+              "type": "derived",
+              "method": "Column-normalization mean (Saaty's approximate method): normalize each column of the matrix to sum to 1, then average across columns; lambda_max is estimated as the mean of (A*w)_i / w_i. This is the prioritization method implemented by, among others, the npm 'ahp' package. Reproduce with tools/compute_expected.py."
+            }
+          }
+        ]
+      },
+      "style": {
+        "priorities": {
+          "method": "principal-eigenvector",
+          "values": [
+            0.357859,
+            0.357859,
+            0.038861,
+            0.155085,
+            0.022752,
+            0.067583
+          ],
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "lambda_max": {
+          "value": 6.632331,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "ci": {
+          "value": 0.126466,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "cr": {
+          "value": 0.101989,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "alternates": [
+          {
+            "method": "column-normalization-mean",
+            "priorities": {
+              "values": [
+                0.345619,
+                0.345619,
+                0.045137,
+                0.160294,
+                0.025185,
+                0.078146
+              ],
+              "tolerance": 1e-06
+            },
+            "lambda_max": {
+              "value": 6.669449,
+              "tolerance": 1e-06
+            },
+            "ci": {
+              "value": 0.13389,
+              "tolerance": 1e-06
+            },
+            "cr": {
+              "value": 0.107976,
+              "tolerance": 1e-06
+            },
+            "provenance": {
+              "type": "derived",
+              "method": "Column-normalization mean (Saaty's approximate method): normalize each column of the matrix to sum to 1, then average across columns; lambda_max is estimated as the mean of (A*w)_i / w_i. This is the prioritization method implemented by, among others, the npm 'ahp' package. Reproduce with tools/compute_expected.py."
+            }
+          }
+        ]
+      },
+      "cargo_capacity": {
+        "priorities": {
+          "method": "principal-eigenvector",
+          "values": [
+            0.089398,
+            0.089398,
+            0.170187,
+            0.170187,
+            0.170187,
+            0.310643
+          ],
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "lambda_max": {
+          "value": 6.013825,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "ci": {
+          "value": 0.002765,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "cr": {
+          "value": 0.00223,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "alternates": [
+          {
+            "method": "column-normalization-mean",
+            "priorities": {
+              "values": [
+                0.089514,
+                0.089514,
+                0.170255,
+                0.170255,
+                0.170255,
+                0.310207
+              ],
+              "tolerance": 1e-06
+            },
+            "lambda_max": {
+              "value": 6.013818,
+              "tolerance": 1e-06
+            },
+            "ci": {
+              "value": 0.002764,
+              "tolerance": 1e-06
+            },
+            "cr": {
+              "value": 0.002229,
+              "tolerance": 1e-06
+            },
+            "provenance": {
+              "type": "derived",
+              "method": "Column-normalization mean (Saaty's approximate method): normalize each column of the matrix to sum to 1, then average across columns; lambda_max is estimated as the mean of (A*w)_i / w_i. This is the prioritization method implemented by, among others, the npm 'ahp' package. Reproduce with tools/compute_expected.py."
+            }
+          }
+        ]
+      },
+      "passenger_capacity": {
+        "priorities": {
+          "method": "principal-eigenvector",
+          "values": [
+            0.136364,
+            0.136364,
+            0.272727,
+            0.136364,
+            0.045455,
+            0.272727
+          ],
+          "tolerance": 1e-06,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "lambda_max": {
+          "value": 6.0,
+          "tolerance": 1e-09,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "ci": {
+          "value": 0.0,
+          "tolerance": 1e-09,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "cr": {
+          "value": 0.0,
+          "tolerance": 1e-09,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        }
       }
     },
     "global_priorities": {
@@ -330,7 +1418,7 @@
       "tolerance": 0.0001,
       "provenance": {
         "type": "derived",
-        "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py. Global priorities are the product of each subcriterion's local priority and its parent criterion's priority; Safety and Style have no subcriteria, so their global priorities equal their criteria priorities."
+        "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py. Global priorities multiply each covering criterion's local priority along its path to the goal; Safety and Style have no subcriteria, so their global priorities equal their criteria priorities."
       },
       "alternates": [
         {
@@ -352,11 +1440,59 @@
           }
         }
       ]
+    },
+    "synthesis": {
+      "method": "principal-eigenvector",
+      "labels": [
+        "Accord Sedan",
+        "Accord Hybrid",
+        "Pilot SUV",
+        "CR-V SUV",
+        "Element SUV",
+        "Odyssey Minivan"
+      ],
+      "values": [
+        0.214724,
+        0.149739,
+        0.10605,
+        0.166535,
+        0.143819,
+        0.219133
+      ],
+      "tolerance": 0.0001,
+      "provenance": {
+        "type": "derived",
+        "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py. Final priorities are the sum over the eight covering criteria of the criterion's global priority times the alternative's local priority under it."
+      },
+      "alternates": [
+        {
+          "method": "column-normalization-mean",
+          "values": [
+            0.212849,
+            0.150302,
+            0.108874,
+            0.165314,
+            0.142155,
+            0.220506
+          ],
+          "tolerance": 1e-06,
+          "provenance": {
+            "type": "derived",
+            "method": "Column-normalization mean (Saaty's approximate method): normalize each column of the matrix to sum to 1, then average across columns; lambda_max is estimated as the mean of (A*w)_i / w_i. This is the prioritization method implemented by, among others, the npm 'ahp' package. Reproduce with tools/compute_expected.py."
+          }
+        }
+      ]
     }
   },
   "source_reported": {
-    "explanation": "The article displays global priorities of Purchase Price 0.246, Fuel Costs 0.127, Maintenance Costs 0.050, Resale Value 0.081, Safety 0.237, Style 0.042, Cargo Capacity 0.036, Passenger Capacity 0.181 (summing to 1.000). These differ from the exact principal-eigenvector synthesis by up to about 0.003 and agree closely with the column-normalization approximation (see the alternate values), which suggests the software used to prepare the article applied an approximate prioritization method. The article does not state which method was used. Neither set of values is wrong; they are the outputs of different documented prioritization methods applied to the same judgments.",
+    "explanation": "All numeric results the article displays are consistent with the column-normalization approximation: the alternate expected values in this fixture reproduce the article's local priorities at their printed three decimals, its global priorities within 0.002, and its final priorities (from the AHPJonesFinalPriorities.png synthesis table) within 0.002. The exact principal-eigenvector results differ from the displayed values by up to about 0.003 at the factor level and 0.003 at the final level, without changing the ranking (Odyssey first, Accord Sedan second, then CR-V, Accord Hybrid, Element, Pilot). The article does not state which prioritization method its software used. Neither set of values is wrong; they are the outputs of different documented methods applied to the same judgments.",
     "values": {
+      "criteria_priorities": {
+        "Cost": 0.504,
+        "Safety": 0.237,
+        "Style": 0.042,
+        "Capacity": 0.217
+      },
       "global_priorities": {
         "Purchase Price": 0.246,
         "Fuel Costs": 0.127,
@@ -366,8 +1502,82 @@
         "Style": 0.042,
         "Cargo Capacity": 0.036,
         "Passenger Capacity": 0.181
+      },
+      "local_priorities": {
+        "purchase_price": {
+          "Accord Sedan": 0.242,
+          "Accord Hybrid": 0.027,
+          "Pilot SUV": 0.027,
+          "CR-V SUV": 0.242,
+          "Element SUV": 0.362,
+          "Odyssey Minivan": 0.1
+        },
+        "fuel_costs": {
+          "Accord Sedan": 0.188,
+          "Accord Hybrid": 0.212,
+          "Pilot SUV": 0.133,
+          "CR-V SUV": 0.16,
+          "Element SUV": 0.151,
+          "Odyssey Minivan": 0.156
+        },
+        "maintenance_costs": {
+          "Accord Sedan": 0.357,
+          "Accord Hybrid": 0.312,
+          "Pilot SUV": 0.084,
+          "CR-V SUV": 0.1,
+          "Element SUV": 0.089,
+          "Odyssey Minivan": 0.058
+        },
+        "resale_value": {
+          "Accord Sedan": 0.225,
+          "Accord Hybrid": 0.095,
+          "Pilot SUV": 0.055,
+          "CR-V SUV": 0.415,
+          "Element SUV": 0.105,
+          "Odyssey Minivan": 0.105
+        },
+        "safety": {
+          "Accord Sedan": 0.215,
+          "Accord Hybrid": 0.215,
+          "Pilot SUV": 0.083,
+          "CR-V SUV": 0.038,
+          "Element SUV": 0.025,
+          "Odyssey Minivan": 0.424
+        },
+        "style": {
+          "Accord Sedan": 0.346,
+          "Accord Hybrid": 0.346,
+          "Pilot SUV": 0.045,
+          "CR-V SUV": 0.16,
+          "Element SUV": 0.025,
+          "Odyssey Minivan": 0.078
+        },
+        "cargo_capacity": {
+          "Accord Sedan": 0.09,
+          "Accord Hybrid": 0.09,
+          "Pilot SUV": 0.17,
+          "CR-V SUV": 0.17,
+          "Element SUV": 0.17,
+          "Odyssey Minivan": 0.31
+        },
+        "passenger_capacity": {
+          "Accord Sedan": 0.136,
+          "Accord Hybrid": 0.136,
+          "Pilot SUV": 0.273,
+          "CR-V SUV": 0.136,
+          "Element SUV": 0.046,
+          "Odyssey Minivan": 0.273
+        }
+      },
+      "final_priorities": {
+        "Accord Sedan": 0.213,
+        "Accord Hybrid": 0.15,
+        "Pilot SUV": 0.109,
+        "CR-V SUV": 0.165,
+        "Element SUV": 0.143,
+        "Odyssey Minivan": 0.22
       }
     },
-    "citation": "'Analytic hierarchy process - car example', Wikipedia, https://en.wikipedia.org/wiki/Analytic_hierarchy_process_%E2%80%93_car_example (accessed 2026-11-16)."
+    "citation": "'Analytic hierarchy process - car example', Wikipedia, https://en.wikipedia.org/wiki/Analytic_hierarchy_process_%E2%80%93_car_example (accessed 2026-11-16). Criteria and global priorities from the article's text and synthesis table; local priorities from the article's per-criterion tables; final priorities from the AHPJonesFinalPriorities.png image."
   }
 }
