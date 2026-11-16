@@ -1,0 +1,13 @@
+{
+  "name": "ahp-verification-runner-js-ahp-npm",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Runs the npm 'ahp' package against the AHP verification fixtures.",
+  "license": "MIT",
+  "scripts": {
+    "test": "node runner.js"
+  },
+  "dependencies": {
+    "ahp": "2.4.2"
+  }
+}
