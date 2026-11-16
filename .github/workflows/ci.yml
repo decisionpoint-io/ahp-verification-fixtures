@@ -30,7 +30,7 @@ jobs:
       - run: pip install -r runners/python-ahpy/requirements.txt
       - run: python3 runners/python-ahpy/runner.py
 
-  runner-js-ahp-npm:
+  runner-npm-ahp:
     name: Runner - npm ahp (JavaScript)
     runs-on: ubuntu-latest
     steps:
@@ -39,6 +39,6 @@ jobs:
         with:
           node-version: "22"
       - run: npm ci
-        working-directory: runners/js-ahp-npm
+        working-directory: runners/npm-ahp
       - run: node runner.js
-        working-directory: runners/js-ahp-npm
+        working-directory: runners/npm-ahp

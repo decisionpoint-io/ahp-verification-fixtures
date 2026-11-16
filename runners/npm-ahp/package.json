@@ -1,5 +1,5 @@
 {
-  "name": "ahp-verification-runner-js-ahp-npm",
+  "name": "ahp-verification-runner-npm-ahp",
   "private": true,
   "version": "1.0.0",
   "description": "Runs the npm 'ahp' package against the AHP verification fixtures.",

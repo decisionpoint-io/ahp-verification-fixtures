@@ -58,7 +58,7 @@ can install and that run in CI on every push:
 
 * [`runners/python-ahpy`](runners/python-ahpy/) — the AHPy library
   (principal eigenvector; its own RI tables, cross-derived transparently);
-* [`runners/js-ahp-npm`](runners/js-ahp-npm/) — the MIT npm `ahp` package,
+* [`runners/npm-ahp`](runners/npm-ahp/) — the MIT npm `ahp` package,
   the library used by the Comcast AHP Tool (column-normalization mean;
   classic Saaty RI table).
 
@@ -90,7 +90,7 @@ python3 tools/compute_expected.py    # recompute all derived values
 pip install -r runners/python-ahpy/requirements.txt
 python3 runners/python-ahpy/runner.py
 
-cd runners/js-ahp-npm && npm install && node runner.js
+cd runners/npm-ahp && npm install && node runner.js
 ```
 
 ## How to cite
