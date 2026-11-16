@@ -1,0 +1,77 @@
+AHP-OS capture session transcript — fixture drinks-saaty-2008
+==============================================================
+
+Date: 2026-11-16
+Tool: AHP-OS "AHP Priority Calculator", https://bpmsg.com/ahp/ahp-calc.php
+Page footer: "AHP-OS author: Klaus D. Goepel, BPMSG. Last update: Feb 26, 2022 Rev: 172"
+Access: public page, no login used.
+Method: model building and judgment entry automated in the operator's browser;
+every entered judgment was read back from the form before calculation (list
+below); outputs transcribed verbatim from the results page.
+
+Setup
+-----
+Number of criteria: 7
+Names: Coffee, Wine, Tea, Beer, Sodas, Milk, Water
+
+Judgments as read back from the form before calculation
+-------------------------------------------------------
+ 1  Coffee vs Wine:  Coffee x9
+ 2  Coffee vs Tea:   Coffee x5
+ 3  Coffee vs Beer:  Coffee x2
+ 4  Coffee vs Sodas: equal (1)
+ 5  Coffee vs Milk:  equal (1)
+ 6  Coffee vs Water: Water x2
+ 7  Wine vs Tea:     Tea x3
+ 8  Wine vs Beer:    Beer x9
+ 9  Wine vs Sodas:   Sodas x9
+10  Wine vs Milk:    Milk x9
+11  Wine vs Water:   Water x9
+12  Tea vs Beer:     Beer x3
+13  Tea vs Sodas:    Sodas x4
+14  Tea vs Milk:     Milk x3
+15  Tea vs Water:    Water x9
+16  Beer vs Sodas:   Sodas x2
+17  Beer vs Milk:    equal (1)
+18  Beer vs Water:   Water x3
+19  Sodas vs Milk:   Sodas x2
+20  Sodas vs Water:  Water x2
+21  Milk vs Water:   Water x3
+
+Results page text (verbatim)
+----------------------------
+Resulting Priorities
+Priorities
+These are the resulting weights for the criteria based on your pairwise comparisons:
+Cat   Priority  Rank  (+)   (-)
+1 Coffee  17.7%  3  3.3%  3.3%
+2 Wine     1.9%  7  0.8%  0.8%
+3 Tea      4.2%  6  0.7%  0.7%
+4 Beer    11.6%  5  2.7%  2.7%
+5 Sodas   19.0%  2  3.6%  3.6%
+6 Milk    12.9%  4  3.1%  3.1%
+7 Water   32.7%  1  7.3%  7.3%
+
+Decision Matrix
+The resulting weights are based on the principal eigenvector of the decision matrix:
+    1     2     3     4     5     6     7
+1   1     9.00  5.00  2.00  1.00  1.00  0.50
+2   0.11  1     0.33  0.11  0.11  0.11  0.11
+3   0.20  3.00  1     0.33  0.25  0.33  0.11
+4   0.50  9.00  3.00  1     0.50  1.00  0.33
+5   1.00  9.00  4.00  2.00  1     2.00  0.50
+6   1.00  9.00  3.00  1.00  0.50  1     0.33
+7   2.00  9.00  9.00  3.00  2.00  3.00  1
+
+Number of comparisons = 21
+Consistency Ratio CR = 2.2%
+Principal eigen value = 7.177
+Eigenvector solution: 4 iterations, delta = 2.4E-8
+
+Notes
+-----
+- The judgment table also displayed "CR = 2.2% OK" above the Calculate button.
+- The (+) and (-) columns are the calculator's uncertainty estimates; they have
+  no counterpart in the fixture and were not compared.
+- The page offers a "Download_(.csv)" export of the result; if exported during
+  the manual check, place it in this artifacts directory.

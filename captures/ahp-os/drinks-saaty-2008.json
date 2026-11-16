@@ -1,0 +1,51 @@
+{
+  "fixture_id": "drinks-saaty-2008",
+  "tool": {
+    "name": "AHP-OS (AHP Online System) - AHP Priority Calculator",
+    "version": "ahp-calc.php Rev 172, last update 2022-02-26 (from the page footer; AHP-OS does not display a global version number)",
+    "platform": "web (hosted at bpmsg.com)"
+  },
+  "captured": {
+    "date": "2026-11-16",
+    "by": "Philip Healy",
+    "method": "hosted-session",
+    "notes": "Model building and judgment entry were automated in the operator's browser; every entered judgment was read back from the form and checked against the fixture before calculation, and the outputs were transcribed verbatim from the results page (see the transcript artifact). The operator manually checked the session and outputs before this capture was committed. The calculator is publicly accessible; no login was used."
+  },
+  "outputs": {
+    "matrices": {
+      "drinks": {
+        "priorities": [0.177, 0.019, 0.042, 0.116, 0.190, 0.129, 0.327],
+        "lambda_max": 7.177,
+        "ci": null,
+        "cr": 0.022,
+        "notes": "Priorities are displayed as percentages to one decimal (17.7%, 1.9%, 4.2%, 11.6%, 19.0%, 12.9%, 32.7%) and transcribed as fractions. CR is displayed as '2.2%'. CI is not displayed. The tool also displays per-priority uncertainty estimates ('(+)'/'(-)' columns) and an 'Eigenvector solution: 4 iterations, delta = 2.4E-8' line, which have no counterpart in the fixture."
+      }
+    }
+  },
+  "ri_table": {
+    "name": "alonso-lamata",
+    "source": "The calculator's documentation page (bpmsg.com/ahp-online-calculator) footnotes the consistency ratio directly to Alonso & Lamata (2006); Goepel's implementation paper (K. D. Goepel, 'Implementing the analytic hierarchy process as a standard method for multi-criteria decision making in corporate enterprises', IJAHP 10(3), 2018) states AHP-OS uses Saaty's CR or the Alonso-Lamata modification for the eigenvector method. At the tool's display precision the distinction is not visible for this matrix: CI/RI gives 0.0223 under the Saaty (1980) table and 0.0219 under Alonso-Lamata, both of which display as 2.2%."
+  },
+  "prioritization_method": "principal-eigenvector",
+  "matches_expected": {
+    "matrices.drinks.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "The displayed percentages equal the fixture's published expected priorities exactly at the tool's display precision (three decimal places as fractions)."
+    },
+    "matrices.drinks.lambda_max": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Tool displays 7.177 (three decimals); expected derived value is 7.176629. Tolerance reflects the display precision."
+    },
+    "matrices.drinks.cr": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Displayed '2.2%' equals the fixture's published CR 0.022. See ri_table: at this display precision the value is the same under either RI basis."
+    }
+  },
+  "reverify": {
+    "instructions": "Open https://bpmsg.com/ahp/ahp-calc.php (no account needed). Enter 7 as the number of criteria and click Go; name them Coffee, Wine, Tea, Beer, Sodas, Milk, Water and click OK. Enter the 21 pairwise judgments from the fixture's matrix (upper triangle, row by row; for entries below 1, select the second element and the reciprocal intensity - e.g. Coffee vs Water 1/2 means selecting Water with intensity 2; the full list is in the transcript artifact). Click 'Check Consistency' / 'Calculate'. The results section shows the priorities, 'Consistency Ratio CR' and 'Principal eigen value' transcribed here. The result can also be exported with the 'Download_(.csv)' button.",
+    "artifacts": ["artifacts/drinks-saaty-2008-transcript.txt"]
+  }
+}
