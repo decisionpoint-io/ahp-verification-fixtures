@@ -1,0 +1,191 @@
+{
+  "id": "drinks-saaty-2008",
+  "title": "Saaty drink-consumption validation matrix (USA)",
+  "description": "Saaty's classic validation example: an audience estimated, by pairwise comparison, the relative consumption of seven drinks in the USA. The paper publishes the derived priority vector (0.177, 0.019, 0.042, 0.116, 0.190, 0.129, 0.327) and a consistency ratio of 0.022, and compares them with actual relative consumption from the US Statistical Abstracts (0.180, 0.010, 0.040, 0.120, 0.180, 0.140, 0.330). This fixture also serves as a known-CR inconsistent matrix from the literature: the CR of 0.022 is published in the source alongside the matrix.",
+  "category": "matrix",
+  "source": {
+    "citation": "T. L. Saaty, 'Decision making with the analytic hierarchy process', International Journal of Services Sciences 1(1), 2008, pp. 83-98; Table 2, p. 86.",
+    "url": "https://doi.org/10.1504/IJSSCI.2008.017590",
+    "notes": "The table as printed shows (Wine, Tea) = 1/3 but (Tea, Wine) = 2, which is not reciprocal. The reciprocal reading (Tea, Wine) = 3 reproduces the published priorities and CR exactly at the published precision, and the paper's text states that reciprocal entry is automatic; this fixture therefore uses (Tea, Wine) = 3. See docs/derivations.md."
+  },
+  "scale": {
+    "name": "saaty-1-9",
+    "fractional_values_allowed": true,
+    "notes": "Judgments on Saaty's fundamental 1-9 scale; reciprocals (e.g. 1/3) and intermediate or fractional values are valid entries. Matrix entries may be given as numbers or as fraction strings such as \"1/3\"."
+  },
+  "ri_table": {
+    "name": "saaty",
+    "values": {
+      "3": 0.58,
+      "4": 0.9,
+      "5": 1.12,
+      "6": 1.24,
+      "7": 1.32,
+      "8": 1.41,
+      "9": 1.45,
+      "10": 1.49
+    },
+    "source": "T. L. Saaty, The Analytic Hierarchy Process, McGraw-Hill, 1980. Values as tabulated in J. A. Alonso and M. T. Lamata, 'Consistency in the analytic hierarchy process: a new approach', International Journal of Uncertainty, Fuzziness and Knowledge-Based Systems 14(4), 2006, Table 1 (Wharton column)."
+  },
+  "matrices": [
+    {
+      "key": "drinks",
+      "labels": [
+        "Coffee",
+        "Wine",
+        "Tea",
+        "Beer",
+        "Sodas",
+        "Milk",
+        "Water"
+      ],
+      "rows": [
+        [
+          1,
+          9,
+          5,
+          2,
+          1,
+          1,
+          "1/2"
+        ],
+        [
+          "1/9",
+          1,
+          "1/3",
+          "1/9",
+          "1/9",
+          "1/9",
+          "1/9"
+        ],
+        [
+          "1/5",
+          3,
+          1,
+          "1/3",
+          "1/4",
+          "1/3",
+          "1/9"
+        ],
+        [
+          "1/2",
+          9,
+          3,
+          1,
+          "1/2",
+          1,
+          "1/3"
+        ],
+        [
+          1,
+          9,
+          4,
+          2,
+          1,
+          2,
+          "1/2"
+        ],
+        [
+          1,
+          9,
+          3,
+          1,
+          "1/2",
+          1,
+          "1/3"
+        ],
+        [
+          2,
+          9,
+          9,
+          3,
+          2,
+          3,
+          1
+        ]
+      ],
+      "description": "Which drink is consumed more in the USA?"
+    }
+  ],
+  "expected": {
+    "matrices": {
+      "drinks": {
+        "priorities": {
+          "method": "principal-eigenvector",
+          "values": [
+            0.177,
+            0.019,
+            0.042,
+            0.116,
+            0.19,
+            0.129,
+            0.327
+          ],
+          "tolerance": 0.0005,
+          "provenance": {
+            "type": "published",
+            "citation": "T. L. Saaty, 'Decision making with the analytic hierarchy process', International Journal of Services Sciences 1(1), 2008, pp. 83-98; Table 2, p. 86."
+          }
+        },
+        "lambda_max": {
+          "value": 7.176629,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "ci": {
+          "value": 0.029438,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "cr": {
+          "value": 0.022,
+          "tolerance": 0.0005,
+          "provenance": {
+            "type": "published",
+            "citation": "T. L. Saaty, 'Decision making with the analytic hierarchy process', International Journal of Services Sciences 1(1), 2008, pp. 83-98; Table 2, p. 86."
+          }
+        },
+        "alternates": [
+          {
+            "method": "column-normalization-mean",
+            "priorities": {
+              "values": [
+                0.17756,
+                0.019542,
+                0.042139,
+                0.117298,
+                0.188838,
+                0.12959,
+                0.325032
+              ],
+              "tolerance": 1e-06
+            },
+            "lambda_max": {
+              "value": 7.178016,
+              "tolerance": 1e-06
+            },
+            "ci": {
+              "value": 0.029669,
+              "tolerance": 1e-06
+            },
+            "cr": {
+              "value": 0.022477,
+              "tolerance": 1e-06
+            },
+            "provenance": {
+              "type": "derived",
+              "method": "Column-normalization mean (Saaty's approximate method): normalize each column of the matrix to sum to 1, then average across columns; lambda_max is estimated as the mean of (A*w)_i / w_i. This is the prioritization method implemented by, among others, the npm 'ahp' package. Reproduce with tools/compute_expected.py."
+            }
+          }
+        ]
+      }
+    }
+  },
+  "notes": "Actual relative consumption published for comparison in the source (not a tool output): Coffee 0.180, Wine 0.010, Tea 0.040, Beer 0.120, Sodas 0.180, Milk 0.140, Water 0.330."
+}

@@ -1,0 +1,184 @@
+{
+  "id": "ts1997-example1-criterion-weights",
+  "title": "Triantaphyllou and Sanchez (1997) Example 1 - criterion-weight sensitivity",
+  "description": "The paper's first numerical example (Tables 2-5 of the archived version): a WSM/AHP decision matrix with four alternatives and four criteria, used to demonstrate criterion-weight sensitivity. Expected values are the published relative threshold changes (delta', in percent, Theorem 1), the Percent-Top critical criterion, and the criticality degrees and sensitivity coefficients that recompute successfully from the printed decision matrix. The published entry for pair (A2, A3) under C3 (0.0262 absolute / 9.1099 percent) does not recompute from the printed matrix (recomputation gives about 0.262 / 91.1, consistent with a decimal-place slip in typesetting); that entry, and the quantities the paper derives from it (the Percent-Any critical value, the criticality degree of C3, sens(C3), and the overall sensitivity ordering), are therefore recorded in source_reported rather than as expected values. See docs/derivations.md for the recomputation.",
+  "category": "stability",
+  "source": {
+    "citation": "E. Triantaphyllou and A. Sanchez, 'A sensitivity analysis approach for some deterministic multi-criteria decision-making methods', Decision Sciences 28(1), 1997, pp. 151-185. Values transcribed from the authors' archived full version at https://www.csc.lsu.edu/trianta/Journal_PAPERS1/SENSIT1.htm",
+    "url": "https://www.csc.lsu.edu/trianta/Journal_PAPERS1/SENSIT1.htm"
+  },
+  "decision_matrix": {
+    "criteria": [
+      "C1",
+      "C2",
+      "C3",
+      "C4"
+    ],
+    "alternatives": [
+      "A1",
+      "A2",
+      "A3",
+      "A4"
+    ],
+    "weights": [
+      0.3277,
+      0.3058,
+      0.2876,
+      0.079
+    ],
+    "performance": [
+      [
+        0.3088,
+        0.2897,
+        0.3867,
+        0.1922
+      ],
+      [
+        0.2163,
+        0.3458,
+        0.1755,
+        0.6288
+      ],
+      [
+        0.4509,
+        0.2473,
+        0.1194,
+        0.0575
+      ],
+      [
+        0.024,
+        0.1172,
+        0.3184,
+        0.1215
+      ]
+    ],
+    "notes": "Columns are normalized to sum to 1 (required by the AHP variant used in the paper). Alternatives' preferences are P_i = sum_j W_j * a_ij."
+  },
+  "expected": {
+    "stability": {
+      "model": "triantaphyllou-sanchez-1997",
+      "preferences": {
+        "values": [
+          0.3162,
+          0.2768,
+          0.2621,
+          0.1449
+        ],
+        "tolerance": 0.0005,
+        "provenance": {
+          "type": "published",
+          "citation": "E. Triantaphyllou and A. Sanchez, 'A sensitivity analysis approach for some deterministic multi-criteria decision-making methods', Decision Sciences 28(1), 1997, pp. 151-185. Values transcribed from the authors' archived full version at https://www.csc.lsu.edu/trianta/Journal_PAPERS1/SENSIT1.htm (Table 3)."
+        },
+        "note": "Exact recomputation gives P3 = 0.26227 (prints as 0.2623); the paper prints 0.2621. All other preferences recompute exactly. The paper's threshold tables were computed from its internal values, which the tolerances below accommodate."
+      },
+      "delta_percent": {
+        "description": "Relative changes delta'(k,i,j) in percent to criterion weight W_k that reverse the ranking of alternatives A_i and A_j (Theorem 1). null = non-feasible under condition (8b). The (A2,A3,C3) entry is omitted; see fixture description.",
+        "pairs": [
+          "A1-A2",
+          "A1-A3",
+          "A1-A4",
+          "A2-A3",
+          "A2-A4",
+          "A3-A4"
+        ],
+        "criteria": [
+          "C1",
+          "C2",
+          "C3",
+          "C4"
+        ],
+        "values": [
+          [
+            null,
+            -229.7,
+            64.8818,
+            -114.1772
+          ],
+          [
+            -116.1733,
+            null,
+            70.3755,
+            null
+          ],
+          [
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            -19.1334,
+            48.7901,
+            "see-description",
+            32.5317
+          ],
+          [
+            null,
+            null,
+            -320.9,
+            null
+          ],
+          [
+            83.7656,
+            null,
+            -204.8,
+            -2318.1
+          ]
+        ],
+        "tolerance": 1.0,
+        "provenance": {
+          "type": "published",
+          "citation": "E. Triantaphyllou and A. Sanchez, 'A sensitivity analysis approach for some deterministic multi-criteria decision-making methods', Decision Sciences 28(1), 1997, pp. 151-185. Values transcribed from the authors' archived full version at https://www.csc.lsu.edu/trianta/Journal_PAPERS1/SENSIT1.htm (Table 5)."
+        },
+        "note": "Tolerance 1.0 (percentage points) accommodates the paper's use of intermediate values rounded to four decimals; exact recomputation from the printed matrix reproduces every included entry within it."
+      },
+      "percent_top_critical_criterion": {
+        "criterion": "C3",
+        "value": 64.8818,
+        "tolerance": 0.1,
+        "provenance": {
+          "type": "published",
+          "citation": "E. Triantaphyllou and A. Sanchez, 'A sensitivity analysis approach for some deterministic multi-criteria decision-making methods', Decision Sciences 28(1), 1997, pp. 151-185. Values transcribed from the authors' archived full version at https://www.csc.lsu.edu/trianta/Journal_PAPERS1/SENSIT1.htm (p. 15 of the archived version)."
+        }
+      },
+      "criticality_degrees": {
+        "values": {
+          "C1": 19.1334,
+          "C2": 48.7901,
+          "C3": null,
+          "C4": 32.5317
+        },
+        "tolerance": 1.0,
+        "provenance": {
+          "type": "published",
+          "citation": "E. Triantaphyllou and A. Sanchez, 'A sensitivity analysis approach for some deterministic multi-criteria decision-making methods', Decision Sciences 28(1), 1997, pp. 151-185. Values transcribed from the authors' archived full version at https://www.csc.lsu.edu/trianta/Journal_PAPERS1/SENSIT1.htm (Definition 4 discussion)."
+        },
+        "note": "C3 omitted; see fixture description."
+      },
+      "sensitivity_coefficients": {
+        "values": {
+          "C1": 0.0523,
+          "C2": 0.0205,
+          "C3": null,
+          "C4": 0.0307
+        },
+        "tolerance": 0.005,
+        "provenance": {
+          "type": "published",
+          "citation": "E. Triantaphyllou and A. Sanchez, 'A sensitivity analysis approach for some deterministic multi-criteria decision-making methods', Decision Sciences 28(1), 1997, pp. 151-185. Values transcribed from the authors' archived full version at https://www.csc.lsu.edu/trianta/Journal_PAPERS1/SENSIT1.htm (Definition 5 discussion)."
+        },
+        "note": "C3 omitted; see fixture description."
+      }
+    }
+  },
+  "source_reported": {
+    "explanation": "As printed, the paper gives delta'(3,2,3) = 9.1099 percent (Table 5; 0.0262 absolute in Table 4), identifies C3 as the Percent-Any critical criterion with that value, gives criticality degree D'3 = 9.1099 and sens(C3) = 0.1098, and orders the criteria C3, C1, C4, C2 by sensitivity. Recomputation from the printed decision matrix yields approximately 0.262 absolute / 91.1 percent for that entry, which would make C1 (19.1334) the Percent-Any critical criterion. The discrepancy is consistent with a decimal-place slip in typesetting. The printed values are preserved here so that the published source is represented exactly.",
+    "values": {
+      "delta_percent_A2_A3_C3": 9.1099,
+      "criticality_degree_C3": 9.1099,
+      "sens_C3": 0.1098,
+      "percent_any_critical_criterion": "C3"
+    },
+    "citation": "E. Triantaphyllou and A. Sanchez, 'A sensitivity analysis approach for some deterministic multi-criteria decision-making methods', Decision Sciences 28(1), 1997, pp. 151-185. Values transcribed from the authors' archived full version at https://www.csc.lsu.edu/trianta/Journal_PAPERS1/SENSIT1.htm"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "id": "consistent-n4",
+  "title": "Perfectly consistent 4x4 matrix (CR exactly 0)",
+  "description": "A 4x4 matrix constructed as a_ij = w_i / w_j from the weight vector w = (8/15, 4/15, 2/15, 1/15). Because the matrix is perfectly consistent, any correct implementation must return CR = 0 (to numerical precision), lambda_max = n, and the construction weights exactly; eigenvector and approximate prioritization methods coincide on consistent matrices.",
+  "category": "matrix",
+  "source": {
+    "citation": "Constructed for this fixture set; see provenance fields."
+  },
+  "scale": {
+    "name": "saaty-1-9",
+    "fractional_values_allowed": true,
+    "notes": "Judgments on Saaty's fundamental 1-9 scale; reciprocals (e.g. 1/3) and intermediate or fractional values are valid entries. Matrix entries may be given as numbers or as fraction strings such as \"1/3\"."
+  },
+  "ri_table": {
+    "name": "saaty",
+    "values": {
+      "3": 0.58,
+      "4": 0.9,
+      "5": 1.12,
+      "6": 1.24,
+      "7": 1.32,
+      "8": 1.41,
+      "9": 1.45,
+      "10": 1.49
+    },
+    "source": "T. L. Saaty, The Analytic Hierarchy Process, McGraw-Hill, 1980. Values as tabulated in J. A. Alonso and M. T. Lamata, 'Consistency in the analytic hierarchy process: a new approach', International Journal of Uncertainty, Fuzziness and Knowledge-Based Systems 14(4), 2006, Table 1 (Wharton column)."
+  },
+  "matrices": [
+    {
+      "key": "matrix",
+      "labels": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ],
+      "rows": [
+        [
+          1,
+          2,
+          4,
+          8
+        ],
+        [
+          "1/2",
+          1,
+          2,
+          4
+        ],
+        [
+          "1/4",
+          "1/2",
+          1,
+          2
+        ],
+        [
+          "1/8",
+          "1/4",
+          "1/2",
+          1
+        ]
+      ]
+    }
+  ],
+  "expected": {
+    "matrices": {
+      "matrix": {
+        "priorities": {
+          "method": "principal-eigenvector",
+          "values": [
+            0.533333333,
+            0.266666667,
+            0.133333333,
+            0.066666667
+          ],
+          "tolerance": 1e-06,
+          "provenance": {
+            "type": "derived",
+            "method": "Constructed from a weight vector w by setting a_ij = w_i / w_j, which makes the matrix perfectly consistent by construction: the principal eigenvector equals w exactly, lambda_max = n exactly, and CI = CR = 0 exactly (not merely approximately). Every entry is an exact ratio of small integers. w = (8/15, 4/15, 2/15, 1/15)"
+          }
+        },
+        "lambda_max": {
+          "value": 4.0,
+          "tolerance": 1e-09,
+          "provenance": {
+            "type": "derived",
+            "method": "Constructed from a weight vector w by setting a_ij = w_i / w_j, which makes the matrix perfectly consistent by construction: the principal eigenvector equals w exactly, lambda_max = n exactly, and CI = CR = 0 exactly (not merely approximately). Every entry is an exact ratio of small integers."
+          }
+        },
+        "ci": {
+          "value": 0.0,
+          "tolerance": 1e-09,
+          "provenance": {
+            "type": "derived",
+            "method": "Constructed from a weight vector w by setting a_ij = w_i / w_j, which makes the matrix perfectly consistent by construction: the principal eigenvector equals w exactly, lambda_max = n exactly, and CI = CR = 0 exactly (not merely approximately). Every entry is an exact ratio of small integers."
+          }
+        },
+        "cr": {
+          "value": 0.0,
+          "tolerance": 1e-09,
+          "provenance": {
+            "type": "derived",
+            "method": "Constructed from a weight vector w by setting a_ij = w_i / w_j, which makes the matrix perfectly consistent by construction: the principal eigenvector equals w exactly, lambda_max = n exactly, and CI = CR = 0 exactly (not merely approximately). Every entry is an exact ratio of small integers."
+          }
+        }
+      }
+    }
+  }
+}

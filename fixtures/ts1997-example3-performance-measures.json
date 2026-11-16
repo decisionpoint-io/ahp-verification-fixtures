@@ -1,0 +1,248 @@
+{
+  "id": "ts1997-example3-performance-measures",
+  "title": "Triantaphyllou and Sanchez (1997) - performance-measure sensitivity (WSM/AHP case)",
+  "description": "The paper's numerical example for sensitivity of the a_ij performance measures under WSM ('the AHP case can be developed in an analogous fashion'): five alternatives, five criteria (Tables 9-12 of the archived version). A threshold tau'(i,j,k) is the percent change in performance measure a_ij (with column j renormalized afterwards) that makes alternative A_k more preferred than A_i. Expected values are the published preferences, the criticality degrees for alternatives A1-A4 (Table 11) and their sensitivity coefficients (Table 12), and the most-critical-alternative conclusion, all of which recompute from the printed decision matrix within the stated tolerances. The A5 row's printed thresholds against target A4 (10.0 under C1, 14.9 under C4, 3.5 under C5) did not reproduce under the model that reproduces the other rows, so the A5 criticality degrees are recorded in source_reported rather than as expected values; see docs/derivations.md.",
+  "category": "stability",
+  "source": {
+    "citation": "E. Triantaphyllou and A. Sanchez, 'A sensitivity analysis approach for some deterministic multi-criteria decision-making methods', Decision Sciences 28(1), 1997, pp. 151-185. Values transcribed from the authors' archived full version at https://www.csc.lsu.edu/trianta/Journal_PAPERS1/SENSIT1.htm",
+    "url": "https://www.csc.lsu.edu/trianta/Journal_PAPERS1/SENSIT1.htm"
+  },
+  "decision_matrix": {
+    "criteria": [
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C5"
+    ],
+    "alternatives": [
+      "A1",
+      "A2",
+      "A3",
+      "A4",
+      "A5"
+    ],
+    "weights": [
+      0.4146,
+      0.0129,
+      0.2958,
+      0.0604,
+      0.2164
+    ],
+    "performance": [
+      [
+        0.3576,
+        0.2483,
+        0.2899,
+        0.2961,
+        0.3202
+      ],
+      [
+        0.3603,
+        0.2836,
+        0.0407,
+        0.0939,
+        0.0172
+      ],
+      [
+        0.0255,
+        0.1745,
+        0.2895,
+        0.2212,
+        0.2641
+      ],
+      [
+        0.1609,
+        0.2008,
+        0.296,
+        0.0716,
+        0.0315
+      ],
+      [
+        0.0957,
+        0.0928,
+        0.0839,
+        0.3172,
+        0.367
+      ]
+    ],
+    "notes": "Columns are normalized to sum to 1. Preferences are P_i = sum_j W_j * a_ij."
+  },
+  "expected": {
+    "stability": {
+      "model": "triantaphyllou-sanchez-1997",
+      "preferences": {
+        "values": [
+          0.3244,
+          0.1745,
+          0.169,
+          0.168,
+          0.1643
+        ],
+        "tolerance": 0.0005,
+        "provenance": {
+          "type": "published",
+          "citation": "E. Triantaphyllou and A. Sanchez, 'A sensitivity analysis approach for some deterministic multi-criteria decision-making methods', Decision Sciences 28(1), 1997, pp. 151-185. Values transcribed from the authors' archived full version at https://www.csc.lsu.edu/trianta/Journal_PAPERS1/SENSIT1.htm (Table 9)."
+        }
+      },
+      "criticality_degrees_alternatives": {
+        "description": "Criticality degree of each a_ij: the smallest absolute percent change in a_ij (column renormalized) that changes the ranking of A_i against some other alternative; the paper's Table 11 lists the degree and, in parentheses, the alternative whose ranking flips. Signs as printed (negative = increase).",
+        "rows": [
+          "A1",
+          "A2",
+          "A3",
+          "A4"
+        ],
+        "criteria": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5"
+        ],
+        "values": [
+          [
+            74.1,
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            5.3,
+            null,
+            35.9,
+            79.4,
+            null
+          ],
+          [
+            8.0,
+            38.9,
+            1.1,
+            8.3,
+            2.2
+          ],
+          [
+            1.7,
+            41.4,
+            -1.1,
+            19.7,
+            11.5
+          ]
+        ],
+        "targets": [
+          [
+            "A2",
+            null,
+            null,
+            null,
+            null
+          ],
+          [
+            "A4",
+            null,
+            "A3",
+            "A3",
+            null
+          ],
+          [
+            "A4",
+            "A4",
+            "A4",
+            "A4",
+            "A4"
+          ],
+          [
+            "A3",
+            "A3",
+            "A3",
+            "A3",
+            "A3"
+          ]
+        ],
+        "tolerance": 0.5,
+        "provenance": {
+          "type": "published",
+          "citation": "E. Triantaphyllou and A. Sanchez, 'A sensitivity analysis approach for some deterministic multi-criteria decision-making methods', Decision Sciences 28(1), 1997, pp. 151-185. Values transcribed from the authors' archived full version at https://www.csc.lsu.edu/trianta/Journal_PAPERS1/SENSIT1.htm (Table 11)."
+        },
+        "note": "null = non-feasible (no change can flip a ranking). Tolerance 0.5 (percentage points) accommodates the paper's internally rounded intermediate values; exact recomputation reproduces every included entry within it (most within 0.1)."
+      },
+      "sensitivity_coefficients_alternatives": {
+        "rows": [
+          "A1",
+          "A2",
+          "A3",
+          "A4"
+        ],
+        "criteria": [
+          "C1",
+          "C2",
+          "C3",
+          "C4",
+          "C5"
+        ],
+        "values": [
+          [
+            0.014,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0.189,
+            0,
+            0.028,
+            0.013,
+            0
+          ],
+          [
+            0.125,
+            0.026,
+            0.909,
+            0.121,
+            0.455
+          ],
+          [
+            0.588,
+            0.024,
+            0.909,
+            0.051,
+            0.087
+          ]
+        ],
+        "tolerance": 0.01,
+        "provenance": {
+          "type": "published",
+          "citation": "E. Triantaphyllou and A. Sanchez, 'A sensitivity analysis approach for some deterministic multi-criteria decision-making methods', Decision Sciences 28(1), 1997, pp. 151-185. Values transcribed from the authors' archived full version at https://www.csc.lsu.edu/trianta/Journal_PAPERS1/SENSIT1.htm (Table 12)."
+        },
+        "note": "Reciprocals of the criticality degrees; 0 where non-feasible."
+      },
+      "most_critical_alternatives": {
+        "alternatives": [
+          "A3",
+          "A4"
+        ],
+        "criticality_degree": 1.1,
+        "tolerance": 0.1,
+        "provenance": {
+          "type": "published",
+          "citation": "E. Triantaphyllou and A. Sanchez, 'A sensitivity analysis approach for some deterministic multi-criteria decision-making methods', Decision Sciences 28(1), 1997, pp. 151-185. Values transcribed from the authors' archived full version at https://www.csc.lsu.edu/trianta/Journal_PAPERS1/SENSIT1.htm (Table 11 discussion)."
+        }
+      }
+    }
+  },
+  "source_reported": {
+    "explanation": "Table 11 as printed also contains a row for A5: 10.0 (C1, vs A4), 544.8 (C2, vs A3), 15.9 (C3, vs A3), 14.9 (C4, vs A4), 3.5 (C5, vs A4), with corresponding Table 12 coefficients. The C2 and C3 entries recompute (as increases of about 547 and 15.9 percent respectively), but the printed positive values against target A4 did not reproduce under the renormalization model that reproduces rows A1-A4 (decreasing an A5 performance value cannot make the already-preferred A4 overtake A5; recomputation finds the reversal at increases of about 8.9 percent under C1). The printed values are preserved here so the published source is represented exactly.",
+    "values": {
+      "criticality_degrees_A5": {
+        "C1": 10.0,
+        "C2": 544.8,
+        "C3": 15.9,
+        "C4": 14.9,
+        "C5": 3.5
+      }
+    },
+    "citation": "E. Triantaphyllou and A. Sanchez, 'A sensitivity analysis approach for some deterministic multi-criteria decision-making methods', Decision Sciences 28(1), 1997, pp. 151-185. Values transcribed from the authors' archived full version at https://www.csc.lsu.edu/trianta/Journal_PAPERS1/SENSIT1.htm"
+  }
+}

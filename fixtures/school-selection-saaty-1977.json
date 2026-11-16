@@ -1,0 +1,699 @@
+{
+  "id": "school-selection-saaty-1977",
+  "title": "Saaty school selection example (three high schools, six criteria)",
+  "description": "One of the earliest published AHP applications: Saaty and his son ranked three high schools against six criteria. The criteria matrix is a well-known example of a strongly inconsistent judgment matrix (lambda_max about 7.42 for n = 6; CR about 0.23 under Saaty's RI). Expected values are derived with the principal-eigenvector method from the published matrices. Note that on this example the final ranking of schools A and B differs between the principal-eigenvector synthesis (B slightly ahead of A) and the column-normalization approximation (A slightly ahead of B) - see the synthesis alternate; the margin is about 0.01 either way, so implementations using different documented prioritization methods can legitimately report different top choices on this fixture.",
+  "category": "hierarchy",
+  "source": {
+    "citation": "T. L. Saaty, 'A scaling method for priorities in hierarchical structures', Journal of Mathematical Psychology 15(3), 1977, pp. 234-281 (the school selection example); matrices as reproduced in N. Krivulin, 'Tropical implementation of the analytical hierarchy process decision method', arXiv:1802.01989, Section 5.2.",
+    "url": "https://arxiv.org/abs/1802.01989"
+  },
+  "scale": {
+    "name": "saaty-1-9",
+    "fractional_values_allowed": true,
+    "notes": "Judgments on Saaty's fundamental 1-9 scale; reciprocals (e.g. 1/3) and intermediate or fractional values are valid entries. Matrix entries may be given as numbers or as fraction strings such as \"1/3\"."
+  },
+  "ri_table": {
+    "name": "saaty",
+    "values": {
+      "3": 0.58,
+      "4": 0.9,
+      "5": 1.12,
+      "6": 1.24,
+      "7": 1.32,
+      "8": 1.41,
+      "9": 1.45,
+      "10": 1.49
+    },
+    "source": "T. L. Saaty, The Analytic Hierarchy Process, McGraw-Hill, 1980. Values as tabulated in J. A. Alonso and M. T. Lamata, 'Consistency in the analytic hierarchy process: a new approach', International Journal of Uncertainty, Fuzziness and Knowledge-Based Systems 14(4), 2006, Table 1 (Wharton column)."
+  },
+  "matrices": [
+    {
+      "key": "criteria",
+      "labels": [
+        "Learning",
+        "Friends",
+        "School Life",
+        "Vocational Training",
+        "College Preparation",
+        "Music Classes"
+      ],
+      "rows": [
+        [
+          1,
+          4,
+          3,
+          1,
+          3,
+          4
+        ],
+        [
+          "1/4",
+          1,
+          7,
+          3,
+          "1/5",
+          1
+        ],
+        [
+          "1/3",
+          "1/7",
+          1,
+          "1/5",
+          "1/5",
+          "1/6"
+        ],
+        [
+          1,
+          "1/3",
+          5,
+          1,
+          1,
+          "1/3"
+        ],
+        [
+          "1/3",
+          5,
+          5,
+          1,
+          1,
+          3
+        ],
+        [
+          "1/4",
+          1,
+          6,
+          3,
+          "1/3",
+          1
+        ]
+      ],
+      "description": "Importance of the six criteria for choosing a school."
+    },
+    {
+      "key": "learning",
+      "labels": [
+        "School A",
+        "School B",
+        "School C"
+      ],
+      "rows": [
+        [
+          1,
+          "1/3",
+          "1/2"
+        ],
+        [
+          3,
+          1,
+          3
+        ],
+        [
+          2,
+          "1/3",
+          1
+        ]
+      ],
+      "parent": {
+        "matrix": "criteria",
+        "element": "Learning"
+      }
+    },
+    {
+      "key": "friends",
+      "labels": [
+        "School A",
+        "School B",
+        "School C"
+      ],
+      "rows": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "parent": {
+        "matrix": "criteria",
+        "element": "Friends"
+      }
+    },
+    {
+      "key": "school_life",
+      "labels": [
+        "School A",
+        "School B",
+        "School C"
+      ],
+      "rows": [
+        [
+          1,
+          5,
+          1
+        ],
+        [
+          "1/5",
+          1,
+          "1/5"
+        ],
+        [
+          1,
+          5,
+          1
+        ]
+      ],
+      "parent": {
+        "matrix": "criteria",
+        "element": "School Life"
+      }
+    },
+    {
+      "key": "vocational_training",
+      "labels": [
+        "School A",
+        "School B",
+        "School C"
+      ],
+      "rows": [
+        [
+          1,
+          9,
+          7
+        ],
+        [
+          "1/9",
+          1,
+          "1/5"
+        ],
+        [
+          "1/7",
+          5,
+          1
+        ]
+      ],
+      "parent": {
+        "matrix": "criteria",
+        "element": "Vocational Training"
+      }
+    },
+    {
+      "key": "college_preparation",
+      "labels": [
+        "School A",
+        "School B",
+        "School C"
+      ],
+      "rows": [
+        [
+          1,
+          "1/2",
+          1
+        ],
+        [
+          2,
+          1,
+          2
+        ],
+        [
+          1,
+          "1/2",
+          1
+        ]
+      ],
+      "parent": {
+        "matrix": "criteria",
+        "element": "College Preparation"
+      }
+    },
+    {
+      "key": "music_classes",
+      "labels": [
+        "School A",
+        "School B",
+        "School C"
+      ],
+      "rows": [
+        [
+          1,
+          6,
+          4
+        ],
+        [
+          "1/6",
+          1,
+          "1/3"
+        ],
+        [
+          "1/4",
+          3,
+          1
+        ]
+      ],
+      "parent": {
+        "matrix": "criteria",
+        "element": "Music Classes"
+      }
+    }
+  ],
+  "expected": {
+    "matrices": {
+      "criteria": {
+        "priorities": {
+          "method": "principal-eigenvector",
+          "values": [
+            0.32077,
+            0.139503,
+            0.034768,
+            0.128486,
+            0.23739,
+            0.139083
+          ],
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "lambda_max": {
+          "value": 7.41987,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "ci": {
+          "value": 0.283974,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "cr": {
+          "value": 0.229011,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "alternates": [
+          {
+            "method": "column-normalization-mean",
+            "priorities": {
+              "values": [
+                0.304742,
+                0.148596,
+                0.038153,
+                0.14137,
+                0.220839,
+                0.146299
+              ],
+              "tolerance": 1e-06
+            },
+            "lambda_max": {
+              "value": 7.444714,
+              "tolerance": 1e-06
+            },
+            "ci": {
+              "value": 0.288943,
+              "tolerance": 1e-06
+            },
+            "cr": {
+              "value": 0.233018,
+              "tolerance": 1e-06
+            },
+            "provenance": {
+              "type": "derived",
+              "method": "Column-normalization mean (Saaty's approximate method): normalize each column of the matrix to sum to 1, then average across columns; lambda_max is estimated as the mean of (A*w)_i / w_i. This is the prioritization method implemented by, among others, the npm 'ahp' package. Reproduce with tools/compute_expected.py."
+            }
+          }
+        ]
+      },
+      "learning": {
+        "priorities": {
+          "method": "principal-eigenvector",
+          "values": [
+            0.157056,
+            0.593634,
+            0.249311
+          ],
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "lambda_max": {
+          "value": 3.053622,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "ci": {
+          "value": 0.026811,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "cr": {
+          "value": 0.046225,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "alternates": [
+          {
+            "method": "column-normalization-mean",
+            "priorities": {
+              "values": [
+                0.159259,
+                0.588889,
+                0.251852
+              ],
+              "tolerance": 1e-06
+            },
+            "lambda_max": {
+              "value": 3.053904,
+              "tolerance": 1e-06
+            },
+            "ci": {
+              "value": 0.026952,
+              "tolerance": 1e-06
+            },
+            "cr": {
+              "value": 0.046469,
+              "tolerance": 1e-06
+            },
+            "provenance": {
+              "type": "derived",
+              "method": "Column-normalization mean (Saaty's approximate method): normalize each column of the matrix to sum to 1, then average across columns; lambda_max is estimated as the mean of (A*w)_i / w_i. This is the prioritization method implemented by, among others, the npm 'ahp' package. Reproduce with tools/compute_expected.py."
+            }
+          }
+        ]
+      },
+      "friends": {
+        "priorities": {
+          "method": "principal-eigenvector",
+          "values": [
+            0.333333,
+            0.333333,
+            0.333333
+          ],
+          "tolerance": 1e-06,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "lambda_max": {
+          "value": 3.0,
+          "tolerance": 1e-09,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "ci": {
+          "value": 0.0,
+          "tolerance": 1e-09,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "cr": {
+          "value": 0.0,
+          "tolerance": 1e-09,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        }
+      },
+      "school_life": {
+        "priorities": {
+          "method": "principal-eigenvector",
+          "values": [
+            0.454545,
+            0.090909,
+            0.454545
+          ],
+          "tolerance": 1e-06,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "lambda_max": {
+          "value": 3.0,
+          "tolerance": 1e-09,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "ci": {
+          "value": 0.0,
+          "tolerance": 1e-09,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "cr": {
+          "value": 0.0,
+          "tolerance": 1e-09,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        }
+      },
+      "vocational_training": {
+        "priorities": {
+          "method": "principal-eigenvector",
+          "values": [
+            0.772017,
+            0.054548,
+            0.173435
+          ],
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "lambda_max": {
+          "value": 3.208469,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "ci": {
+          "value": 0.104234,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "cr": {
+          "value": 0.179714,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "alternates": [
+          {
+            "method": "column-normalization-mean",
+            "priorities": {
+              "values": [
+                0.750376,
+                0.059888,
+                0.189736
+              ],
+              "tolerance": 1e-06
+            },
+            "lambda_max": {
+              "value": 3.21909,
+              "tolerance": 1e-06
+            },
+            "ci": {
+              "value": 0.109545,
+              "tolerance": 1e-06
+            },
+            "cr": {
+              "value": 0.188871,
+              "tolerance": 1e-06
+            },
+            "provenance": {
+              "type": "derived",
+              "method": "Column-normalization mean (Saaty's approximate method): normalize each column of the matrix to sum to 1, then average across columns; lambda_max is estimated as the mean of (A*w)_i / w_i. This is the prioritization method implemented by, among others, the npm 'ahp' package. Reproduce with tools/compute_expected.py."
+            }
+          }
+        ]
+      },
+      "college_preparation": {
+        "priorities": {
+          "method": "principal-eigenvector",
+          "values": [
+            0.25,
+            0.5,
+            0.25
+          ],
+          "tolerance": 1e-06,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "lambda_max": {
+          "value": 3.0,
+          "tolerance": 1e-09,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "ci": {
+          "value": 0.0,
+          "tolerance": 1e-09,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "cr": {
+          "value": 0.0,
+          "tolerance": 1e-09,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        }
+      },
+      "music_classes": {
+        "priorities": {
+          "method": "principal-eigenvector",
+          "values": [
+            0.690959,
+            0.091402,
+            0.217638
+          ],
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "lambda_max": {
+          "value": 3.053622,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "ci": {
+          "value": 0.026811,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "cr": {
+          "value": 0.046225,
+          "tolerance": 0.0001,
+          "provenance": {
+            "type": "derived",
+            "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py."
+          }
+        },
+        "alternates": [
+          {
+            "method": "column-normalization-mean",
+            "priorities": {
+              "values": [
+                0.685294,
+                0.093382,
+                0.221324
+              ],
+              "tolerance": 1e-06
+            },
+            "lambda_max": {
+              "value": 3.054144,
+              "tolerance": 1e-06
+            },
+            "ci": {
+              "value": 0.027072,
+              "tolerance": 1e-06
+            },
+            "cr": {
+              "value": 0.046676,
+              "tolerance": 1e-06
+            },
+            "provenance": {
+              "type": "derived",
+              "method": "Column-normalization mean (Saaty's approximate method): normalize each column of the matrix to sum to 1, then average across columns; lambda_max is estimated as the mean of (A*w)_i / w_i. This is the prioritization method implemented by, among others, the npm 'ahp' package. Reproduce with tools/compute_expected.py."
+            }
+          }
+        ]
+      }
+    },
+    "synthesis": {
+      "method": "principal-eigenvector",
+      "labels": [
+        "School A",
+        "School B",
+        "School C"
+      ],
+      "values": [
+        0.367325,
+        0.378498,
+        0.254177
+      ],
+      "tolerance": 0.0001,
+      "provenance": {
+        "type": "derived",
+        "method": "Principal right eigenvector of the pairwise comparison matrix (computed with numpy.linalg.eig; the Perron root is lambda_max), normalized to sum to 1. CI = (lambda_max - n)/(n - 1); CR = CI / RI(n) for the RI table declared in this fixture. Reproduce with tools/compute_expected.py. Final priorities are the criteria-weighted sum of the schools' local priorities."
+      },
+      "alternates": [
+        {
+          "method": "column-normalization-mean",
+          "values": [
+            0.376956,
+            0.365008,
+            0.258036
+          ],
+          "tolerance": 1e-06,
+          "provenance": {
+            "type": "derived",
+            "method": "Column-normalization mean (Saaty's approximate method): normalize each column of the matrix to sum to 1, then average across columns; lambda_max is estimated as the mean of (A*w)_i / w_i. This is the prioritization method implemented by, among others, the npm 'ahp' package. Reproduce with tools/compute_expected.py."
+          }
+        }
+      ]
+    }
+  }
+}
