@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    name: Schemas, provenance and capture checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install jsonschema numpy
+      - name: Validate fixtures and captures against the schemas; tolerance-check captures
+        run: python3 tools/validate.py
+      - name: Recompute every derived expected value from the fixture inputs
+        run: python3 tools/compute_expected.py
+
+  runner-python-ahpy:
+    name: Runner - AHPy (Python)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r runners/python-ahpy/requirements.txt
+      - run: python3 runners/python-ahpy/runner.py
+
+  runner-js-ahp-npm:
+    name: Runner - npm ahp (JavaScript)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm ci
+        working-directory: runners/js-ahp-npm
+      - run: node runner.js
+        working-directory: runners/js-ahp-npm
