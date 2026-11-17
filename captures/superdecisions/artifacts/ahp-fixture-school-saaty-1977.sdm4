@@ -1,0 +1,757 @@
+{
+  "brainstormNodes": [],
+  "networks": [
+    {
+      "clusterComparisons": [
+        {
+          "clusterid": 1,
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            2
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "values": [
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "clusterid": 2,
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            3
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "values": [
+            [
+              1
+            ]
+          ]
+        }
+      ],
+      "clusters": [
+        {
+          "description": "",
+          "designInfo": {
+            "colorHex": "#52A756",
+            "dimensions": {
+              "height": 110,
+              "width": 173.728515625
+            },
+            "fontFace": "Arial",
+            "fontSize": 12,
+            "isBold": false,
+            "isIconized": false,
+            "isItalic": false,
+            "isUnderlined": false,
+            "orientation": "rectangle",
+            "position": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          "icon": "",
+          "id": 1,
+          "name": "Goal",
+          "nodes": [
+            {
+              "clusterId": 1,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 159.728515625
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 101,
+              "name": "Satisfaction with school",
+              "orderId": 1,
+              "subnetId": 0
+            }
+          ],
+          "orderId": 1
+        },
+        {
+          "description": "",
+          "designInfo": {
+            "colorHex": "#52A756",
+            "dimensions": {
+              "height": 141,
+              "width": 418.03515625
+            },
+            "fontFace": "Arial",
+            "fontSize": 12,
+            "isBold": false,
+            "isIconized": false,
+            "isItalic": false,
+            "isUnderlined": false,
+            "orientation": "rectangle",
+            "position": {
+              "x": 0,
+              "y": 238
+            }
+          },
+          "icon": null,
+          "id": 2,
+          "name": "Criteria",
+          "nodes": [
+            {
+              "clusterId": 2,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 81.705078125
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 201,
+              "name": "Learning",
+              "orderId": 1,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 2,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 75.013671875
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 202,
+              "name": "Friends",
+              "orderId": 2,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 2,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 94.373046875
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 203,
+              "name": "School Life",
+              "orderId": 3,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 2,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 136.619140625
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 204,
+              "name": "Vocational Training",
+              "orderId": 4,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 2,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 141.06640625
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 205,
+              "name": "College Preparation",
+              "orderId": 5,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 2,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 112.349609375
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 206,
+              "name": "Music Classes",
+              "orderId": 6,
+              "subnetId": 0
+            }
+          ],
+          "orderId": 2
+        },
+        {
+          "description": "",
+          "designInfo": {
+            "colorHex": "#52A756",
+            "dimensions": {
+              "height": 110,
+              "width": 277.75
+            },
+            "fontFace": "Arial",
+            "fontSize": 12,
+            "isBold": false,
+            "isIconized": false,
+            "isItalic": false,
+            "isUnderlined": false,
+            "orientation": "rectangle",
+            "position": {
+              "x": 0,
+              "y": 476
+            }
+          },
+          "icon": null,
+          "id": 3,
+          "name": "Schools",
+          "nodes": [
+            {
+              "clusterId": 3,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 83.029296875
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 301,
+              "name": "School A",
+              "orderId": 1,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 3,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 83.029296875
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 302,
+              "name": "School B",
+              "orderId": 2,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 3,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 83.69140625
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 303,
+              "name": "School C",
+              "orderId": 3,
+              "subnetId": 0
+            }
+          ],
+          "orderId": 3
+        }
+      ],
+      "formula": null,
+      "id": 0,
+      "modelType": "pairwise",
+      "name": "Main Network",
+      "nodeComparisons": [
+        {
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            201,
+            202,
+            203,
+            204,
+            205,
+            206
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "nodeid": 101,
+          "values": [
+            [
+              1,
+              4,
+              3,
+              1,
+              3,
+              4
+            ],
+            [
+              0.25,
+              1,
+              7,
+              3,
+              0.2,
+              1
+            ],
+            [
+              0.3333333333333333,
+              0.14285714285714285,
+              1,
+              0.2,
+              0.2,
+              0.16666666666666666
+            ],
+            [
+              1,
+              0.3333333333333333,
+              5,
+              1,
+              1,
+              0.3333333333333333
+            ],
+            [
+              0.3333333333333333,
+              5,
+              5,
+              1,
+              1,
+              3
+            ],
+            [
+              0.25,
+              1,
+              6,
+              3,
+              0.3333333333333333,
+              1
+            ]
+          ]
+        },
+        {
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            301,
+            302,
+            303
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "nodeid": 201,
+          "values": [
+            [
+              1,
+              0.3333333333333333,
+              0.5
+            ],
+            [
+              3,
+              1,
+              3
+            ],
+            [
+              2,
+              0.3333333333333333,
+              1
+            ]
+          ]
+        },
+        {
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            301,
+            302,
+            303
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "nodeid": 202,
+          "values": [
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            301,
+            302,
+            303
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "nodeid": 203,
+          "values": [
+            [
+              1,
+              5,
+              1
+            ],
+            [
+              0.2,
+              1,
+              0.2
+            ],
+            [
+              1,
+              5,
+              1
+            ]
+          ]
+        },
+        {
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            301,
+            302,
+            303
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "nodeid": 204,
+          "values": [
+            [
+              1,
+              9,
+              7
+            ],
+            [
+              0.1111111111111111,
+              1,
+              0.2
+            ],
+            [
+              0.14285714285714285,
+              5,
+              1
+            ]
+          ]
+        },
+        {
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            301,
+            302,
+            303
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "nodeid": 205,
+          "values": [
+            [
+              1,
+              0.5,
+              1
+            ],
+            [
+              2,
+              1,
+              2
+            ],
+            [
+              1,
+              0.5,
+              1
+            ]
+          ]
+        },
+        {
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            301,
+            302,
+            303
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "nodeid": 206,
+          "values": [
+            [
+              1,
+              6,
+              4
+            ],
+            [
+              0.16666666666666666,
+              1,
+              0.3333333333333333
+            ],
+            [
+              0.25,
+              3,
+              1
+            ]
+          ]
+        }
+      ],
+      "nodeConnections": [
+        {
+          "end": [
+            {
+              "clusterId": 2,
+              "nodeId": 201
+            },
+            {
+              "clusterId": 2,
+              "nodeId": 202
+            },
+            {
+              "clusterId": 2,
+              "nodeId": 203
+            },
+            {
+              "clusterId": 2,
+              "nodeId": 204
+            },
+            {
+              "clusterId": 2,
+              "nodeId": 205
+            },
+            {
+              "clusterId": 2,
+              "nodeId": 206
+            }
+          ],
+          "start": {
+            "clusterId": 1,
+            "nodeId": 101
+          }
+        },
+        {
+          "end": [
+            {
+              "clusterId": 3,
+              "nodeId": 301
+            },
+            {
+              "clusterId": 3,
+              "nodeId": 302
+            },
+            {
+              "clusterId": 3,
+              "nodeId": 303
+            }
+          ],
+          "start": {
+            "clusterId": 2,
+            "nodeId": 201
+          }
+        },
+        {
+          "end": [
+            {
+              "clusterId": 3,
+              "nodeId": 301
+            },
+            {
+              "clusterId": 3,
+              "nodeId": 302
+            },
+            {
+              "clusterId": 3,
+              "nodeId": 303
+            }
+          ],
+          "start": {
+            "clusterId": 2,
+            "nodeId": 202
+          }
+        },
+        {
+          "end": [
+            {
+              "clusterId": 3,
+              "nodeId": 301
+            },
+            {
+              "clusterId": 3,
+              "nodeId": 302
+            },
+            {
+              "clusterId": 3,
+              "nodeId": 303
+            }
+          ],
+          "start": {
+            "clusterId": 2,
+            "nodeId": 203
+          }
+        },
+        {
+          "end": [
+            {
+              "clusterId": 3,
+              "nodeId": 301
+            },
+            {
+              "clusterId": 3,
+              "nodeId": 302
+            },
+            {
+              "clusterId": 3,
+              "nodeId": 303
+            }
+          ],
+          "start": {
+            "clusterId": 2,
+            "nodeId": 204
+          }
+        },
+        {
+          "end": [
+            {
+              "clusterId": 3,
+              "nodeId": 301
+            },
+            {
+              "clusterId": 3,
+              "nodeId": 302
+            },
+            {
+              "clusterId": 3,
+              "nodeId": 303
+            }
+          ],
+          "start": {
+            "clusterId": 2,
+            "nodeId": 205
+          }
+        },
+        {
+          "end": [
+            {
+              "clusterId": 3,
+              "nodeId": 301
+            },
+            {
+              "clusterId": 3,
+              "nodeId": 302
+            },
+            {
+              "clusterId": 3,
+              "nodeId": 303
+            }
+          ],
+          "start": {
+            "clusterId": 2,
+            "nodeId": 206
+          }
+        }
+      ],
+      "parent": {
+        "clusterId": null,
+        "nodeId": null
+      },
+      "type": "bottom level"
+    }
+  ]
+}

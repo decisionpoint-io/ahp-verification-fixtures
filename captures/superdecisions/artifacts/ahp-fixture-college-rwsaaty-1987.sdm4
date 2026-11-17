@@ -1,0 +1,513 @@
+{
+  "brainstormNodes": [],
+  "networks": [
+    {
+      "clusterComparisons": [
+        {
+          "clusterid": 1,
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            2
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "values": [
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "clusterid": 2,
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            3
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "values": [
+            [
+              1
+            ]
+          ]
+        }
+      ],
+      "clusters": [
+        {
+          "description": "",
+          "designInfo": {
+            "colorHex": "#52A756",
+            "dimensions": {
+              "height": 110,
+              "width": 170
+            },
+            "fontFace": "Arial",
+            "fontSize": 12,
+            "isBold": false,
+            "isIconized": false,
+            "isItalic": false,
+            "isUnderlined": false,
+            "orientation": "rectangle",
+            "position": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          "icon": "",
+          "id": 1,
+          "name": "Goal",
+          "nodes": [
+            {
+              "clusterId": 1,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 143.73828125
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 101,
+              "name": "Choose best college",
+              "orderId": 1,
+              "subnetId": 0
+            }
+          ],
+          "orderId": 1
+        },
+        {
+          "description": "",
+          "designInfo": {
+            "colorHex": "#52A756",
+            "dimensions": {
+              "height": 141,
+              "width": 303.091796875
+            },
+            "fontFace": "Arial",
+            "fontSize": 12,
+            "isBold": false,
+            "isIconized": false,
+            "isItalic": false,
+            "isUnderlined": false,
+            "orientation": "rectangle",
+            "position": {
+              "x": 0,
+              "y": 238
+            }
+          },
+          "icon": null,
+          "id": 2,
+          "name": "Criteria",
+          "nodes": [
+            {
+              "clusterId": 2,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 80.369140625
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 201,
+              "name": "Location",
+              "orderId": 1,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 2,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 88.361328125
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 202,
+              "name": "Ambience",
+              "orderId": 2,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 2,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 93.04296875
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 203,
+              "name": "Reputation",
+              "orderId": 3,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 2,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 93.6875
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 204,
+              "name": "Academics",
+              "orderId": 4,
+              "subnetId": 0
+            }
+          ],
+          "orderId": 2
+        },
+        {
+          "description": "",
+          "designInfo": {
+            "colorHex": "#52A756",
+            "dimensions": {
+              "height": 141,
+              "width": 332.40625
+            },
+            "fontFace": "Arial",
+            "fontSize": 12,
+            "isBold": false,
+            "isIconized": false,
+            "isItalic": false,
+            "isUnderlined": false,
+            "orientation": "rectangle",
+            "position": {
+              "x": 0,
+              "y": 476
+            }
+          },
+          "icon": null,
+          "id": 3,
+          "name": "Colleges",
+          "nodes": [
+            {
+              "clusterId": 3,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 99.6875
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 301,
+              "name": "Swarthmore",
+              "orderId": 1,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 3,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 106.361328125
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 302,
+              "name": "Northwestern",
+              "orderId": 2,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 3,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 98.357421875
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 303,
+              "name": "U. Michigan",
+              "orderId": 3,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 3,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 88.14453125
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 304,
+              "name": "Vanderbilt",
+              "orderId": 4,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 3,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 62.328125
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 305,
+              "name": "CMU",
+              "orderId": 5,
+              "subnetId": 0
+            }
+          ],
+          "orderId": 3
+        }
+      ],
+      "formula": null,
+      "id": 0,
+      "modelType": "pairwise",
+      "name": "Main Network",
+      "nodeComparisons": [
+        {
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            201,
+            202,
+            203,
+            204
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "nodeid": 101,
+          "values": [
+            [
+              1,
+              0.14285714285714285,
+              0.2,
+              0.2
+            ],
+            [
+              7,
+              1,
+              2,
+              3
+            ],
+            [
+              5,
+              0.5,
+              1,
+              1
+            ],
+            [
+              5,
+              0.3333333333333333,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            301,
+            302,
+            303,
+            304,
+            305
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "nodeid": 201,
+          "values": [
+            [
+              1,
+              0.25,
+              0.3333333333333333,
+              0.3333333333333333,
+              7
+            ],
+            [
+              4,
+              1,
+              2,
+              3,
+              7
+            ],
+            [
+              3,
+              0.5,
+              1,
+              3,
+              6
+            ],
+            [
+              3,
+              0.3333333333333333,
+              0.3333333333333333,
+              1,
+              4
+            ],
+            [
+              0.14285714285714285,
+              0.14285714285714285,
+              0.16666666666666666,
+              0.25,
+              1
+            ]
+          ]
+        }
+      ],
+      "nodeConnections": [
+        {
+          "end": [
+            {
+              "clusterId": 2,
+              "nodeId": 201
+            },
+            {
+              "clusterId": 2,
+              "nodeId": 202
+            },
+            {
+              "clusterId": 2,
+              "nodeId": 203
+            },
+            {
+              "clusterId": 2,
+              "nodeId": 204
+            }
+          ],
+          "start": {
+            "clusterId": 1,
+            "nodeId": 101
+          }
+        },
+        {
+          "end": [
+            {
+              "clusterId": 3,
+              "nodeId": 301
+            },
+            {
+              "clusterId": 3,
+              "nodeId": 302
+            },
+            {
+              "clusterId": 3,
+              "nodeId": 303
+            },
+            {
+              "clusterId": 3,
+              "nodeId": 304
+            },
+            {
+              "clusterId": 3,
+              "nodeId": 305
+            }
+          ],
+          "start": {
+            "clusterId": 2,
+            "nodeId": 201
+          }
+        }
+      ],
+      "parent": {
+        "clusterId": null,
+        "nodeId": null
+      },
+      "type": "bottom level"
+    }
+  ]
+}

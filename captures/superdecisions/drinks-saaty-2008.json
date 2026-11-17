@@ -55,9 +55,10 @@
     }
   },
   "reverify": {
-    "instructions": "Sign in at superdecisions.com (Google or Microsoft account). Create a new model; add a cluster 'Goal' with one node and a cluster 'Drinks' with nodes Coffee, Wine, Tea, Beer, Sodas, Milk, Water; use Design > Make Node connections to connect the goal node to the Drinks cluster (7 connections). In Assess/Compare > Matrix view, enter the fixture's matrix: a value in cell (row, column) means the row element is that many times more preferred, so enter each judgment as a value >= 1 in the dominant element's row (the full cell list is in the transcript artifact); reciprocals fill automatically. Read the Priorities panel ('Normal' column) and the 'Inconsistency' figure. The model file ahp-fixture-drinks-saaty-2008.sdm4 is saved in the operator's Google Drive and can be shared or exported via the application's 'Export sdmod' / 'Download' functions on request.",
+    "instructions": "Sign in at superdecisions.com (Google or Microsoft account). Create a new model; add a cluster 'Goal' with one node and a cluster 'Drinks' with nodes Coffee, Wine, Tea, Beer, Sodas, Milk, Water; use Design > Make Node connections to connect the goal node to the Drinks cluster (7 connections). In Assess/Compare > Matrix view, enter the fixture's matrix: a value in cell (row, column) means the row element is that many times more preferred, so enter each judgment as a value >= 1 in the dominant element's row (the full cell list is in the transcript artifact); reciprocals fill automatically. Read the Priorities panel ('Normal' column) and the 'Inconsistency' figure. The model file ahp-fixture-drinks-saaty-2008.sdm4 is saved in the operator's Google Drive and can be shared or exported via the application's 'Export sdmod' / 'Download' functions on request. Alternatively, import the exported .sdm4 model file in artifacts/ into SuperDecisions instead of rebuilding by hand.",
     "artifacts": [
-      "artifacts/drinks-saaty-2008-transcript.txt"
+      "artifacts/drinks-saaty-2008-transcript.txt",
+      "artifacts/ahp-fixture-drinks-saaty-2008.sdm4"
     ]
   }
 }

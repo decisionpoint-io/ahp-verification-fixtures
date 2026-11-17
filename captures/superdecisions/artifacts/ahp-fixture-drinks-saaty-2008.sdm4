@@ -1,0 +1,400 @@
+{
+  "brainstormNodes": [],
+  "networks": [
+    {
+      "clusterComparisons": [
+        {
+          "clusterid": 1,
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            2
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "values": [
+            [
+              1
+            ]
+          ]
+        }
+      ],
+      "clusters": [
+        {
+          "description": "",
+          "designInfo": {
+            "colorHex": "#52A756",
+            "dimensions": {
+              "height": 110,
+              "width": 193.0703125
+            },
+            "fontFace": "Arial",
+            "fontSize": 12,
+            "isBold": false,
+            "isIconized": false,
+            "isItalic": false,
+            "isUnderlined": false,
+            "orientation": "rectangle",
+            "position": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          "icon": "",
+          "id": 1,
+          "name": "Goal",
+          "nodes": [
+            {
+              "clusterId": 1,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 179.0703125
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 101,
+              "name": "Relative drink consumption",
+              "orderId": 1,
+              "subnetId": 0
+            }
+          ],
+          "orderId": 1
+        },
+        {
+          "description": "",
+          "designInfo": {
+            "colorHex": "#52A756",
+            "dimensions": {
+              "height": 178,
+              "width": 223.4921875
+            },
+            "fontFace": "Arial",
+            "fontSize": 12,
+            "isBold": false,
+            "isIconized": false,
+            "isItalic": false,
+            "isUnderlined": false,
+            "orientation": "rectangle",
+            "position": {
+              "x": 0,
+              "y": 238
+            }
+          },
+          "icon": null,
+          "id": 2,
+          "name": "Drinks",
+          "nodes": [
+            {
+              "clusterId": 2,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 70.138671875
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 201,
+              "name": "Coffee",
+              "orderId": 1,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 2,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 62.33984375
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 202,
+              "name": "Wine",
+              "orderId": 2,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 2,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 54.34765625
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 203,
+              "name": "Tea",
+              "orderId": 3,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 2,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 60.34765625
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 204,
+              "name": "Beer",
+              "orderId": 4,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 2,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 69.025390625
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 205,
+              "name": "Sodas",
+              "orderId": 5,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 2,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 56.328125
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 206,
+              "name": "Milk",
+              "orderId": 6,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 2,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 66.55859375
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 207,
+              "name": "Water",
+              "orderId": 7,
+              "subnetId": 0
+            }
+          ],
+          "orderId": 2
+        }
+      ],
+      "formula": null,
+      "id": 0,
+      "modelType": "pairwise",
+      "name": "Main Network",
+      "nodeComparisons": [
+        {
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "nodeid": 101,
+          "values": [
+            [
+              1,
+              9,
+              5,
+              2,
+              1,
+              1,
+              0.5
+            ],
+            [
+              0.1111111111111111,
+              1,
+              0.3333333333333333,
+              0.1111111111111111,
+              0.1111111111111111,
+              0.1111111111111111,
+              0.1111111111111111
+            ],
+            [
+              0.2,
+              3,
+              1,
+              0.3333333333333333,
+              0.25,
+              0.3333333333333333,
+              0.1111111111111111
+            ],
+            [
+              0.5,
+              9,
+              3,
+              1,
+              0.5,
+              1,
+              0.3333333333333333
+            ],
+            [
+              1,
+              9,
+              4,
+              2,
+              1,
+              2,
+              0.5
+            ],
+            [
+              1,
+              9,
+              3,
+              1,
+              0.5,
+              1,
+              0.3333333333333333
+            ],
+            [
+              2,
+              9,
+              9,
+              3,
+              2,
+              3,
+              1
+            ]
+          ]
+        }
+      ],
+      "nodeConnections": [
+        {
+          "end": [
+            {
+              "clusterId": 2,
+              "nodeId": 201
+            },
+            {
+              "clusterId": 2,
+              "nodeId": 202
+            },
+            {
+              "clusterId": 2,
+              "nodeId": 203
+            },
+            {
+              "clusterId": 2,
+              "nodeId": 204
+            },
+            {
+              "clusterId": 2,
+              "nodeId": 205
+            },
+            {
+              "clusterId": 2,
+              "nodeId": 206
+            },
+            {
+              "clusterId": 2,
+              "nodeId": 207
+            }
+          ],
+          "start": {
+            "clusterId": 1,
+            "nodeId": 101
+          }
+        }
+      ],
+      "parent": {
+        "clusterId": null,
+        "nodeId": null
+      },
+      "type": "bottom level"
+    }
+  ]
+}

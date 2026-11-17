@@ -1,0 +1,1565 @@
+{
+  "brainstormNodes": [],
+  "networks": [
+    {
+      "clusterComparisons": [
+        {
+          "clusterid": 1,
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            2
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "values": [
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "clusterid": 2,
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            3,
+            4,
+            5
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "values": [
+            [
+              1,
+              null,
+              null
+            ],
+            [
+              null,
+              1,
+              null
+            ],
+            [
+              null,
+              null,
+              1
+            ]
+          ]
+        },
+        {
+          "clusterid": 3,
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            5
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "values": [
+            [
+              1
+            ]
+          ]
+        },
+        {
+          "clusterid": 4,
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            5
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "values": [
+            [
+              1
+            ]
+          ]
+        }
+      ],
+      "clusters": [
+        {
+          "description": "",
+          "designInfo": {
+            "colorHex": "#52A756",
+            "dimensions": {
+              "height": 110,
+              "width": 170
+            },
+            "fontFace": "Arial",
+            "fontSize": 12,
+            "isBold": false,
+            "isIconized": false,
+            "isItalic": false,
+            "isUnderlined": false,
+            "orientation": "rectangle",
+            "position": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          "icon": "",
+          "id": 1,
+          "name": "Goal",
+          "nodes": [
+            {
+              "clusterId": 1,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 122.380859375
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 101,
+              "name": "Choose best car",
+              "orderId": 1,
+              "subnetId": 0
+            }
+          ],
+          "orderId": 1
+        },
+        {
+          "description": "",
+          "designInfo": {
+            "colorHex": "#52A756",
+            "dimensions": {
+              "height": 141,
+              "width": 240.384765625
+            },
+            "fontFace": "Arial",
+            "fontSize": 12,
+            "isBold": false,
+            "isIconized": false,
+            "isItalic": false,
+            "isUnderlined": false,
+            "orientation": "rectangle",
+            "position": {
+              "x": 355,
+              "y": 0
+            }
+          },
+          "icon": null,
+          "id": 2,
+          "name": "Criteria",
+          "nodes": [
+            {
+              "clusterId": 2,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 59.673828125
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 201,
+              "name": "Cost",
+              "orderId": 1,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 2,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 69.01953125
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 202,
+              "name": "Safety",
+              "orderId": 2,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 2,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 61.677734375
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 203,
+              "name": "Style",
+              "orderId": 3,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 2,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 81.6875
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 204,
+              "name": "Capacity",
+              "orderId": 4,
+              "subnetId": 0
+            }
+          ],
+          "orderId": 2
+        },
+        {
+          "description": "",
+          "designInfo": {
+            "colorHex": "#52A756",
+            "dimensions": {
+              "height": 141,
+              "width": 374.44140625
+            },
+            "fontFace": "Arial",
+            "fontSize": 12,
+            "isBold": false,
+            "isIconized": false,
+            "isItalic": false,
+            "isUnderlined": false,
+            "orientation": "rectangle",
+            "position": {
+              "x": 710,
+              "y": 0
+            }
+          },
+          "icon": null,
+          "id": 3,
+          "name": "Cost Subcriteria",
+          "nodes": [
+            {
+              "clusterId": 3,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 116.369140625
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 301,
+              "name": "Purchase Price",
+              "orderId": 1,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 3,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 92.3515625
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 302,
+              "name": "Fuel Costs",
+              "orderId": 2,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 3,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 137.720703125
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 303,
+              "name": "Maintenance Costs",
+              "orderId": 3,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 3,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 105.48828125
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 304,
+              "name": "Resale Value",
+              "orderId": 4,
+              "subnetId": 0
+            }
+          ],
+          "orderId": 3
+        },
+        {
+          "description": "",
+          "designInfo": {
+            "colorHex": "#52A756",
+            "dimensions": {
+              "height": 110,
+              "width": 281.095703125
+            },
+            "fontFace": "Arial",
+            "fontSize": 12,
+            "isBold": false,
+            "isIconized": false,
+            "isItalic": false,
+            "isUnderlined": false,
+            "orientation": "rectangle",
+            "position": {
+              "x": 0,
+              "y": 238
+            }
+          },
+          "icon": null,
+          "id": 4,
+          "name": "Capacity Subcriteria",
+          "nodes": [
+            {
+              "clusterId": 4,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 117.705078125
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 401,
+              "name": "Cargo Capacity",
+              "orderId": 1,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 4,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 142.390625
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 402,
+              "name": "Passenger Capacity",
+              "orderId": 2,
+              "subnetId": 0
+            }
+          ],
+          "orderId": 4
+        },
+        {
+          "description": "",
+          "designInfo": {
+            "colorHex": "#52A756",
+            "dimensions": {
+              "height": 141,
+              "width": 375.103515625
+            },
+            "fontFace": "Arial",
+            "fontSize": 12,
+            "isBold": false,
+            "isIconized": false,
+            "isItalic": false,
+            "isUnderlined": false,
+            "orientation": "rectangle",
+            "position": {
+              "x": 355,
+              "y": 238
+            }
+          },
+          "icon": null,
+          "id": 5,
+          "name": "Alternatives",
+          "nodes": [
+            {
+              "clusterId": 5,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 110.380859375
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 501,
+              "name": "Accord Sedan",
+              "orderId": 1,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 5,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 110.357421875
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 502,
+              "name": "Accord Hybrid",
+              "orderId": 2,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 5,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 86.3515625
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 503,
+              "name": "Pilot SUV",
+              "orderId": 3,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 5,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 92.33984375
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 504,
+              "name": "CR-V SUV",
+              "orderId": 4,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 5,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 107.029296875
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 505,
+              "name": "Element SUV",
+              "orderId": 5,
+              "subnetId": 0
+            },
+            {
+              "clusterId": 5,
+              "description": "",
+              "designInfo": {
+                "colorHex": "#52A756",
+                "fontFace": "Arial",
+                "fontSize": 12,
+                "isBold": false,
+                "isIconized": false,
+                "isItalic": false,
+                "isUnderlined": false,
+                "position": {
+                  "x": 0,
+                  "y": 0
+                },
+                "width": 126.365234375
+              },
+              "hasSubnet": false,
+              "icon": "",
+              "id": 506,
+              "name": "Odyssey Minivan",
+              "orderId": 6,
+              "subnetId": 0
+            }
+          ],
+          "orderId": 5
+        }
+      ],
+      "formula": null,
+      "id": 0,
+      "modelType": "pairwise",
+      "name": "Main Network",
+      "nodeComparisons": [
+        {
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            201,
+            202,
+            203,
+            204
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "nodeid": 101,
+          "values": [
+            [
+              1,
+              3,
+              7,
+              3
+            ],
+            [
+              0.3333333333333333,
+              1,
+              9,
+              1
+            ],
+            [
+              0.14285714285714285,
+              0.1111111111111111,
+              1,
+              0.14285714285714285
+            ],
+            [
+              0.3333333333333333,
+              1,
+              7,
+              1
+            ]
+          ]
+        },
+        {
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            301,
+            302,
+            303,
+            304
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "nodeid": 201,
+          "values": [
+            [
+              1,
+              2,
+              5,
+              3
+            ],
+            [
+              0.5,
+              1,
+              2,
+              2
+            ],
+            [
+              0.2,
+              0.5,
+              1,
+              0.5
+            ],
+            [
+              0.3333333333333333,
+              0.5,
+              2,
+              1
+            ]
+          ]
+        },
+        {
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            401,
+            402
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "nodeid": 204,
+          "values": [
+            [
+              1,
+              0.2
+            ],
+            [
+              5,
+              1
+            ]
+          ]
+        },
+        {
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            501,
+            502,
+            503,
+            504,
+            505,
+            506
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "nodeid": 202,
+          "values": [
+            [
+              1,
+              1,
+              5,
+              7,
+              9,
+              0.3333333333333333
+            ],
+            [
+              1,
+              1,
+              5,
+              7,
+              9,
+              0.3333333333333333
+            ],
+            [
+              0.2,
+              0.2,
+              1,
+              2,
+              9,
+              0.125
+            ],
+            [
+              0.14285714285714285,
+              0.14285714285714285,
+              0.5,
+              1,
+              2,
+              0.125
+            ],
+            [
+              0.1111111111111111,
+              0.1111111111111111,
+              0.1111111111111111,
+              0.5,
+              1,
+              0.1111111111111111
+            ],
+            [
+              3,
+              3,
+              8,
+              8,
+              9,
+              1
+            ]
+          ]
+        },
+        {
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            501,
+            502,
+            503,
+            504,
+            505,
+            506
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "nodeid": 203,
+          "values": [
+            [
+              1,
+              1,
+              7,
+              5,
+              9,
+              6
+            ],
+            [
+              1,
+              1,
+              7,
+              5,
+              9,
+              6
+            ],
+            [
+              0.14285714285714285,
+              0.14285714285714285,
+              1,
+              0.16666666666666666,
+              3,
+              0.3333333333333333
+            ],
+            [
+              0.2,
+              0.2,
+              6,
+              1,
+              7,
+              5
+            ],
+            [
+              0.1111111111111111,
+              0.1111111111111111,
+              0.3333333333333333,
+              0.14285714285714285,
+              1,
+              0.2
+            ],
+            [
+              0.16666666666666666,
+              0.16666666666666666,
+              3,
+              0.2,
+              5,
+              1
+            ]
+          ]
+        },
+        {
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            501,
+            502,
+            503,
+            504,
+            505,
+            506
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "nodeid": 301,
+          "values": [
+            [
+              1,
+              9,
+              9,
+              1,
+              0.5,
+              5
+            ],
+            [
+              0.1111111111111111,
+              1,
+              1,
+              0.1111111111111111,
+              0.1111111111111111,
+              0.14285714285714285
+            ],
+            [
+              0.1111111111111111,
+              1,
+              1,
+              0.1111111111111111,
+              0.1111111111111111,
+              0.14285714285714285
+            ],
+            [
+              1,
+              9,
+              9,
+              1,
+              0.5,
+              5
+            ],
+            [
+              2,
+              9,
+              9,
+              2,
+              1,
+              6
+            ],
+            [
+              0.2,
+              7,
+              7,
+              0.2,
+              0.16666666666666666,
+              1
+            ]
+          ]
+        },
+        {
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            501,
+            502,
+            503,
+            504,
+            505,
+            506
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "nodeid": 302,
+          "values": [
+            [
+              1,
+              0.8849557522123894,
+              1.41,
+              1.15,
+              1.24,
+              1.19
+            ],
+            [
+              1.13,
+              1,
+              1.59,
+              1.3,
+              1.4,
+              1.35
+            ],
+            [
+              0.7092198581560284,
+              0.6289308176100629,
+              1,
+              0.8130081300813008,
+              0.8771929824561404,
+              0.8474576271186441
+            ],
+            [
+              0.8695652173913044,
+              0.7692307692307692,
+              1.23,
+              1,
+              1.08,
+              1.04
+            ],
+            [
+              0.8064516129032259,
+              0.7142857142857143,
+              1.14,
+              0.9259259259259258,
+              1,
+              0.9615384615384615
+            ],
+            [
+              0.8403361344537815,
+              0.7407407407407407,
+              1.18,
+              0.9615384615384615,
+              1.04,
+              1
+            ]
+          ]
+        },
+        {
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            501,
+            502,
+            503,
+            504,
+            505,
+            506
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "nodeid": 303,
+          "values": [
+            [
+              1,
+              1.5,
+              4,
+              4,
+              4,
+              5
+            ],
+            [
+              0.6666666666666666,
+              1,
+              4,
+              4,
+              4,
+              5
+            ],
+            [
+              0.25,
+              0.25,
+              1,
+              1,
+              1.2,
+              1
+            ],
+            [
+              0.25,
+              0.25,
+              1,
+              1,
+              1,
+              3
+            ],
+            [
+              0.25,
+              0.25,
+              0.8333333333333334,
+              1,
+              1,
+              2
+            ],
+            [
+              0.2,
+              0.2,
+              1,
+              0.3333333333333333,
+              0.5,
+              1
+            ]
+          ]
+        },
+        {
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            501,
+            502,
+            503,
+            504,
+            505,
+            506
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "nodeid": 304,
+          "values": [
+            [
+              1,
+              3,
+              4,
+              0.5,
+              2,
+              2
+            ],
+            [
+              0.3333333333333333,
+              1,
+              2,
+              0.2,
+              1,
+              1
+            ],
+            [
+              0.25,
+              0.5,
+              1,
+              0.16666666666666666,
+              0.5,
+              0.5
+            ],
+            [
+              2,
+              5,
+              6,
+              1,
+              4,
+              4
+            ],
+            [
+              0.5,
+              1,
+              2,
+              0.25,
+              1,
+              1
+            ],
+            [
+              0.5,
+              1,
+              2,
+              0.25,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            501,
+            502,
+            503,
+            504,
+            505,
+            506
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "nodeid": 401,
+          "values": [
+            [
+              1,
+              1,
+              0.5,
+              0.5,
+              0.5,
+              0.3333333333333333
+            ],
+            [
+              1,
+              1,
+              0.5,
+              0.5,
+              0.5,
+              0.3333333333333333
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1,
+              0.5
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1,
+              0.5
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1,
+              0.5
+            ],
+            [
+              3,
+              3,
+              2,
+              2,
+              2,
+              1
+            ]
+          ]
+        },
+        {
+          "comparisonWord": "PREFERRED",
+          "labels": [
+            501,
+            502,
+            503,
+            504,
+            505,
+            506
+          ],
+          "markCompleted": false,
+          "multiplier": 1,
+          "nodeid": 402,
+          "values": [
+            [
+              1,
+              1,
+              0.5,
+              1,
+              3,
+              0.5
+            ],
+            [
+              1,
+              1,
+              0.5,
+              1,
+              3,
+              0.5
+            ],
+            [
+              2,
+              2,
+              1,
+              2,
+              6,
+              1
+            ],
+            [
+              1,
+              1,
+              0.5,
+              1,
+              3,
+              0.5
+            ],
+            [
+              0.3333333333333333,
+              0.3333333333333333,
+              0.16666666666666666,
+              0.3333333333333333,
+              1,
+              0.16666666666666666
+            ],
+            [
+              2,
+              2,
+              1,
+              2,
+              6,
+              1
+            ]
+          ]
+        }
+      ],
+      "nodeConnections": [
+        {
+          "end": [
+            {
+              "clusterId": 2,
+              "nodeId": 201
+            },
+            {
+              "clusterId": 2,
+              "nodeId": 202
+            },
+            {
+              "clusterId": 2,
+              "nodeId": 203
+            },
+            {
+              "clusterId": 2,
+              "nodeId": 204
+            }
+          ],
+          "start": {
+            "clusterId": 1,
+            "nodeId": 101
+          }
+        },
+        {
+          "end": [
+            {
+              "clusterId": 3,
+              "nodeId": 301
+            },
+            {
+              "clusterId": 3,
+              "nodeId": 302
+            },
+            {
+              "clusterId": 3,
+              "nodeId": 303
+            },
+            {
+              "clusterId": 3,
+              "nodeId": 304
+            }
+          ],
+          "start": {
+            "clusterId": 2,
+            "nodeId": 201
+          }
+        },
+        {
+          "end": [
+            {
+              "clusterId": 4,
+              "nodeId": 401
+            },
+            {
+              "clusterId": 4,
+              "nodeId": 402
+            }
+          ],
+          "start": {
+            "clusterId": 2,
+            "nodeId": 204
+          }
+        },
+        {
+          "end": [
+            {
+              "clusterId": 5,
+              "nodeId": 501
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 502
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 503
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 504
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 505
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 506
+            }
+          ],
+          "start": {
+            "clusterId": 2,
+            "nodeId": 202
+          }
+        },
+        {
+          "end": [
+            {
+              "clusterId": 5,
+              "nodeId": 501
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 502
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 503
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 504
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 505
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 506
+            }
+          ],
+          "start": {
+            "clusterId": 2,
+            "nodeId": 203
+          }
+        },
+        {
+          "end": [
+            {
+              "clusterId": 5,
+              "nodeId": 501
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 502
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 503
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 504
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 505
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 506
+            }
+          ],
+          "start": {
+            "clusterId": 3,
+            "nodeId": 301
+          }
+        },
+        {
+          "end": [
+            {
+              "clusterId": 5,
+              "nodeId": 501
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 502
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 503
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 504
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 505
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 506
+            }
+          ],
+          "start": {
+            "clusterId": 3,
+            "nodeId": 302
+          }
+        },
+        {
+          "end": [
+            {
+              "clusterId": 5,
+              "nodeId": 501
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 502
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 503
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 504
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 505
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 506
+            }
+          ],
+          "start": {
+            "clusterId": 3,
+            "nodeId": 303
+          }
+        },
+        {
+          "end": [
+            {
+              "clusterId": 5,
+              "nodeId": 501
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 502
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 503
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 504
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 505
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 506
+            }
+          ],
+          "start": {
+            "clusterId": 3,
+            "nodeId": 304
+          }
+        },
+        {
+          "end": [
+            {
+              "clusterId": 5,
+              "nodeId": 501
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 502
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 503
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 504
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 505
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 506
+            }
+          ],
+          "start": {
+            "clusterId": 4,
+            "nodeId": 401
+          }
+        },
+        {
+          "end": [
+            {
+              "clusterId": 5,
+              "nodeId": 501
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 502
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 503
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 504
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 505
+            },
+            {
+              "clusterId": 5,
+              "nodeId": 506
+            }
+          ],
+          "start": {
+            "clusterId": 4,
+            "nodeId": 402
+          }
+        }
+      ],
+      "parent": {
+        "clusterId": null,
+        "nodeId": null
+      },
+      "type": "bottom level"
+    }
+  ]
+}
