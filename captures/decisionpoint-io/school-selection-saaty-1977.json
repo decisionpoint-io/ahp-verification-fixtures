@@ -1,0 +1,236 @@
+{
+  "fixture_id": "school-selection-saaty-1977",
+  "tool": {
+    "name": "decisionpoint.io (hosted application)",
+    "version": "undetermined (hosted, continuously deployed); captured from the public observer view on 2026-11-17",
+    "platform": "web (hosted at app.decisionpoint.io)"
+  },
+  "captured": {
+    "date": "2026-11-17",
+    "by": "Philip Healy",
+    "method": "hosted-session",
+    "notes": "The decision (six criteria, three schools) was created on the operator's account through the application's public API by a script that enters the fixture's 33 judgments verbatim (every judgment an integer ratio from the fixture's matrices, direction chosen so the value is >= 1). The stored judgment set was then read back through the public API and confirmed to reproduce all seven fixture matrices exactly, entry for entry, before capture. Outputs are transcribed from the pages the application shows to an anonymous observer of the public decision: the results page (rankings, priority breakdowns, results table), the comparisons page (per-matrix consistency), and the sensitivity page (the Stability Overview table, which the page itself describes as 'the Percent-Top measure of Triantaphyllou and Sanchez (1997)'). The operator manually checked the transcription before commit. Note on neutrality: decisionpoint.io is maintained by the same organization that maintains this repository; the capture follows the same schema and rules as every other tool captured here."
+  },
+  "outputs": {
+    "matrices": {
+      "criteria": {
+        "priorities": [
+          0.321,
+          0.14,
+          0.035,
+          0.128,
+          0.237,
+          0.139
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.23,
+        "notes": "Criteria weights from the results page's Priority Breakdowns (three decimals; order Learning, Friends, School Life, Vocational Training, College Preparation, Music Classes). Per-matrix 'Consistency' figures from the comparisons page's scorecards (two decimals). lambda_max and CI are not displayed."
+      },
+      "learning": {
+        "priorities": [
+          0.157,
+          0.594,
+          0.249
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.05
+      },
+      "friends": {
+        "priorities": [
+          0.333,
+          0.333,
+          0.333
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0
+      },
+      "school_life": {
+        "priorities": [
+          0.455,
+          0.091,
+          0.455
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0
+      },
+      "vocational_training": {
+        "priorities": [
+          0.772,
+          0.055,
+          0.173
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.18
+      },
+      "college_preparation": {
+        "priorities": [
+          0.25,
+          0.5,
+          0.25
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.0
+      },
+      "music_classes": {
+        "priorities": [
+          0.691,
+          0.091,
+          0.218
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.05
+      }
+    },
+    "synthesis": {
+      "labels": [
+        "School A",
+        "School B",
+        "School C"
+      ],
+      "values": [
+        0.367,
+        0.378,
+        0.254
+      ],
+      "notes": "Overall Ranking on the results page (three decimals): School B 1st, School A 2nd, School C 3rd - the principal-eigenvector order, with the A/B gap of 0.011 that the column-normalization approximation reverses. The page also displays an overall CONSISTENCY figure of 0.07, which the engine computes as the unweighted mean of the seven per-matrix consistency ratios (the fixture's expected per-matrix CRs average 0.0716)."
+    },
+    "stability": {
+      "description": "The sensitivity page's Stability Overview, one row per criterion: the change to the criterion's weight, stated relative to the weight itself, at which a different alternative takes first place, and the resulting weight. Transcribed below in the fixture's criteria order as two vectors; the displacing alternative is School A in every feasible row, and the Friends row displays 'Never'. The page also assigns ratings (Sensitive < 10%, Moderate 10-25%, Stable above): Learning Sensitive; Vocational Training, College Preparation and Music Classes Moderate; Friends and School Life Stable.",
+      "percent_top": {
+        "relative_change_percent": [
+          -5.6,
+          null,
+          82.8,
+          10.4,
+          -15.0,
+          11.3
+        ],
+        "new_weight": [
+          0.303,
+          null,
+          0.064,
+          0.142,
+          0.202,
+          0.155
+        ],
+        "notes": "Displayed as, e.g., 'Learning 32.1%, -5.6% of its weight, 32.1% -> 30.3%: School A takes first place'. New weights are the displayed percentages divided by 100."
+      }
+    }
+  },
+  "ri_table": {
+    "name": "saaty",
+    "values": {
+      "3": 0.58,
+      "4": 0.9,
+      "5": 1.12,
+      "6": 1.24,
+      "7": 1.32,
+      "8": 1.41,
+      "9": 1.45,
+      "10": 1.49
+    },
+    "source": "Engine source (the application's evaluation module, saatyRandomIndexes): the classic Saaty (1980) table, matching the fixture's declared table for all sizes used here. Determined by direct source inspection - the engine is maintained by the same organization as this repository."
+  },
+  "prioritization_method": "principal-eigenvector (power method; determined by direct engine source inspection, and consistent with all displayed values matching the fixture's principal-eigenvector expected values at display precision)",
+  "matches_expected": {
+    "matrices.criteria.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the display precision (three decimals)."
+    },
+    "matrices.criteria.cr": {
+      "matches": true,
+      "tolerance": 0.005,
+      "note": "Matches the fixture's expected CR (Saaty 1980 RI table, same table as the engine) at the display precision (two decimals)."
+    },
+    "matrices.learning.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the display precision (three decimals)."
+    },
+    "matrices.learning.cr": {
+      "matches": true,
+      "tolerance": 0.005,
+      "note": "Matches the fixture's expected CR (Saaty 1980 RI table, same table as the engine) at the display precision (two decimals)."
+    },
+    "matrices.friends.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the display precision (three decimals)."
+    },
+    "matrices.friends.cr": {
+      "matches": true,
+      "tolerance": 0.005,
+      "note": "Matches the fixture's expected CR (Saaty 1980 RI table, same table as the engine) at the display precision (two decimals)."
+    },
+    "matrices.school_life.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the display precision (three decimals)."
+    },
+    "matrices.school_life.cr": {
+      "matches": true,
+      "tolerance": 0.005,
+      "note": "Matches the fixture's expected CR (Saaty 1980 RI table, same table as the engine) at the display precision (two decimals)."
+    },
+    "matrices.vocational_training.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the display precision (three decimals)."
+    },
+    "matrices.vocational_training.cr": {
+      "matches": true,
+      "tolerance": 0.005,
+      "note": "Matches the fixture's expected CR (Saaty 1980 RI table, same table as the engine) at the display precision (two decimals)."
+    },
+    "matrices.college_preparation.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the display precision (three decimals)."
+    },
+    "matrices.college_preparation.cr": {
+      "matches": true,
+      "tolerance": 0.005,
+      "note": "Matches the fixture's expected CR (Saaty 1980 RI table, same table as the engine) at the display precision (two decimals)."
+    },
+    "matrices.music_classes.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's derived principal-eigenvector values at the display precision (three decimals)."
+    },
+    "matrices.music_classes.cr": {
+      "matches": true,
+      "tolerance": 0.005,
+      "note": "Matches the fixture's expected CR (Saaty 1980 RI table, same table as the engine) at the display precision (two decimals)."
+    },
+    "synthesis": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Overall Ranking matches the fixture's derived synthesis at display precision; rank order identical, School B first."
+    },
+    "stability.percent_top.relative_change_percent": {
+      "matches": true,
+      "tolerance": 0.05,
+      "compared_to": "proportional-redistribution",
+      "note": "Matches the fixture's proportional-redistribution block at the display precision (one decimal of relative percent), including the null Friends entry (displayed 'Never'). The engine redistributes the remaining weights proportionally when one weight moves (confirmed by direct source inspection), so it is checked against that convention block; see explanation."
+    },
+    "stability.percent_top.new_weight": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "compared_to": "proportional-redistribution",
+      "note": "The displayed crossing weights match the fixture's proportional-redistribution block at display precision (percentages to one decimal)."
+    }
+  },
+  "explanation": "All priorities, consistency ratios and the synthesis match the fixture's normative expected values at display precision. The stability rows are checked against the fixture's proportional-redistribution alternate rather than the theorem-1 block: when the application varies one criterion's weight it rescales the remaining weights proportionally so they continue to sum to 1 (confirmed by direct engine source inspection), whereas Theorem 1 of Triantaphyllou and Sanchez (1997) changes only the selected weight. The two conventions ask the same Percent-Top question and agree here on the critical criterion (Learning), every crossing direction, and the displacing alternative (School A); they differ in threshold magnitude (e.g. Learning -5.6% of its weight under redistribution, -8.0% under Theorem 1). This is a documented convention difference, not an error.",
+  "reverify": {
+    "url": "https://app.decisionpoint.io/ahp/processes/1ubjp6g538axfzqc6uv7nwmxb",
+    "instructions": "Open the URL (no account needed; the page states 'You are an observer and cannot make edits'). VIEW RESULTS shows the Overall Ranking, Priority Breakdowns per matrix, and the Results Table; VIEW COMPARISONS shows each matrix's judgments and its Consistency figure; ANALYZE SENSITIVITY shows the Stability Overview table transcribed here."
+  }
+}

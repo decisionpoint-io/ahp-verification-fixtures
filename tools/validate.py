@@ -130,8 +130,12 @@ for path in capture_files:
         exp_vals = exp_block.get("values", exp_block.get("value"))
         if isinstance(exp_vals, list):
             got = node if isinstance(node, list) else node.get("values")
+            # null entries (e.g. "no feasible change" in stability vectors)
+            # match only null entries
             within = (got is not None and len(got) == len(exp_vals)
-                      and all(abs(a - b) <= tol for a, b in zip(got, exp_vals)))
+                      and all((a is None) == (b is None)
+                              and (a is None or abs(a - b) <= tol)
+                              for a, b in zip(got, exp_vals)))
         else:
             got = node
             within = got is not None and abs(got - exp_vals) <= tol

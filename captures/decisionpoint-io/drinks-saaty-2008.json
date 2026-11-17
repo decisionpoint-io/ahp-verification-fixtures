@@ -1,0 +1,64 @@
+{
+  "fixture_id": "drinks-saaty-2008",
+  "tool": {
+    "name": "decisionpoint.io (hosted application)",
+    "version": "undetermined (hosted, continuously deployed); captured from the public observer view on 2026-11-17",
+    "platform": "web (hosted at app.decisionpoint.io)"
+  },
+  "captured": {
+    "date": "2026-11-17",
+    "by": "Philip Healy",
+    "method": "hosted-session",
+    "notes": "Representation: the fixture is a single judgment matrix, so the decision has one criterion ('Relative consumption in the USA', weight 1 with nothing to compare it to) and the seven drinks as alternatives; the published ranking therefore equals the matrix's priority vector directly. The decision was created on the operator's account through the application's public API by a script that enters the fixture's judgments verbatim (every judgment an integer ratio from the fixture's matrix, direction chosen so the value is >= 1). The stored judgment set was then read back through the public API and confirmed to reproduce the fixture's matrix (21 comparisons) exactly, entry for entry, before capture. Outputs are transcribed from the pages the application shows to an anonymous observer of the public decision. The operator manually checked the transcription before commit. Note on neutrality: decisionpoint.io is maintained by the same organization that maintains this repository; the capture follows the same schema and rules as every other tool captured here."
+  },
+  "outputs": {
+    "matrices": {
+      "drinks": {
+        "priorities": [
+          0.177,
+          0.019,
+          0.042,
+          0.116,
+          0.19,
+          0.129,
+          0.327
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.02,
+        "notes": "Priorities from the results page's Overall Ranking and Results Table (three decimals; order Coffee, Wine, Tea, Beer, Sodas, Milk, Water; Water 1st). CR is the results page's CONSISTENCY figure (two decimals), which for this single-matrix decision is the matrix's consistency ratio. lambda_max and CI are not displayed."
+      }
+    }
+  },
+  "ri_table": {
+    "name": "saaty",
+    "values": {
+      "3": 0.58,
+      "4": 0.9,
+      "5": 1.12,
+      "6": 1.24,
+      "7": 1.32,
+      "8": 1.41,
+      "9": 1.45,
+      "10": 1.49
+    },
+    "source": "Engine source (the application's evaluation module, saatyRandomIndexes): the classic Saaty (1980) table, matching the fixture's declared table for all sizes used here. Determined by direct source inspection - the engine is maintained by the same organization as this repository."
+  },
+  "prioritization_method": "principal-eigenvector (power method; determined by direct engine source inspection, and consistent with all displayed values matching the fixture's principal-eigenvector expected values at display precision)",
+  "matches_expected": {
+    "matrices.drinks.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's expected priorities at the display precision (three decimals). The seven displayed values equal the published priorities digit for digit."
+    },
+    "matrices.drinks.cr": {
+      "matches": true,
+      "tolerance": 0.005,
+      "note": "Matches the fixture's expected CR (Saaty 1980 RI table, same table as the engine) at the display precision (two decimals)."
+    }
+  },
+  "reverify": {
+    "url": "https://app.decisionpoint.io/ahp/processes/1ubjp6e9uoydkbwhaiczruo4l",
+    "instructions": "Open the URL (no account needed; the page states 'You are an observer and cannot make edits'). VIEW RESULTS shows the Overall Ranking, the CONSISTENCY figure, and the Results Table; VIEW COMPARISONS shows the 21 judgments."
+  }
+}

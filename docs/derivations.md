@@ -172,6 +172,37 @@ Two properties make this fixture useful:
   legitimately report different top choices here, which makes this fixture a
   sharp method-sensitivity probe.
 
+**Stability (Percent-Top) expectations.** The fixture also carries derived
+criterion-weight stability thresholds (`expected.stability.percent_top`):
+for each criterion, the smallest relative change to its weight that makes a
+different school rank first (School B is first at the baseline; the
+displacing school is A in every feasible case). The narrow A/B margin makes
+this the natural hierarchy on which to verify Percent-Top implementations,
+since the Triantaphyllou & Sánchez example matrices themselves cannot be
+entered through judgment-limited interfaces (see the ts1997 note below).
+Two conventions are stated, both recomputed by
+`tools/compute_expected.py` from the fixture's derived weights and local
+priorities:
+
+* **theorem-1** (the normative block): only the selected weight changes, as
+  in Theorem 1 of Triantaphyllou & Sánchez (1997), with the feasibility
+  condition that the new weight stays in [0, 1]. The threshold for
+  alternatives *i*, *j* under criterion *k* is δ = (P_j − P_i)/(a_jk − a_ik).
+* **proportional-redistribution** (a method-tagged alternate): the remaining
+  weights are rescaled proportionally so the weights always sum to 1 — the
+  convention of interactive AHP sensitivity tools, where a weight slider
+  redistributes the complement. Crossings are taken strictly inside (0, 1).
+
+The two conventions ask the same question and agree here on the critical
+criterion (Learning), every crossing direction, and the displacing
+alternative; they differ in magnitude (Learning −8.0% of its weight under
+theorem-1, −5.6% under redistribution). The Friends entry is null under
+both: its matrix rates the three schools equally, so no change to its
+weight can reorder them (under redistribution the scores tie only in the
+degenerate limit where Friends carries the entire weight). A tool is
+checked against the block matching its documented convention; divergence
+between the blocks is a convention difference, not an error.
+
 ### job-selection-saaty-2008
 
 Tables 3–5 of Saaty (2008) publish three matrices with their priority
@@ -258,5 +289,17 @@ decision matrices:
   explanation rather than stated as expected values.
 
 No open implementation in `runners/` currently computes these sensitivity
-measures, so the stability fixtures are verified via captures; they are
-schema-validated and their preferences are recomputed in CI.
+measures; the fixtures are schema-validated and their preferences are
+recomputed in CI.
+
+One representability note for tools whose input is pairwise judgments: the
+paper generated its decision matrices as normalized data directly, not from
+1–9-scale judgments. Reconstructing Example 1's matrix in such a tool
+requires consistent judgment ratios up to a_1k/a_4k ≈ 18.8 under C1 — and
+every ratio involving A4 under C1 exceeds 9 — so tools that enforce Saaty's
+fundamental scale on judgment entry (decisionpoint.io among them) cannot
+represent these fixtures through their judgment interfaces at all. That is
+a property of the data, not a defect of those tools. Percent-Top
+implementations in judgment-based tools are instead verified against the
+derived stability expectations of `school-selection-saaty-1977`, whose
+matrices are genuine 1–9-scale judgments (see that fixture's note above).

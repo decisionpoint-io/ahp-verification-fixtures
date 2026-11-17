@@ -694,6 +694,86 @@
           }
         }
       ]
+    },
+    "stability": {
+      "model": "percent-top-criterion-weights",
+      "description": "The Percent-Top question of Triantaphyllou and Sanchez (1997) applied to this hierarchy's criterion weights: for each criterion, the smallest relative change to its weight (in percent of the weight; negative = decrease) that makes a different alternative rank first. At the baseline School B ranks first, and in every feasible case the displacing alternative is School A. Two documented conventions are given. 'theorem-1' (the normative block) changes only the selected weight, per the paper's Theorem 1, with the feasibility condition that the new weight stays in [0, 1]. The 'proportional-redistribution' alternate also rescales the remaining weights so the sum stays 1 - the convention of interactive AHP sensitivity tools; a tool is checked against the block matching its documented convention, and divergence between the blocks is a convention difference, not an error. All values are derived from this fixture's derived principal-eigenvector criteria weights and local priorities, and recompute via tools/compute_expected.py. A null entry means no feasible change to that criterion's weight displaces the top alternative: the Friends matrix rates the three schools equally, so under theorem-1 no crossing exists, and under redistribution the scores tie only in the degenerate limit where Friends carries the entire weight.",
+      "percent_top": {
+        "criteria": [
+          "Learning",
+          "Friends",
+          "School Life",
+          "Vocational Training",
+          "College Preparation",
+          "Music Classes"
+        ],
+        "baseline_top_alternative": "School B",
+        "displacing_alternative": "School A",
+        "relative_change_percent": {
+          "values": [
+            -7.9783,
+            null,
+            88.3718,
+            12.1201,
+            -18.8262,
+            13.3986
+          ],
+          "tolerance": 0.05,
+          "provenance": {
+            "type": "derived",
+            "method": "Theorem 1 of the cited paper applied to the fixture's derived criteria weights and local priorities (only the selected weight changes); smallest-magnitude feasible threshold per criterion.",
+            "citation": "E. Triantaphyllou and A. Sanchez, 'A sensitivity analysis approach for some deterministic multi-criteria decision-making methods', Decision Sciences 28(1), 1997, pp. 151-185."
+          }
+        },
+        "new_weight": {
+          "values": [
+            0.295178,
+            null,
+            0.065494,
+            0.144059,
+            0.192699,
+            0.157718
+          ],
+          "tolerance": 0.0005,
+          "provenance": {
+            "type": "derived",
+            "method": "The criterion weight at the Theorem-1 threshold (baseline weight plus the absolute change).",
+            "citation": "E. Triantaphyllou and A. Sanchez, 'A sensitivity analysis approach for some deterministic multi-criteria decision-making methods', Decision Sciences 28(1), 1997, pp. 151-185."
+          }
+        },
+        "alternates": [
+          {
+            "method": "proportional-redistribution",
+            "provenance": {
+              "type": "derived",
+              "method": "The same Percent-Top question with the remaining criteria weights rescaled proportionally so the weights sum to 1 at every point (the convention of interactive AHP sensitivity tools); smallest-magnitude crossing strictly inside (0, 1) per criterion.",
+              "citation": "E. Triantaphyllou and A. Sanchez, 'A sensitivity analysis approach for some deterministic multi-criteria decision-making methods', Decision Sciences 28(1), 1997, pp. 151-185."
+            },
+            "relative_change_percent": {
+              "values": [
+                -5.5614,
+                null,
+                82.7565,
+                10.4008,
+                -15.0287,
+                11.3241
+              ],
+              "tolerance": 0.05
+            },
+            "new_weight": {
+              "values": [
+                0.302931,
+                null,
+                0.063541,
+                0.14185,
+                0.201713,
+                0.154833
+              ],
+              "tolerance": 0.0005
+            }
+          }
+        ]
+      }
     }
   },
   "source_reported": {

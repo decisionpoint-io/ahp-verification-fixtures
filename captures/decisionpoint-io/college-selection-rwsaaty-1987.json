@@ -1,0 +1,84 @@
+{
+  "fixture_id": "college-selection-rwsaaty-1987",
+  "tool": {
+    "name": "decisionpoint.io (hosted application)",
+    "version": "undetermined (hosted, continuously deployed); captured from the public observer view on 2026-11-17",
+    "platform": "web (hosted at app.decisionpoint.io)"
+  },
+  "captured": {
+    "date": "2026-11-17",
+    "by": "Philip Healy",
+    "method": "hosted-session",
+    "notes": "Representation: the fixture's two matrices are captured as two single-matrix public decisions, each with one criterion and the compared items as alternatives (the criteria matrix's four selection criteria are the compared items of the first decision; the five colleges of the location matrix are the compared items of the second). The decision was created on the operator's account through the application's public API by a script that enters the fixture's judgments verbatim (every judgment an integer ratio from the fixture's matrix, direction chosen so the value is >= 1). The stored judgment set was then read back through the public API and confirmed to reproduce the fixture's matrices (6 and 10 comparisons) exactly, entry for entry, before capture. Outputs are transcribed from the pages the application shows to an anonymous observer of the public decision. The operator manually checked the transcription before commit. Note on neutrality: decisionpoint.io is maintained by the same organization that maintains this repository; the capture follows the same schema and rules as every other tool captured here."
+  },
+  "outputs": {
+    "matrices": {
+      "criteria": {
+        "priorities": [
+          0.053,
+          0.491,
+          0.238,
+          0.218
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.02,
+        "notes": "From the first decision's results page (Overall Ranking / Results Table, three decimals; order Location, Ambience, Reputation, Academics). CR is the page's CONSISTENCY figure (two decimals). lambda_max and CI are not displayed."
+      },
+      "location": {
+        "priorities": [
+          0.115,
+          0.402,
+          0.284,
+          0.163,
+          0.037
+        ],
+        "lambda_max": null,
+        "ci": null,
+        "cr": 0.09,
+        "notes": "From the second decision's results page (order Swarthmore, Northwestern, U. Michigan, Vanderbilt, CMU)."
+      }
+    }
+  },
+  "ri_table": {
+    "name": "saaty",
+    "values": {
+      "3": 0.58,
+      "4": 0.9,
+      "5": 1.12,
+      "6": 1.24,
+      "7": 1.32,
+      "8": 1.41,
+      "9": 1.45,
+      "10": 1.49
+    },
+    "source": "Engine source (the application's evaluation module, saatyRandomIndexes): the classic Saaty (1980) table, matching the fixture's declared table for all sizes used here. Determined by direct source inspection - the engine is maintained by the same organization as this repository."
+  },
+  "prioritization_method": "principal-eigenvector (power method; determined by direct engine source inspection, and consistent with all displayed values matching the fixture's principal-eigenvector expected values at display precision)",
+  "matches_expected": {
+    "matrices.criteria.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's expected priorities at the display precision (three decimals)."
+    },
+    "matrices.criteria.cr": {
+      "matches": true,
+      "tolerance": 0.005,
+      "note": "Matches the fixture's expected CR (Saaty 1980 RI table, same table as the engine) at the display precision (two decimals)."
+    },
+    "matrices.location.priorities": {
+      "matches": true,
+      "tolerance": 0.0005,
+      "note": "Matches the fixture's expected priorities at the display precision (three decimals)."
+    },
+    "matrices.location.cr": {
+      "matches": true,
+      "tolerance": 0.005,
+      "note": "Matches the fixture's expected CR (Saaty 1980 RI table, same table as the engine) at the display precision (two decimals)."
+    }
+  },
+  "reverify": {
+    "url": "https://app.decisionpoint.io/ahp/processes/1ubjp6fae5e05ccm25zdfb1i8",
+    "instructions": "Criteria matrix: open the URL above. Location matrix: open https://app.decisionpoint.io/ahp/processes/1ubjp6fou3r2laem8obbtz30r. No account is needed for either; each results page shows the Overall Ranking and CONSISTENCY figure, and VIEW COMPARISONS shows the judgments."
+  }
+}

@@ -71,8 +71,12 @@ def check(name, got, block, kind="value"):
     tol = block["tolerance"]
     exp = block.get("values", block.get("value"))
     if isinstance(exp, list):
-        within = len(got) == len(exp) and all(abs(a - b) <= tol for a, b in zip(got, exp))
-        shown = "[" + " ".join(f"{v:.6f}" for v in got) + "]"
+        # null entries (e.g. "no feasible change" in stability vectors) match
+        # only null entries
+        within = len(got) == len(exp) and all(
+            (a is None) == (b is None) and (a is None or abs(a - b) <= tol)
+            for a, b in zip(got, exp))
+        shown = "[" + " ".join("null" if v is None else f"{v:.6f}" for v in got) + "]"
     else:
         within = abs(got - exp) <= tol
         shown = f"{got:.6f}"
@@ -166,6 +170,70 @@ def run_fixture(path):
                         got += gfactor(m["key"]) * np.array(
                             [aligned[lbl] for lbl in block["labels"]])
             check(f"{field}[{method}]", list(got), b)
+
+    stability = fx["expected"].get("stability")
+    if stability and "percent_top" in stability:
+        run_percent_top(fx, weights["principal-eigenvector"], stability["percent_top"])
+
+
+def run_percent_top(fx, wset, pt):
+    """Recompute the Percent-Top criterion-weight thresholds of a one-level
+    hierarchy under both documented conventions: 'theorem-1' changes only the
+    selected weight (Triantaphyllou & Sanchez 1997, Theorem 1 with the
+    feasibility condition that the new weight stays in [0, 1]); the
+    'proportional-redistribution' alternate also rescales the remaining
+    weights so that the sum stays 1. A null threshold means no feasible
+    change displaces the top alternative."""
+    root = next(m for m in fx["matrices"] if not m.get("parent"))
+    crits = pt["criteria"]
+    rootw = dict(zip(root["labels"], wset[root["key"]]))
+    w = np.array([rootw[c] for c in crits])
+    alt_labels = fx["expected"]["synthesis"]["labels"]
+    A = np.zeros((len(alt_labels), len(crits)))
+    for m in fx["matrices"]:
+        if m.get("parent") and m["parent"]["element"] in crits:
+            local = dict(zip(m["labels"], wset[m["key"]]))
+            A[:, crits.index(m["parent"]["element"])] = [local[l] for l in alt_labels]
+    P = A @ w
+    top = int(np.argmax(P))
+
+    def thresholds(redistribute):
+        rels, new_ws = [], []
+        for k in range(len(crits)):
+            best = None
+            for i in range(len(alt_labels)):
+                if i == top:
+                    continue
+                if redistribute:
+                    d = A[i, k] - A[top, k]
+                    rest = ((P[i] - P[top]) - w[k] * d) / (1 - w[k])
+                    denom = d - rest
+                    if abs(denom) < 1e-14:
+                        continue
+                    x = -rest / denom
+                    if not (1e-9 < x < 1 - 1e-9):
+                        continue
+                else:
+                    d = A[top, k] - A[i, k]
+                    if abs(d) < 1e-14:
+                        continue
+                    x = w[k] - (P[top] - P[i]) / d
+                    if not (0 <= x <= 1):
+                        continue
+                rel = (x - w[k]) / w[k] * 100
+                if best is None or abs(rel) < abs(best[0]):
+                    best = (rel, x)
+            rels.append(best[0] if best else None)
+            new_ws.append(best[1] if best else None)
+        return rels, new_ws
+
+    blocks = [("theorem-1", pt)] + [(alt["method"], alt) for alt in pt.get("alternates", [])]
+    for method, block in blocks:
+        rels, new_ws = thresholds(redistribute=(method == "proportional-redistribution"))
+        check(f"stability.percent_top[{method}].relative_change_percent",
+              rels, block["relative_change_percent"])
+        check(f"stability.percent_top[{method}].new_weight",
+              new_ws, block["new_weight"])
 
 
 paths = [Path(p) for p in sys.argv[1:]] or sorted((ROOT / "fixtures").glob("*.json"))
